@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
+  /* ─────────────────────────────────────────
+     EXISTING: colour tokens (dark / light)
+     ───────────────────────────────────────── */
   :root {
     --bg:        #0f1117;
     --bg2:       #161b27;
@@ -34,8 +37,19 @@
     --shadow:    rgba(0,0,0,0.15);
   }
 
+  /* ─────────────────────────────────────────
+     EXISTING: base layout
+     ───────────────────────────────────────── */
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; transition: background 0.25s, color 0.25s; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.25s, color 0.25s;
+  }
 
   #header {
     background: var(--bg2);
@@ -46,7 +60,7 @@
     gap: 14px;
     flex-shrink: 0;
   }
-  #header-h1 { font-size: 15px; font-weight: 600; color: var(--text2); }
+  #header-h1  { font-size: 15px; font-weight: 600; color: var(--text2); }
   #header-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
   .toggle-group {
@@ -54,7 +68,7 @@
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border);
-    margin-left: auto;
+    margin-left: auto;       /* pushes theme toggle to the far right */
   }
   .tgl-btn {
     padding: 6px 13px;
@@ -70,36 +84,212 @@
   .tgl-btn.active { background: var(--btn-active); color: var(--accent); }
   .tgl-btn:not(:last-child) { border-right: 1px solid var(--border); }
 
-  #map { flex: 1; }
+  /* ─────────────────────────────────────────
+     EXISTING: map takes remaining height
+     ───────────────────────────────────────── */
+  /* NOTE: we wrap the map in a relative container
+     so the filter panel can float over it.       */
+  #map-wrap { position: relative; flex: 1; }
+  #map      { width: 100%; height: 100%; }
+
+
+  /* ═════════════════════════════════════════
+     NEW: Filter panel floating over the map
+     ═════════════════════════════════════════
+
+     position: absolute  → floats inside #map-wrap
+     z-index: 1000       → sits above all Leaflet tiles (Leaflet uses z-index ~200-400)
+  */
+  #filter-panel {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+
+    background: var(--popup-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+    min-width: 230px;
+
+    /* smooth colour transition when theme switches */
+    transition: background 0.25s, border-color 0.25s;
+  }
+
+  /* Small label above the two columns */
+  #filter-panel .fp-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  /* Two-column grid */
+  .filter-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+  }
+
+  /* Column heading (ESO / Litgrid) */
+  .filter-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Each checkbox row */
+  .filter-col label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--text);
+    cursor: pointer;
+    margin-bottom: 7px;
+    user-select: none;        /* prevents text highlight on fast clicks */
+    transition: color 0.2s;
+  }
+  .filter-col label:hover { color: var(--accent); }
+
+  /* The checkbox itself */
+  .filter-col input[type="checkbox"] {
+    accent-color: var(--accent); /* colours the tick to match theme */
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Coloured dot next to each label — matches marker colour */
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  /* Divider between the two columns */
+  .filter-divider {
+    width: 1px;
+    background: var(--border);
+    margin: 0 -9px;          /* pulled into the gap */
+  }
+
+  /* Small counter below the filter columns */
+  #filter-count {
+    margin-top: 10px;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+    border-top: 1px solid var(--border);
+    padding-top: 7px;
+  }
 </style>
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════
+     EXISTING: Top header bar
+     ═══════════════════════════════════════════ -->
 <div id="header">
   <div>
     <div id="header-h1">ESO pralaidumai</div>
     <div id="header-sub">30/110 kV pastotės · Duomenys: ESO ArcGIS 2026-05-24</div>
   </div>
   <div class="toggle-group">
-    <button class="tgl-btn active" id="btn-dark" onclick="setTheme('dark')">🌑 Tamsi</button>
-    <button class="tgl-btn" id="btn-light" onclick="setTheme('light')">☀ Šviesi</button>
+    <button class="tgl-btn active" id="btn-dark"  onclick="setTheme('dark')">🌑 Tamsi</button>
+    <button class="tgl-btn"        id="btn-light" onclick="setTheme('light')">☀ Šviesi</button>
   </div>
 </div>
 
-<div id="map"></div>
+<!-- ═══════════════════════════════════════════
+     CHANGED: map is now inside a wrapper div
+     so the filter panel can float over it.
+     ═══════════════════════════════════════════ -->
+<div id="map-wrap">
+
+  <!-- ════════════════════════════════════════
+       NEW: Filter panel (floats over map)
+       ════════════════════════════════════════ -->
+  <div id="filter-panel">
+    <div class="fp-title">Rodyti pastotes</div>   <!-- "Show substations" -->
+
+    <div class="filter-columns">
+
+      <!-- ── ESO column ── -->
+      <div class="filter-col">
+        <h4>ESO</h4>
+
+        <!-- Each label wraps: checkbox + coloured dot + text -->
+        <!-- The "data-op" and "data-v" attributes are read by JS -->
+        <label>
+          <input type="checkbox" id="f-eso-35"  data-op="ESO"     data-v="35"  checked onchange="applyFilters()">
+          <span class="dot" style="background:#f59e0b;"></span>
+          35 kV
+        </label>
+
+        <label>
+          <input type="checkbox" id="f-eso-110" data-op="ESO"     data-v="110" checked onchange="applyFilters()">
+          <span class="dot" style="background:#4fc3f7;"></span>
+          110 kV
+        </label>
+      </div>
+
+      <!-- ── Litgrid column ── -->
+      <div class="filter-col">
+        <h4>Litgrid</h4>
+
+        <label>
+          <input type="checkbox" id="f-ltg-110" data-op="Litgrid" data-v="110" checked onchange="applyFilters()">
+          <span class="dot" style="background:#34d399;"></span>
+          110 kV
+        </label>
+
+        <label>
+          <input type="checkbox" id="f-ltg-330" data-op="Litgrid" data-v="330" checked onchange="applyFilters()">
+          <span class="dot" style="background:#f87171;"></span>
+          330 kV
+        </label>
+      </div>
+
+    </div><!-- /.filter-columns -->
+
+    <!-- Live counter: "Rodoma X iš Y" = "Showing X of Y" -->
+    <div id="filter-count">Rodoma — iš —</div>
+  </div><!-- /#filter-panel -->
+
+  <div id="map"></div>
+
+</div><!-- /#map-wrap -->
+
 
 <script>
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 1 — MAP SETUP  (your existing code, unchanged)
+   ═══════════════════════════════════════════════════════════════ */
+
 const map = L.map('map', { center: [55.3, 23.8], zoom: 7, zoomControl: true });
-let tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© OpenStreetMap © CARTO', maxZoom: 19
-}).addTo(map);
+
+let tileLayer = L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  { attribution: '© OpenStreetMap © CARTO', maxZoom: 19 }
+).addTo(map);
 
 let currentTheme = 'dark';
 
 function setTheme(theme) {
   currentTheme = theme;
   document.body.classList.toggle('light', theme === 'light');
-  document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
+  document.getElementById('btn-dark').classList.toggle('active',  theme === 'dark');
   document.getElementById('btn-light').classList.toggle('active', theme === 'light');
   map.removeLayer(tileLayer);
   const url = theme === 'light'
@@ -107,6 +297,182 @@ function setTheme(theme) {
     : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
   tileLayer = L.tileLayer(url, { attribution: '© OpenStreetMap © CARTO', maxZoom: 19 }).addTo(map);
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 2 — SUBSTATION DATA
+   ═══════════════════════════════════════════════════════════════
+
+   Each object = one substation on the map.
+
+   ┌─────────────────────────────────────────────────────────┐
+   │  FIELDS YOU MUST MATCH TO YOUR REAL DATA:               │
+   │                                                         │
+   │  name     — label shown in the popup                    │
+   │  operator — must be exactly "ESO" or "Litgrid"          │
+   │  voltage  — must be exactly "35", "110", or "330"       │
+   │  lat/lng  — WGS-84 coordinates (decimal degrees)        │
+   │                                                         │
+   │  If your data arrives as GeoJSON, a CSV fetch, etc.,    │
+   │  shape it into this same array format before passing    │
+   │  it to buildMarkers() below.                            │
+   └─────────────────────────────────────────────────────────┘
+
+   These are EXAMPLE entries — replace with your real data.
+*/
+const substations = [
+  // ── ESO 35 kV ──────────────────────────────────────────────
+  { name: "Kauno PS",        operator: "ESO",     voltage: "35",  lat: 54.905, lng: 23.943 },
+  { name: "Marijampolės PS", operator: "ESO",     voltage: "35",  lat: 54.559, lng: 23.361 },
+  { name: "Alytaus PS",      operator: "ESO",     voltage: "35",  lat: 54.399, lng: 24.047 },
+  { name: "Trakų PS",        operator: "ESO",     voltage: "35",  lat: 54.638, lng: 24.938 },
+  { name: "Molėtų PS",       operator: "ESO",     voltage: "35",  lat: 55.228, lng: 25.419 },
+
+  // ── ESO 110 kV ─────────────────────────────────────────────
+  { name: "Vilniaus PS",     operator: "ESO",     voltage: "110", lat: 54.683, lng: 25.279 },
+  { name: "Šiaulių PS",      operator: "ESO",     voltage: "110", lat: 55.935, lng: 23.315 },
+  { name: "Panevėžio PS",    operator: "ESO",     voltage: "110", lat: 55.729, lng: 24.361 },
+  { name: "Klaipėdos PS",    operator: "ESO",     voltage: "110", lat: 55.703, lng: 21.145 },
+  { name: "Telšių PS",       operator: "ESO",     voltage: "110", lat: 55.984, lng: 22.253 },
+
+  // ── Litgrid 110 kV ─────────────────────────────────────────
+  { name: "Kruonio GS",      operator: "Litgrid", voltage: "110", lat: 54.801, lng: 24.064 },
+  { name: "Elektrėnų GS",    operator: "Litgrid", voltage: "110", lat: 54.784, lng: 24.659 },
+  { name: "Mažeikių GS",     operator: "Litgrid", voltage: "110", lat: 56.311, lng: 22.339 },
+
+  // ── Litgrid 330 kV ─────────────────────────────────────────
+  { name: "Lietuvos elektrinė", operator: "Litgrid", voltage: "330", lat: 54.778, lng: 24.669 },
+  { name: "Ignalinos GS",    operator: "Litgrid", voltage: "330", lat: 55.339, lng: 26.174 },
+  { name: "Vilniaus GS",     operator: "Litgrid", voltage: "330", lat: 54.718, lng: 25.283 },
+  { name: "Bitėnų GS",       operator: "Litgrid", voltage: "330", lat: 55.079, lng: 21.897 },
+];
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 3 — MARKER COLOURS
+   ═══════════════════════════════════════════════════════════════
+
+   One colour per operator+voltage combination.
+   The dot colours in the HTML filter panel use the SAME values.
+*/
+const COLOURS = {
+  "ESO-35":     { fill: "#f59e0b", border: "#92400e" },  // amber
+  "ESO-110":    { fill: "#4fc3f7", border: "#0369a1" },  // sky blue
+  "Litgrid-110":{ fill: "#34d399", border: "#065f46" },  // emerald
+  "Litgrid-330":{ fill: "#f87171", border: "#991b1b" },  // rose
+};
+
+/* Helper: return the colour pair for a substation object */
+function colourFor(sub) {
+  const key = `${sub.operator}-${sub.voltage}`;
+  return COLOURS[key] || { fill: "#aaa", border: "#444" };  // fallback grey
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 4 — BUILD MARKERS
+   ═══════════════════════════════════════════════════════════════
+
+   We create one Leaflet CircleMarker per substation and store it
+   in the `markers` array alongside the original data object.
+
+   Structure of each entry in `markers`:
+     { data: { name, operator, voltage, lat, lng },
+       layer: <Leaflet CircleMarker>  }
+*/
+const markers = [];   // will be filled by buildMarkers()
+
+function buildMarkers() {
+  substations.forEach(function(sub) {
+    const c = colourFor(sub);
+
+    const layer = L.circleMarker([sub.lat, sub.lng], {
+      radius:      7,
+      fillColor:   c.fill,
+      color:       c.border,   // stroke / outline colour
+      weight:      1.5,
+      opacity:     1,
+      fillOpacity: 0.85,
+    });
+
+    /* Popup shown on click */
+    layer.bindPopup(
+      `<b>${sub.name}</b><br>` +
+      `${sub.operator} · ${sub.voltage} kV`
+    );
+
+    layer.addTo(map);  // start with all markers visible
+
+    // Store together so applyFilters() can find both
+    markers.push({ data: sub, layer: layer });
+  });
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 5 — FILTER LOGIC  ← the most important part
+   ═══════════════════════════════════════════════════════════════
+
+   FLOW:
+     checkbox ticked / unticked
+         ↓
+     onchange="applyFilters()"  (wired in HTML)
+         ↓
+     read which checkboxes are checked  →  build a Set of "ESO-35" etc.
+         ↓
+     loop every marker:
+       if its "operator-voltage" key is in the Set → show it
+       otherwise                                   → hide it
+         ↓
+     update the counter label
+*/
+function applyFilters() {
+
+  /* Step A — collect all checked checkboxes into a Set.
+     We read the data-op and data-v attributes we put on each <input>. */
+  const active = new Set();
+
+  document.querySelectorAll('#filter-panel input[type="checkbox"]').forEach(function(cb) {
+    if (cb.checked) {
+      active.add(cb.dataset.op + "-" + cb.dataset.v);
+      //                 ↑ e.g. "ESO"       ↑ e.g. "35"   → "ESO-35"
+    }
+  });
+
+  /* Step B — show or hide each marker */
+  let visibleCount = 0;
+
+  markers.forEach(function(m) {
+    const key = m.data.operator + "-" + m.data.voltage;  // e.g. "Litgrid-330"
+
+    if (active.has(key)) {
+      // This combination is selected — make sure it is on the map
+      if (!map.hasLayer(m.layer)) {
+        m.layer.addTo(map);
+      }
+      visibleCount++;
+    } else {
+      // Not selected — remove from map (does nothing if already absent)
+      if (map.hasLayer(m.layer)) {
+        map.removeLayer(m.layer);
+      }
+    }
+  });
+
+  /* Step C — update the counter text at the bottom of the panel */
+  document.getElementById('filter-count').textContent =
+    `Rodoma ${visibleCount} iš ${markers.length}`;
+    //       ↑ "Showing X of Y"
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 6 — INITIALISE
+   ═══════════════════════════════════════════════════════════════ */
+buildMarkers();   // place all markers on the map
+applyFilters();   // set the counter label to match initial state
+               // (all boxes start checked, so all markers visible)
+
 </script>
 </body>
 </html>
