@@ -1,123 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Website</title>
-  <style>
-    /* ── Page background and font ── */
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background-color: #f5f0eb;
-      color: #2c2c2c;
-      display: flex;
-      justify-content: center;
-      padding: 60px 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laisvos vėjo elektrinių pajungimo galios – 110 kV pastotės</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  :root {
+    --bg:        #0f1117;
+    --bg2:       #161b27;
+    --border:    #2a3650;
+    --border2:   #1e2535;
+    --text:      #e0e0e0;
+    --text2:     #c8d8f0;
+    --muted:     #7a90b0;
+    --accent:    #4fc3f7;
+    --row-hover: #1e2a40;
+    --row-active:#1a3050;
+    --btn-bg:    #0f1117;
+    --btn-active:#1a3050;
+    --search-bg: #0f1117;
+    --popup-bg:  #161b27;
+    --shadow:    rgba(0,0,0,0.6);
+    --marker-stroke: #fff;
+  }
+  body.light {
+    --bg:        #f0f4f8;
+    --bg2:       #ffffff;
+    --border:    #c5d3e0;
+    --border2:   #dce6ef;
+    --text:      #1a2535;
+    --text2:     #1e3050;
+    --muted:     #6080a0;
+    --accent:    #1a6fa8;
+    --row-hover: #e4eef7;
+    --row-active:#cce0f5;
+    --btn-bg:    #f0f4f8;
+    --btn-active:#cce0f5;
+    --search-bg: #f8fbff;
+    --popup-bg:  #ffffff;
+    --shadow:    rgba(0,0,0,0.15);
+    --marker-stroke: #333;
+  }
 
-    /* ── Main content box ── */
-    .card {
-      max-width: 640px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 48px 48px 56px;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; transition: background 0.25s, color 0.25s; }
 
-    /* ── Your name at the top ── */
-    h1 {
-      font-size: 2.2rem;
-      margin: 0 0 6px;
-      letter-spacing: -0.5px;
-    }
+  #header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  #header-h1 { font-size: 15px; font-weight: 600; color: var(--text2); }
+  #header-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  #stats { margin-left: auto; display: flex; gap: 20px; }
+  .stat { text-align: right; }
+  .stat-val { font-size: 18px; font-weight: 700; color: var(--accent); }
+  .stat-lbl { font-size: 11px; color: var(--muted); }
 
-    /* ── Subtitle line ── */
-    .subtitle {
-      font-size: 1rem;
-      color: #888;
-      margin: 0 0 36px;
-      font-style: italic;
-    }
+  /* Toggles row */
+  #controls { display: flex; gap: 8px; align-items: center; }
 
-    /* ── Section headings ── */
-    h2 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #aaa;
-      margin: 32px 0 12px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 6px;
-    }
+  .toggle-group {
+    display: flex;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .tgl-btn {
+    padding: 6px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--muted);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tgl-btn.active { background: var(--btn-active); color: var(--accent); }
+  .tgl-btn:not(:last-child) { border-right: 1px solid var(--border); }
 
-    /* ── Normal text paragraphs ── */
-    p {
-      line-height: 1.75;
-      margin: 0 0 12px;
-    }
+  #main { display: flex; flex: 1; overflow: hidden; }
+  #map { flex: 1; }
 
-    /* ── Link style ── */
-    a {
-      color: #c0392b;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  #sidebar {
+    width: 280px;
+    background: var(--bg2);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #sidebar-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  #search {
+    width: 100%;
+    background: var(--search-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text2);
+    padding: 5px 8px;
+    font-size: 12px;
+    outline: none;
+    margin-top: 6px;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  #search:focus { border-color: var(--accent); }
+  #list { overflow-y: auto; flex: 1; }
+  .row {
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--border2);
+    cursor: pointer;
+    transition: background 0.15s;
+    gap: 10px;
+  }
+  .row:hover { background: var(--row-hover); }
+  .row.active { background: var(--row-active); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .row-name { font-size: 12px; color: var(--text2); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-val { font-size: 12px; font-weight: 700; white-space: nowrap; }
 
-    /* ── Contact list ── */
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
+  #legend {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+    background: var(--bg2);
+  }
+  #legend .leg-title { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .leg-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px; color: var(--text2); }
+  .leg-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
 
-    /* ── Footer ── */
-    .footer {
-      margin-top: 48px;
-      font-size: 0.78rem;
-      color: #ccc;
-      text-align: center;
-    }
-  </style>
+  .leaflet-popup-content-wrapper {
+    background: var(--popup-bg) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text2) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px var(--shadow) !important;
+  }
+  .leaflet-popup-tip { background: var(--popup-bg) !important; }
+  .popup-title { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .popup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .popup-item .lbl { font-size: 10px; color: var(--muted); }
+  .popup-item .val { font-size: 13px; font-weight: 600; }
+  .popup-active { font-size: 11px; color: var(--accent); margin-top: 6px; font-weight: 600; }
+
+  .filter-bar {
+    display: flex; gap: 6px; padding: 6px 12px; flex-wrap: wrap; flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-btn {
+    font-size: 10px; padding: 3px 8px; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--btn-bg); color: var(--muted); cursor: pointer; transition: all 0.15s;
+  }
+  .filter-btn.on { background: var(--btn-active); color: var(--accent); border-color: var(--accent); }
+
+  /* Leaflet light tile override handled in JS */
+</style>
 </head>
 <body>
-  <div class="card">
 
-    <!-- ✏️ Replace "Your Name" with your actual name -->
-    <h1>Your Name</h1>
-    <!-- ✏️ Replace the subtitle with one short line about yourself -->
-    <p class="subtitle">Student · Kaunas, Lithuania</p>
-
-    <h2>About Me</h2>
-    <!-- ✏️ Write a short paragraph about yourself -->
-    <p>
-      Hi! I'm a student interested in finance, technology, and the outdoors.
-      This is my personal website where I share a bit about who I am.
-    </p>
-
-    <h2>What I'm Up To</h2>
-    <!-- ✏️ Describe what you are working on or interested in lately -->
-    <p>
-      Currently finishing my bachelor's degree, preparing for an internship,
-      and planning a semester abroad. I enjoy reading about investing and
-      exploring new cities.
-    </p>
-
-    <h2>Contact</h2>
-    <ul>
-      <!-- ✏️ Replace with your real links. Delete any line you don't want. -->
-      <li>📧 <a href="mailto:you@example.com">you@example.com</a></li>
-      <li>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
-      <li>🐙 <a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-    </ul>
-
-    <div class="footer">Made with GitHub Pages · 2025</div>
+<div id="header">
+  <div>
+    <div id="header-h1">⚡ Laisvos vėjo elektrinių prisijungimo galios</div>
+    <div id="header-sub">110 kV pastotės · LaisvaSUN1 &gt; 6 MW · Duomenys: Litgrid / ESO ArcGIS 2026-05-18</div>
   </div>
+
+  <div id="controls">
+    <div class="toggle-group">
+      <button class="tgl-btn active" id="btn-sun1" onclick="setMode('LaisvaSUN1')">☀️ Dieninis</button>
+      <button class="tgl-btn" id="btn-naktine" onclick="setMode('SuN1naktine')">🌙 Naktinis</button>
+    </div>
+    <div class="toggle-group">
+      <button class="tgl-btn active" id="btn-dark" onclick="setTheme('dark')">🌑 Tamsi</button>
+      <button class="tgl-btn" id="btn-light" onclick="setTheme('light')">☀ Šviesi</button>
+    </div>
+  </div>
+
+  <div id="stats">
+    <div class="stat">
+      <div class="stat-val" id="stat-count">–</div>
+      <div class="stat-lbl">Pastotės</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-max">–</div>
+      <div class="stat-lbl">Maks. MW</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-total">–</div>
+      <div class="stat-lbl">Viso MW</div>
+    </div>
+  </div>
+</div>
+
+<div id="main">
+  <div id="map"></div>
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <div style="flex:1">
+        <div style="font-size:12px;color:#c8d8f0;font-weight:600;" id="list-title">Pastočių sąrašas · LaisvaSUN1</div>
+        <input id="search" type="text" placeholder="Ieškoti pastotės...">
+      </div>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn on" data-min="6">Visos</button>
+      <button class="filter-btn" data-min="20">&gt;20 MW</button>
+      <button class="filter-btn" data-min="40">&gt;40 MW</button>
+      <button class="filter-btn" data-min="70">&gt;70 MW</button>
+    </div>
+    <div id="list"></div>
+    <div id="legend">
+      <div class="leg-title" id="leg-title">LaisvaSUN1 (MW)</div>
+      <div class="leg-row"><div class="leg-dot" style="background:#1a9e2c"></div> 6 – 20 MW</div>
+      <div class="leg-row"><div class="leg-dot" style="background:#f0c030"></div> 20 – 50 MW</div>
+      <div class="leg-row"><div class="leg-dot" style="background:#f07820"></div> 50 – 80 MW</div>
+      <div class="leg-row"><div class="leg-dot" style="background:#e03030"></div> &gt; 80 MW</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUBSTATIONS = [{"name": "Dirvupiai", "LaisvaSUN1": 110.85, "SuN1naktine": 124.6809, "lng": 21.251243597148108, "lat": 55.71762160658007}, {"name": "Taika", "LaisvaSUN1": 97.38, "SuN1naktine": 111.3264, "lng": 21.149534107536386, "lat": 55.692667850569265}, {"name": "Šiaurinė", "LaisvaSUN1": 91.83, "SuN1naktine": 107.0681, "lng": 25.28788896343655, "lat": 54.71391507040559}, {"name": "Centrinė", "LaisvaSUN1": 71.43, "SuN1naktine": 79.7153, "lng": 25.287803516244033, "lat": 54.69103847069897}, {"name": "Centras 110", "LaisvaSUN1": 69.86, "SuN1naktine": 78.8233, "lng": 25.272110555895104, "lat": 54.67170657559506}, {"name": "Žvėrynas", "LaisvaSUN1": 68.8, "SuN1naktine": 78.3034, "lng": 25.25233181125759, "lat": 54.70264835976612}, {"name": "Šeškinė", "LaisvaSUN1": 65.21, "SuN1naktine": 76.4558, "lng": 25.23233754022138, "lat": 54.722915277816284}, {"name": "Viršuliškės", "LaisvaSUN1": 58.6, "SuN1naktine": 72.5977, "lng": 25.211604564360613, "lat": 54.70500713987135}, {"name": "Baltupis", "LaisvaSUN1": 55.19, "SuN1naktine": 70.629, "lng": 25.278693037351402, "lat": 54.742735982268}, {"name": "Marios", "LaisvaSUN1": 55.01, "SuN1naktine": 71.3698, "lng": 21.16779450737692, "lat": 55.65147352015187}, {"name": "Naujoji Akmenė", "LaisvaSUN1": 53.04, "SuN1naktine": 65.7638, "lng": 22.904521651827434, "lat": 56.30733073692174}, {"name": "Stiklas", "LaisvaSUN1": 52.05, "SuN1naktine": 76.8331, "lng": 24.306582795726996, "lat": 55.751893446002846}, {"name": "Pagiriai", "LaisvaSUN1": 47.47, "SuN1naktine": 59.1898, "lng": 25.202843080297395, "lat": 54.58078926670174}, {"name": "Šiauliai", "LaisvaSUN1": 44.64, "SuN1naktine": 60.5777, "lng": 23.294926773008488, "lat": 55.91672017387715}, {"name": "Amaliai", "LaisvaSUN1": 44.58, "SuN1naktine": 63.4699, "lng": 23.995029036308434, "lat": 54.90232790194337}, {"name": "Visaginas", "LaisvaSUN1": 44.13, "SuN1naktine": 49.5215, "lng": 26.4667552142355, "lat": 55.592495619413484}, {"name": "Žasliai", "LaisvaSUN1": 44.1, "SuN1naktine": 49.5309, "lng": 24.583233459019073, "lat": 54.838459246588044}, {"name": "VE-2", "LaisvaSUN1": 43.13, "SuN1naktine": 55.1854, "lng": 25.232883924624186, "lat": 54.66602857307907}, {"name": "Nemunas", "LaisvaSUN1": 42.07, "SuN1naktine": 48.3507, "lng": 23.90442431867026, "lat": 54.89517930262439}, {"name": "Uostas", "LaisvaSUN1": 39.77, "SuN1naktine": 47.2577, "lng": 21.113892467396855, "lat": 55.72609737472991}, {"name": "Grigiškės", "LaisvaSUN1": 37.21, "SuN1naktine": 45.8712, "lng": 25.085484670775113, "lat": 54.677324922364434}, {"name": "Ketus", "LaisvaSUN1": 37, "SuN1naktine": 45.5533, "lng": 23.989112772061752, "lat": 54.898896007898436}, {"name": "Aerouostas", "LaisvaSUN1": 36.78, "SuN1naktine": 61.4755, "lng": 25.268726757739593, "lat": 54.654060637856944}, {"name": "Zokniai", "LaisvaSUN1": 36.59, "SuN1naktine": 51.5934, "lng": 23.345329384589412, "lat": 55.91773292316361}, {"name": "Eiguliai", "LaisvaSUN1": 35.28, "SuN1naktine": 58.4568, "lng": 23.920274370800858, "lat": 54.92284671019598}, {"name": "Druskininkai", "LaisvaSUN1": 34.88, "SuN1naktine": 43.9399, "lng": 24.00834875912407, "lat": 54.04146038268817}, {"name": "Savitiškis", "LaisvaSUN1": 33.51, "SuN1naktine": 43.7544, "lng": 24.312927320449205, "lat": 55.73552380185928}, {"name": "Vilijampolė", "LaisvaSUN1": 33.06, "SuN1naktine": 43.6584, "lng": 23.852201534490135, "lat": 54.912825816773214}, {"name": "Murava", "LaisvaSUN1": 32.33, "SuN1naktine": 43.4922, "lng": 23.947114367042822, "lat": 54.913670079747476}, {"name": "Petrašiūnų E", "LaisvaSUN1": 31.25, "SuN1naktine": 37.4263, "lng": 23.990015038014786, "lat": 54.8912930397558}, {"name": "Juodkrantė", "LaisvaSUN1": 27.6, "SuN1naktine": 31.3922, "lng": 21.10193417813717, "lat": 55.539062456951434}, {"name": "Palemonas", "LaisvaSUN1": 26.57, "SuN1naktine": 56.7413, "lng": 24.054471151046243, "lat": 54.92872937556301}, {"name": "Palanga", "LaisvaSUN1": 26.49, "SuN1naktine": 38.8392, "lng": 21.080357036767015, "lat": 55.91359252334607}, {"name": "Plastmasės", "LaisvaSUN1": 26.28, "SuN1naktine": 30.5073, "lng": 25.21917806528426, "lat": 54.652111205543996}, {"name": "Kapsai", "LaisvaSUN1": 26.09, "SuN1naktine": 53.555, "lng": 23.37830924915829, "lat": 54.56714125185299}, {"name": "Sendvaris", "LaisvaSUN1": 25.4, "SuN1naktine": 38.2783, "lng": 21.1650392648375, "lat": 55.708402040014995}, {"name": "Švenčionėliai", "LaisvaSUN1": 25.32, "SuN1naktine": 30.1679, "lng": 26.015054949208256, "lat": 55.171261340470224}, {"name": "Kaunas", "LaisvaSUN1": 24.71, "SuN1naktine": 37.0943, "lng": 23.996738149442738, "lat": 54.93536299205616}, {"name": "Jonava", "LaisvaSUN1": 24.62, "SuN1naktine": 34.8297, "lng": 24.289272201409947, "lat": 55.08613767835034}, {"name": "Drobė", "LaisvaSUN1": 24.6, "SuN1naktine": 29.8109, "lng": 23.9421910850709, "lat": 54.86226162082291}, {"name": "Kinostudija", "LaisvaSUN1": 24.44, "SuN1naktine": 38.2386, "lng": 25.322844872101083, "lat": 54.727109022021956}, {"name": "Markučiai", "LaisvaSUN1": 23.95, "SuN1naktine": 29.3509, "lng": 25.325080126851457, "lat": 54.67782877178294}, {"name": "Šilkas", "LaisvaSUN1": 23.75, "SuN1naktine": 29.3392, "lng": 23.905861820599746, "lat": 54.913081525177255}, {"name": "Cukrus", "LaisvaSUN1": 22.85, "SuN1naktine": 42.7508, "lng": 23.991724493363417, "lat": 55.26529934102202}, {"name": "Švenčionys", "LaisvaSUN1": 22.25, "SuN1naktine": 28.5668, "lng": 26.14935388511345, "lat": 55.13663700964122}, {"name": "Šilainiai", "LaisvaSUN1": 22.16, "SuN1naktine": 52.7032, "lng": 23.87676217099422, "lat": 54.93647596701515}, {"name": "Paneriai", "LaisvaSUN1": 22.13, "SuN1naktine": 28.6423, "lng": 25.143080466766705, "lat": 54.63586539645903}, {"name": "Gedminai", "LaisvaSUN1": 21.59, "SuN1naktine": 37.3394, "lng": 21.190317358325885, "lat": 55.67852245750759}, {"name": "Vilkpėdė", "LaisvaSUN1": 21.15, "SuN1naktine": 27.861, "lng": 25.208029398921067, "lat": 54.64334782227217}, {"name": "Smeltė", "LaisvaSUN1": 20.99, "SuN1naktine": 37.9956, "lng": 21.23220280643101, "lat": 55.67658722942621}, {"name": "Ekranas", "LaisvaSUN1": 20.86, "SuN1naktine": 43.494, "lng": 24.389919390549068, "lat": 55.74278507023323}, {"name": "Putinai", "LaisvaSUN1": 19.8, "SuN1naktine": 28.5765, "lng": 24.012473777439485, "lat": 54.42369848631782}, {"name": "Kaišiadorys", "LaisvaSUN1": 19.77, "SuN1naktine": 27.2667, "lng": 24.40420799833782, "lat": 54.86770503001136}, {"name": "Lietuvos E", "LaisvaSUN1": 19.15, "SuN1naktine": 32.2996, "lng": 24.649944847526186, "lat": 54.772708198816986}, {"name": "Rašė", "LaisvaSUN1": 18.5, "SuN1naktine": 31.5681, "lng": 25.618263161631482, "lat": 55.50976669877482}, {"name": "Jačionys", "LaisvaSUN1": 18.22, "SuN1naktine": 25.1054, "lng": 25.13635750056819, "lat": 54.663955632651934}, {"name": "Pagėgiai", "LaisvaSUN1": 17.85, "SuN1naktine": 23.2636, "lng": 21.863492254405546, "lat": 55.144989025915024}, {"name": "Kalnėnai", "LaisvaSUN1": 17.65, "SuN1naktine": 19.8202, "lng": 22.723141215375446, "lat": 55.074689539181705}, {"name": "Mockėnai", "LaisvaSUN1": 16.96, "SuN1naktine": 24.4512, "lng": 25.630595377426378, "lat": 55.492275270024905}, {"name": "Lentvaris", "LaisvaSUN1": 16.95, "SuN1naktine": 34.3728, "lng": 25.06000436053405, "lat": 54.64186986760828}, {"name": "Kvietiškis", "LaisvaSUN1": 16.09, "SuN1naktine": 33.0151, "lng": 23.35904273303312, "lat": 54.53236912071182}, {"name": "Vaidotai", "LaisvaSUN1": 15.94, "SuN1naktine": 25.3934, "lng": 25.15460200106647, "lat": 54.61381441038277}, {"name": "Rokiškis", "LaisvaSUN1": 15.88, "SuN1naktine": 29.1413, "lng": 25.57840473289561, "lat": 55.93999573925057}, {"name": "Pabradė", "LaisvaSUN1": 15.87, "SuN1naktine": 21.6929, "lng": 25.75199972948092, "lat": 54.98579274811243}, {"name": "Nemenčinė", "LaisvaSUN1": 15.74, "SuN1naktine": 24.7216, "lng": 25.462205222434864, "lat": 54.85244433691861}, {"name": "Lypkiai", "LaisvaSUN1": 15.72, "SuN1naktine": 41.773, "lng": 21.20654655970853, "lat": 55.680640485026046}, {"name": "Šalčininkai", "LaisvaSUN1": 15.59, "SuN1naktine": 25.2067, "lng": 25.380790744904527, "lat": 54.320337799188316}, {"name": "Leipalingis", "LaisvaSUN1": 15.22, "SuN1naktine": 20.753, "lng": 23.867081792413202, "lat": 54.09526111219115}, {"name": "Rudamina", "LaisvaSUN1": 14.57, "SuN1naktine": 34.2446, "lng": 25.334915023484836, "lat": 54.594291790523606}, {"name": "Venta", "LaisvaSUN1": 14.57, "SuN1naktine": 21.4043, "lng": 22.69999201597325, "lat": 56.19802419292638}, {"name": "Kauno HE", "LaisvaSUN1": 14.5, "SuN1naktine": 18.2275, "lng": 24.001802707429487, "lat": 54.876366766720594}, {"name": "Danė", "LaisvaSUN1": 14.12, "SuN1naktine": 22.0731, "lng": 21.162492574903226, "lat": 55.71977136196414}, {"name": "Kybartai", "LaisvaSUN1": 14.08, "SuN1naktine": 24.6095, "lng": 22.801588888050592, "lat": 54.6310976984769}, {"name": "Ignalina", "LaisvaSUN1": 13.86, "SuN1naktine": 19.0476, "lng": 26.16269938627837, "lat": 55.33343129520991}, {"name": "Kazlų Rūda", "LaisvaSUN1": 13.8, "SuN1naktine": 22.7534, "lng": 23.478632026429768, "lat": 54.75026811841674}, {"name": "Jakai", "LaisvaSUN1": 13.61, "SuN1naktine": 33.6196, "lng": 21.210333079396356, "lat": 55.68859052426762}, {"name": "Varėna", "LaisvaSUN1": 12.78, "SuN1naktine": 20.3294, "lng": 24.56148002686164, "lat": 54.221648661166824}, {"name": "Vilnia", "LaisvaSUN1": 12.12, "SuN1naktine": 32.2782, "lng": 25.446390739877653, "lat": 54.69717601105555}, {"name": "Suginčiai", "LaisvaSUN1": 11.37, "SuN1naktine": 14.6108, "lng": 25.511175864759547, "lat": 55.34196037346387}, {"name": "Molėtai", "LaisvaSUN1": 10.96, "SuN1naktine": 21.6309, "lng": 25.399084863327428, "lat": 55.22559360173246}, {"name": "Garliava", "LaisvaSUN1": 10.81, "SuN1naktine": 26.8332, "lng": 23.88557690499745, "lat": 54.818578905046344}, {"name": "Aleksotas", "LaisvaSUN1": 10.8, "SuN1naktine": 31.6537, "lng": 23.88789595118162, "lat": 54.87026822775689}, {"name": "Dūkštas", "LaisvaSUN1": 10.78, "SuN1naktine": 14.1589, "lng": 26.30930564845239, "lat": 55.51885532275682}, {"name": "Tauragė", "LaisvaSUN1": 10.75, "SuN1naktine": 25.0564, "lng": 22.311035667137546, "lat": 55.24645485628722}, {"name": "Dumpiai", "LaisvaSUN1": 10.69, "SuN1naktine": 11.946, "lng": 21.26595643271293, "lat": 55.635674306124464}, {"name": "Rizgonys", "LaisvaSUN1": 10.26, "SuN1naktine": 12.0436, "lng": 24.521910526487137, "lat": 55.11345261026845}, {"name": "Salotė", "LaisvaSUN1": 9.9, "SuN1naktine": 21.709, "lng": 25.171470766281654, "lat": 54.70231727120698}, {"name": "Žeimiai", "LaisvaSUN1": 9.87, "SuN1naktine": 13.8733, "lng": 24.197207157073503, "lat": 55.16525901904006}, {"name": "Trakai", "LaisvaSUN1": 9.66, "SuN1naktine": 14.9223, "lng": 24.936531636937264, "lat": 54.62472228239238}, {"name": "Kelmė", "LaisvaSUN1": 9.42, "SuN1naktine": 16.5404, "lng": 22.951544317295685, "lat": 55.63305094751823}, {"name": "Kruonis", "LaisvaSUN1": 8.9, "SuN1naktine": 13.0547, "lng": 24.250776578574982, "lat": 54.767627637540684}, {"name": "Žibartonys", "LaisvaSUN1": 8.89, "SuN1naktine": 9.9333, "lng": 23.957874822304703, "lat": 55.534672095274}, {"name": "Usėnai", "LaisvaSUN1": 8.52, "SuN1naktine": 13.2613, "lng": 21.73049689685744, "lat": 55.21290173355839}, {"name": "Plungė", "LaisvaSUN1": 8.44, "SuN1naktine": 14.3391, "lng": 21.82866298036993, "lat": 55.9026915374759}, {"name": "Jurbarkas", "LaisvaSUN1": 8.4, "SuN1naktine": 24.1373, "lng": 22.742265659241117, "lat": 55.09633506310146}, {"name": "Šimkaičiai", "LaisvaSUN1": 8.31, "SuN1naktine": 9.6468, "lng": 22.993749015123672, "lat": 55.24039336453476}, {"name": "Tarpučiai", "LaisvaSUN1": 8.25, "SuN1naktine": 12.6063, "lng": 23.319767124829415, "lat": 54.56885494099268}, {"name": "Paberžė", "LaisvaSUN1": 8.17, "SuN1naktine": 14.7983, "lng": 25.23529672477209, "lat": 54.94995349449502}, {"name": "Kudirkos Naumiestis", "LaisvaSUN1": 8.1, "SuN1naktine": 10.4947, "lng": 22.85941245583663, "lat": 54.75875781726706}, {"name": "Rūdiškės", "LaisvaSUN1": 7.98, "SuN1naktine": 12.5014, "lng": 24.806307081167972, "lat": 54.512637016269856}, {"name": "Statyba", "LaisvaSUN1": 7.98, "SuN1naktine": 14.99, "lng": 26.575712703444406, "lat": 55.59681263760396}, {"name": "Vievis", "LaisvaSUN1": 7.78, "SuN1naktine": 28.5379, "lng": 24.773231546717888, "lat": 54.782514836008716}, {"name": "Antalgė", "LaisvaSUN1": 7.52, "SuN1naktine": 9.1445, "lng": 25.477529768779103, "lat": 55.493633403957475}, {"name": "Joniškis", "LaisvaSUN1": 7.31, "SuN1naktine": 18.3361, "lng": 23.594000165727472, "lat": 56.217257734192664}, {"name": "Rėkyva", "LaisvaSUN1": 7.14, "SuN1naktine": 14.3484, "lng": 23.324206074418324, "lat": 55.85517461919141}, {"name": "Jašiūnai", "LaisvaSUN1": 7.05, "SuN1naktine": 17.7176, "lng": 25.292241931455035, "lat": 54.43737963492203}, {"name": "Vilkaviškis", "LaisvaSUN1": 6.89, "SuN1naktine": 14.7435, "lng": 23.02512952106882, "lat": 54.63488475888762}, {"name": "Oda", "LaisvaSUN1": 6.7, "SuN1naktine": 13.9309, "lng": 21.81558551739387, "lat": 55.919862744507654}, {"name": "Kartena", "LaisvaSUN1": 6.68, "SuN1naktine": 8.6593, "lng": 21.50641044784009, "lat": 55.92941853728822}, {"name": "Eržvilkas", "LaisvaSUN1": 6.64, "SuN1naktine": 9.4941, "lng": 22.69609154103627, "lat": 55.269002934343106}, {"name": "Velžys", "LaisvaSUN1": 6.6, "SuN1naktine": 19.3687, "lng": 24.383558103004273, "lat": 55.71006247792844}, {"name": "Užpaliai", "LaisvaSUN1": 6.33, "SuN1naktine": 8.5273, "lng": 25.561988025308793, "lat": 55.62982268100008}, {"name": "Kupiškis", "LaisvaSUN1": 6.2, "SuN1naktine": 17.1926, "lng": 24.981936135049782, "lat": 55.82660500707097}, {"name": "Didžiasalis", "LaisvaSUN1": 6.04, "SuN1naktine": 9.9406, "lng": 26.680706893191967, "lat": 55.315807667394274}, {"name": "Radviliškis", "LaisvaSUN1": 5.82, "SuN1naktine": 20.2374, "lng": 23.557190502214798, "lat": 55.81540625839164}, {"name": "Endriejavas", "LaisvaSUN1": 5.7, "SuN1naktine": 6.6654, "lng": 21.715174370438827, "lat": 55.70851441651412}, {"name": "Karjeras", "LaisvaSUN1": 5.67, "SuN1naktine": 6.3, "lng": 24.141177394354926, "lat": 55.04777431986891}, {"name": "Šventoji", "LaisvaSUN1": 5.64, "SuN1naktine": 9.6206, "lng": 21.099089078428424, "lat": 56.041547396138974}, {"name": "Rietavas", "LaisvaSUN1": 5.5, "SuN1naktine": 12.8125, "lng": 21.92081858722403, "lat": 55.7371871565999}, {"name": "Subačius", "LaisvaSUN1": 5.48, "SuN1naktine": 8.2195, "lng": 24.72984866896373, "lat": 55.782638762417996}, {"name": "Šakyna", "LaisvaSUN1": 5.19, "SuN1naktine": 6.0075, "lng": 23.12865878426962, "lat": 56.17406691365794}, {"name": "Šventininkai", "LaisvaSUN1": 4.98, "SuN1naktine": 20.0215, "lng": 25.027661070279432, "lat": 54.59699425215351}, {"name": "Berčiūnai", "LaisvaSUN1": 4.64, "SuN1naktine": 14.4578, "lng": 24.217968882744305, "lat": 55.71267054618473}, {"name": "Kazitiškis", "LaisvaSUN1": 4.59, "SuN1naktine": 12.7847, "lng": 26.19611648159968, "lat": 55.450211089860524}, {"name": "Šilutė", "LaisvaSUN1": 4.39, "SuN1naktine": 18.2931, "lng": 21.48612398313264, "lat": 55.35293814982789}, {"name": "Gelgaudiškis", "LaisvaSUN1": 3.59, "SuN1naktine": 7.6902, "lng": 22.971140777258324, "lat": 55.067965665695446}, {"name": "Griškonys", "LaisvaSUN1": 3.58, "SuN1naktine": 9.4623, "lng": 24.22446201099108, "lat": 54.507751946755505}, {"name": "Gižai", "LaisvaSUN1": 3.52, "SuN1naktine": 10.3756, "lng": 23.213545205953956, "lat": 54.586817170287674}, {"name": "Migla", "LaisvaSUN1": 3.43, "SuN1naktine": 18.4719, "lng": 22.318750051194893, "lat": 56.312069762152774}, {"name": "Noreikiškės", "LaisvaSUN1": 3.17, "SuN1naktine": 18.1101, "lng": 23.816678805682987, "lat": 54.89492307289211}, {"name": "Ukmergė", "LaisvaSUN1": 3.07, "SuN1naktine": 27.8882, "lng": 24.72658680621714, "lat": 55.24519016119156}, {"name": "Bubiai", "LaisvaSUN1": 2.93, "SuN1naktine": 8.2075, "lng": 23.161885652818857, "lat": 55.85384754423403}, {"name": "Seredžius", "LaisvaSUN1": 2.78, "SuN1naktine": 10.1006, "lng": 23.376478557944875, "lat": 55.11206253014194}, {"name": "Kalveliai", "LaisvaSUN1": 2.34, "SuN1naktine": 9.9515, "lng": 25.693681594502532, "lat": 54.63289013428662}, {"name": "Pasvalys", "LaisvaSUN1": 2.31, "SuN1naktine": 13.3041, "lng": 24.41008303406069, "lat": 56.0562505489758}, {"name": "Krekenava", "LaisvaSUN1": 1.76, "SuN1naktine": 17.7336, "lng": 24.1590733742834, "lat": 55.578408269407085}, {"name": "Pakruojis", "LaisvaSUN1": 1.13, "SuN1naktine": 7.9151, "lng": 23.87360310109316, "lat": 55.97511800908253}, {"name": "Bukta", "LaisvaSUN1": 0.76, "SuN1naktine": 7.3736, "lng": 23.38564131806149, "lat": 54.454551438371844}, {"name": "Lazdijai", "LaisvaSUN1": 0.56, "SuN1naktine": 8.7788, "lng": 23.558454553259367, "lat": 54.23848197675782}, {"name": "Prienai", "LaisvaSUN1": 0.49, "SuN1naktine": 17.3285, "lng": 23.939813649691636, "lat": 54.63992734183961}, {"name": "Mažeikiai", "LaisvaSUN1": 0.36, "SuN1naktine": 13.847, "lng": 22.358191627329653, "lat": 56.301062627784624}, {"name": "Priekulė", "LaisvaSUN1": 0.3, "SuN1naktine": 9.4721, "lng": 21.333807152160304, "lat": 55.55579736745642}, {"name": "Šilas", "LaisvaSUN1": 0.2, "SuN1naktine": 10.5883, "lng": 24.083187472241363, "lat": 54.40621493231196}, {"name": "Dainai", "LaisvaSUN1": 0, "SuN1naktine": 13.8003, "lng": 23.245547436486657, "lat": 55.91890458008719}, {"name": "Kėdainiai", "LaisvaSUN1": 0, "SuN1naktine": 19.088, "lng": 23.996731081643727, "lat": 55.292595018959176}, {"name": "Parovėja", "LaisvaSUN1": 0, "SuN1naktine": 9.7786, "lng": 24.823316325822894, "lat": 56.23888884690092}, {"name": "Raseiniai", "LaisvaSUN1": 0, "SuN1naktine": 17.5404, "lng": 23.119625719334078, "lat": 55.369139719789935}, {"name": "Riešė", "LaisvaSUN1": 0, "SuN1naktine": 16.4736, "lng": 25.20145348327516, "lat": 54.81231036111962}, {"name": "Seda", "LaisvaSUN1": 0, "SuN1naktine": 6.029, "lng": 22.099600529982993, "lat": 56.16331246330034}, {"name": "Šilalė", "LaisvaSUN1": 0, "SuN1naktine": 6.2539, "lng": 22.201683767967832, "lat": 55.48361373587245}, {"name": "Verkiai", "LaisvaSUN1": 0, "SuN1naktine": 14.4814, "lng": 25.33870721903222, "lat": 54.76579533749175}, {"name": "Zarasai", "LaisvaSUN1": 0, "SuN1naktine": 16.0065, "lng": 26.242951948548196, "lat": 55.71568288392656}, {"name": "Gubernija", "LaisvaSUN1": 0, "SuN1naktine": 24.6728, "lng": 23.31945184955456, "lat": 55.968673826620396}, {"name": "Kretinga", "LaisvaSUN1": 0, "SuN1naktine": 8.5711, "lng": 21.265673048112152, "lat": 55.87663154882296}, {"name": "Rimkai", "LaisvaSUN1": 0, "SuN1naktine": 6.2713, "lng": 24.248873480651422, "lat": 55.06837801094805}, {"name": "Tausalas", "LaisvaSUN1": 0, "SuN1naktine": 13.4718, "lng": 22.237194019198956, "lat": 56.000691207896374}, {"name": "Ąžuolynė", "LaisvaSUN1": 0, "SuN1naktine": 17.0026, "lng": 25.16567972325188, "lat": 54.74533577725461}, {"name": "Bakšiai", "LaisvaSUN1": 0, "SuN1naktine": 16.6738, "lng": 24.01533270123913, "lat": 54.43566612571543}, {"name": "Gargždai", "LaisvaSUN1": 0, "SuN1naktine": 16.236, "lng": 21.364111658536558, "lat": 55.71294370874452}, {"name": "Kuršėnai", "LaisvaSUN1": 0, "SuN1naktine": 12.1271, "lng": 22.96577299458801, "lat": 55.99378261233403}, {"name": "Šakiai", "LaisvaSUN1": 0, "SuN1naktine": 6.7208, "lng": 23.04069450437238, "lat": 54.93268088183856}, {"name": "Šeduva", "LaisvaSUN1": 0, "SuN1naktine": 9.7276, "lng": 23.75116491044869, "lat": 55.74607107919423}, {"name": "Širvintos", "LaisvaSUN1": 0, "SuN1naktine": 8.1467, "lng": 24.936050567002603, "lat": 55.04674985278843}, {"name": "Tauralaukis", "LaisvaSUN1": 0, "SuN1naktine": 15.8754, "lng": 21.134343519398044, "lat": 55.763195972121316}, {"name": "Vidzgiris", "LaisvaSUN1": 0, "SuN1naktine": 17.0679, "lng": 24.029634196284956, "lat": 54.3890620989086}];
+
+let currentMode = 'LaisvaSUN1'; // or 'SuN1naktine'
+let currentMin = 6;
+let searchVal = '';
+let activeRow = null;
+let markers = [];
+
+function getColor(v) {
+  if (v > 80) return '#e03030';
+  if (v > 50) return '#f07820';
+  if (v > 20) return '#f0c030';
+  return '#1a9e2c';
+}
+function getRadius(v) {
+  if (v > 80) return 13;
+  if (v > 50) return 10;
+  if (v > 20) return 8;
+  if (v > 10) return 6;
+  return 5;
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  const isSun1 = mode === 'LaisvaSUN1';
+  document.getElementById('btn-sun1').classList.toggle('active', isSun1);
+  document.getElementById('btn-naktine').classList.toggle('active', !isSun1);
+  document.getElementById('leg-title').textContent = mode + ' (MW)';
+  document.getElementById('list-title').textContent = 'Pastočių sąrašas · ' + mode;
+  document.getElementById('header-sub').innerHTML =
+    '110 kV pastotės · ' + mode + ' &gt; ' + currentMin + ' MW · Duomenys: Litgrid / ESO ArcGIS 2026-05-18';
+  render();
+}
+
+// Init map
+const map = L.map('map', { center: [55.3, 23.8], zoom: 7, zoomControl: true });
+let tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap © CARTO', maxZoom: 19
+}).addTo(map);
+
+let currentTheme = 'dark';
+
+function setTheme(theme) {
+  currentTheme = theme;
+  document.body.classList.toggle('light', theme === 'light');
+  document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
+  document.getElementById('btn-light').classList.toggle('active', theme === 'light');
+
+  map.removeLayer(tileLayer);
+  const url = theme === 'light'
+    ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  tileLayer = L.tileLayer(url, { attribution: '© OpenStreetMap © CARTO', maxZoom: 19 }).addTo(map);
+}
+
+const markerGroup = L.layerGroup().addTo(map);
+
+function makeMarker(s, i) {
+  const val = s[currentMode];
+  const col = getColor(val);
+  const r = getRadius(val);
+  const m = L.circleMarker([s.lat, s.lng], {
+    radius: r,
+    fillColor: col,
+    color: '#fff',
+    weight: 1.2,
+    fillOpacity: 0.9,
+  });
+  m.bindPopup(`
+    <div class="popup-title">⚡ ${s.name}</div>
+    <div class="popup-active">Rodymas: ${currentMode}</div>
+    <div class="popup-grid" style="margin-top:6px;">
+      <div class="popup-item">
+        <div class="lbl">LaisvaSUN1</div>
+        <div class="val" style="color:${getColor(s.LaisvaSUN1)}">${s.LaisvaSUN1} MW</div>
+      </div>
+      <div class="popup-item">
+        <div class="lbl">SuN1naktine</div>
+        <div class="val" style="color:${getColor(s.SuN1naktine)}">${s.SuN1naktine.toFixed(2)} MW</div>
+      </div>
+    </div>
+  `, { maxWidth: 260 });
+  return m;
+}
+
+const listEl = document.getElementById('list');
+let rowEls = [];
+
+function buildList(data) {
+  listEl.innerHTML = '';
+  rowEls = [];
+  data.forEach((s, i) => {
+    const val = s[currentMode];
+    const col = getColor(val);
+    const div = document.createElement('div');
+    div.className = 'row';
+    div.innerHTML = `<div class="dot" style="background:${col}"></div>
+      <div class="row-name">${s.name}</div>
+      <div class="row-val" style="color:${col}">${val.toFixed(2)}</div>`;
+    div.addEventListener('click', () => {
+      map.setView([s.lat, s.lng], 11);
+      markers[i].openPopup();
+      if (activeRow) activeRow.classList.remove('active');
+      div.classList.add('active');
+      activeRow = div;
+    });
+    listEl.appendChild(div);
+    rowEls.push(div);
+  });
+}
+
+function render() {
+  markerGroup.clearLayers();
+  markers = [];
+  const filtered = SUBSTATIONS.filter(s =>
+    s[currentMode] >= currentMin &&
+    s.name.toLowerCase().includes(searchVal)
+  );
+  // Sort by current mode descending
+  filtered.sort((a, b) => b[currentMode] - a[currentMode]);
+
+  filtered.forEach((s, i) => {
+    const m = makeMarker(s, i);
+    markerGroup.addLayer(m);
+    markers.push(m);
+  });
+
+  buildList(filtered);
+
+  const total = filtered.reduce((a, s) => a + s[currentMode], 0);
+  const mx = filtered.length ? Math.max(...filtered.map(s => s[currentMode])) : 0;
+  document.getElementById('stat-count').textContent = filtered.length;
+  document.getElementById('stat-max').textContent = mx.toFixed(2);
+  document.getElementById('stat-total').textContent = Math.round(total).toLocaleString('lt-LT');
+
+  // Update header sub
+  document.getElementById('header-sub').innerHTML =
+    '110 kV pastotės · ' + currentMode + ' &gt; ' + currentMin + ' MW · Duomenys: Litgrid / ESO ArcGIS 2026-05-18';
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    currentMin = parseFloat(btn.dataset.min);
+    render();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  searchVal = e.target.value.toLowerCase();
+  render();
+});
+
+render();
+</script>
 </body>
 </html>
