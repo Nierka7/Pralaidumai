@@ -576,6 +576,7 @@ async function loadESO35kV() {
         laisva_lp_n1: attr.TPlanksti_laisvaN1 != null
                         ? Number(attr.TPlanksti_laisvaN1)
                         : null,
+          badge: 'ESO · 35 kV',
       });
     });
 
@@ -619,6 +620,138 @@ async function loadESO35kV() {
    SECTION 8 — START
    ═══════════════════════════════════════════════════════════════ */
 loadESO35kV();
+loadESO110kV();
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 9 — LOAD ESO 110 kV DATA (THREE FILES, MERGED)
+   ═══════════════════════════════════════════════════════════════
+
+   The three source files cover different substation categories:
+     • ESO_yra_Litgrid_nera.json  — ESO substation exists, Litgrid link missing
+     • ESO_nevaldoma.json          — uncontrolled ESO substations
+     • ESO_yra_Litgrid_yra.json   — both ESO and Litgrid links present
+
+   All three share the same field schema, so we can merge them
+   without any special-casing.
+
+   If you kept the original spaced filenames, replace the paths
+   below with the %20-encoded versions listed in the comment at
+   the end of this function.
+*/
+async function loadESO110kV() {
+  const files = [
+    'Data/ESO_yra_Litgrid_nera.json',
+    'Data/ESO_nevaldoma.json',
+    'Data/ESO_yra_Litgrid_yra.json',
+  ];
+
+  try {
+    /* ── 1. Fetch all three files at the same time ──────── */
+    const responses = await Promise.all(files.map(function(path) {
+      return fetch(path);
+    }));
+
+    /* ── 2. Check every response for HTTP errors ────────── */
+    responses.forEach(function(r, i) {
+      if (!r.ok) {
+        throw new Error(
+          'Nepavyko įkelti failo: ' + files[i] +
+          '\nServerio atsakas: ' + r.status + ' ' + r.statusText
+        );
+      }
+    });
+
+    /* ── 3. Parse JSON from all three responses ─────────── */
+    const jsons = await Promise.all(responses.map(function(r) {
+      return r.json();
+    }));
+
+    /* ── 4. Validate and merge the "features" arrays ─────── */
+    jsons.forEach(function(json, i) {
+      if (!json.features || !Array.isArray(json.features)) {
+        throw new Error(
+          'JSON formatas neteisingas faile: ' + files[i] +
+          '\nTrūksta "features" masyvo.'
+        );
+      }
+    });
+
+    /* flatMap merges [ [f,f,f], [f,f], [f,f,f,f] ] into one array */
+    const allFeatures = jsons.flatMap(function(json) {
+      return json.features;
+    });
+
+    /* ── 5. Parse each feature into a substation object ──── */
+    let skipped = 0;
+    const substationList = [];
+
+    allFeatures.forEach(function(feature, index) {
+      const attr = feature.attributes || {};
+      const geom = feature.geometry   || {};
+
+      /* Skip if coordinates are missing or non-numeric */
+      const latLng = lks94ToLatLng(geom.x, geom.y);
+      if (!latLng) {
+        skipped++;
+        console.warn(
+          'ESO 110 kV — praleista pastotė (trūksta koordinačių), ' +
+          'eilutė ' + index + ':', attr.PAS_PAVADINIMAS
+        );
+        return; /* continue to next feature */
+      }
+
+      substationList.push({
+        /* Required by the filter + colour system */
+        operator: 'ESO',
+        voltage:  '110',
+        lat:      latLng[0],
+        lng:      latLng[1],
+
+        /* Display fields */
+        name: attr.PAS_PAVADINIMAS || null,
+
+        /*
+          LaisvaSUN1    — available capacity under N-1 restrictions, MW
+          SuN1naktine   — available capacity under flexible
+                          connection + N-1 restrictions, MW
+          Both can be null if the field is absent or not a number.
+        */
+        laisva_surib: (attr.LaisvaSUN1 != null && isFinite(attr.LaisvaSUN1))
+                        ? Number(attr.LaisvaSUN1)
+                        : null,
+
+        laisva_lp_n1: (attr.SuN1naktine != null && isFinite(attr.SuN1naktine))
+                        ? Number(attr.SuN1naktine)
+                        : null,
+
+        badge: 'ESO · 110 kV',
+      });
+    });
+
+    /* ── 6. Add markers and sync filters ─────────────────── */
+    addMarkersToMap(substationList);
+    applyFilters();   /* refreshes the visible-marker counter */
+
+    console.log('Įkelta ESO 110 kV pastočių iš viso:', substationList.length,
+                '(iš', allFeatures.length, 'objektų,', skipped, 'praleista)');
+
+  } catch (err) {
+    /* One file failing does not crash the entire map —
+       the 35 kV layer and any already-loaded 110 kV markers stay visible. */
+    console.error('Klaida įkeliant ESO 110 kV duomenis:', err);
+
+    /* Show a non-blocking warning on the map */
+    L.popup({ maxWidth: 360 })
+      .setLatLng([55.3, 23.8])
+      .setContent(
+        '<b style="color:#f87171">⚠ ESO 110 kV duomenys neįkelti</b><br><br>' +
+        '<code style="font-size:11px;word-break:break-all">' + err.message + '</code><br><br>' +
+        '<span style="font-size:11px;color:#aaa">' +
+          'Patikrinkite failo pavadinimus aplanke <b>Data/</b>' +
+        '</span>'
+      )
+      .openOn(map);
+  }
+}
 </script>
 </body>
 </html>
