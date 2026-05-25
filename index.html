@@ -393,20 +393,28 @@ function fmt(val) {
 }
 
 function buildPopupHtml(sub) {
+  // badge falls back to "operator · voltage kV" if not set explicitly
+  const badge = sub.badge || (sub.operator + ' · ' + sub.voltage + ' kV');
+
   return (
     '<div class="popup-name">' + (sub.name || 'Nenurodyta') + '</div>' +
 
     '<div class="popup-row">' +
-      '<span class="popup-label">Laisva galia (N-1)</span>' +
+      '<span class="popup-label">Pastotės pavadinimas</span>' +
+      '<span class="popup-value">' + (sub.name || '—') + '</span>' +
+    '</div>' +
+
+    '<div class="popup-row">' +
+      '<span class="popup-label">Laisva galia taikant N-1 ribojimus, MW</span>' +
       fmt(sub.laisva_surib) +
     '</div>' +
 
     '<div class="popup-row">' +
-      '<span class="popup-label">Laisva galia (LP + N-1)</span>' +
+      '<span class="popup-label">Laisva galia taikant lanksčiojo prijungimo ir N-1 ribojimus, MW</span>' +
       fmt(sub.laisva_lp_n1) +
     '</div>' +
 
-    '<div><span class="popup-badge">ESO · 35 kV</span></div>'
+    '<div><span class="popup-badge">' + badge + '</span></div>'
   );
 }
 
