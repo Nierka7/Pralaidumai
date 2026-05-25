@@ -231,6 +231,62 @@
     background: var(--btn-active);
     color: var(--accent);
   }
+/* ── Capacity slider section ─────────────────────────── */
+  #cap-section {
+    border-top: 1px solid var(--border);
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  #cap-section .fp-title {
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  /* Radio buttons for N-1 vs flexible mode */
+  .cap-mode-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .cap-radio {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+  }
+  .cap-radio:hover { color: var(--accent); }
+  .cap-radio input[type="radio"] {
+    accent-color: var(--accent);
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Slider track + label */
+  .slider-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  #cap-slider {
+    width: 100%;
+    accent-color: var(--accent);
+    cursor: pointer;
+    height: 4px;
+  }
+  #cap-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
 </style>
 </head>
 <body>
@@ -290,6 +346,34 @@
     </div>
 
     <div id="filter-count">Kraunama…</div>
+       <!-- ── Capacity slider ─────────────────────────────── -->
+    <div id="cap-section">
+
+      <div class="fp-title">Galios filtras</div>
+
+      <!-- Which capacity field to compare against the slider -->
+      <div class="cap-mode-wrap">
+        <label class="cap-radio">
+          <input type="radio" name="cap-mode" value="n1"
+                 checked onchange="updateVisibleMarkers()">
+          N-1 ribojimas
+        </label>
+        <label class="cap-radio">
+          <input type="radio" name="cap-mode" value="flexible"
+                 onchange="updateVisibleMarkers()">
+          LP + N-1 ribojimas
+        </label>
+      </div>
+
+      <!-- Slider: 0 means "no minimum" (show all) -->
+      <div class="slider-wrap">
+        <input type="range" id="cap-slider"
+               min="0" max="50" step="1" value="0"
+               oninput="updateVisibleMarkers()">
+        <div id="cap-label">Minimali galia: 0 MW</div>
+      </div>
+
+    </div>
   </div>
 
   <div id="map"></div>
@@ -458,38 +542,112 @@ function addMarkersToMap(substationList) {
    SECTION 6 — FILTER LOGIC
    ═══════════════════════════════════════════════════════════════
 
-   Called every time a checkbox changes.
+   Two functions:
 
-   Flow:
-     1. Read all checked checkboxes → build a Set of active keys
-        e.g. {"ESO-35", "Litgrid-330"}
-     2. Loop every marker:
-        - key matches Set  →  ensure it is on the map
-        - key not in Set   →  remove it from the map
-     3. Update the counter label.
+   applyFilters()           — keeps the original name so the HTML
+                              checkbox onchange attributes work
+                              without any change. It simply
+                              delegates to updateVisibleMarkers().
+
+   updateVisibleMarkers()   — the single source of truth for what
+                              is visible on the map. Applies both:
+                                • substation group checkboxes
+                                • capacity slider + mode selector
+
+   HOW THE CAPACITY FIELDS WERE MAPPED AT LOAD TIME
+   ─────────────────────────────────────────────────
+   Each loader normalises raw JSON field names into two standard
+   properties on every sub object:
+
+     sub.laisva_surib   ← "available under N-1 restrictions"
+     sub.laisva_lp_n1   ← "available under flexible + N-1"
+
+   Source mapping per group:
+     ESO-35 :
+       laisva_surib  ← Laisva_galia_35110_surib
+       laisva_lp_n1  ← TPlanksti_laisvaN1
+     ESO-110 :
+       laisva_surib  ← LaisvaSUN1
+       laisva_lp_n1  ← SuN1naktine
+     Litgrid-110 :
+       laisva_surib  ← PUT_CORRECT_FIELD_HERE  (fill when you add the loader)
+       laisva_lp_n1  ← PUT_CORRECT_FIELD_HERE
+     Litgrid-330 :
+       laisva_surib  ← PUT_CORRECT_FIELD_HERE
+       laisva_lp_n1  ← PUT_CORRECT_FIELD_HERE
+
+   Because the mapping happens in the loader, this function only
+   ever reads sub.laisva_surib and sub.laisva_lp_n1 — it never
+   needs to know the original raw field names.
 */
+
+/* ── Thin wrapper — keeps HTML onchange="applyFilters()" working ── */
 function applyFilters() {
-  /* Step A: which categories are currently ticked? */
-  const active = new Set();
+  updateVisibleMarkers();
+}
+
+/* ── Master visibility function ──────────────────────────────────── */
+function updateVisibleMarkers() {
+
+  /* Step A — which substation groups are checked? */
+  const activeGroups = new Set();
   document.querySelectorAll('#filter-panel input[type="checkbox"]').forEach(function(cb) {
     if (cb.checked) {
-      active.add(cb.dataset.op + '-' + cb.dataset.v);
+      activeGroups.add(cb.dataset.op + '-' + cb.dataset.v);
     }
   });
 
-  /* Step B: show / hide each marker */
+  /* Step B — read slider value (0 = no minimum, show everything) */
+  const sliderEl = document.getElementById('cap-slider');
+  const minMW    = sliderEl ? parseFloat(sliderEl.value) : 0;
+
+  /* Step C — read capacity mode (n1 or flexible) */
+  const modeEl = document.querySelector('input[name="cap-mode"]:checked');
+  const mode   = modeEl ? modeEl.value : 'n1';   // safe default
+
+  /* Step D — update the label next to the slider */
+  const labelEl = document.getElementById('cap-label');
+  if (labelEl) {
+    labelEl.textContent = minMW === 0
+      ? 'Minimali galia: nėra apribojimo'
+      : 'Minimali galia: ' + minMW.toFixed(0) + ' MW';
+  }
+
+  /* Step E — show or hide each marker */
   let visible = 0;
+
   markers.forEach(function(m) {
     const key = m.data.operator + '-' + m.data.voltage;
-    if (active.has(key)) {
+
+    /* Rule 1: group must be checked */
+    const groupPass = activeGroups.has(key);
+
+    /* Rule 2: capacity must meet the minimum
+         - If slider is at 0, every marker passes regardless.
+         - If slider > 0 and the field is null (no data), the
+           marker is hidden — we cannot confirm it meets the limit.
+         - Otherwise, the stored value must be >= the slider.         */
+    let capPass;
+    if (minMW === 0) {
+      capPass = true;                           // slider at zero → no filter
+    } else {
+      const capVal = mode === 'n1'
+        ? m.data.laisva_surib   // N-1 mode
+        : m.data.laisva_lp_n1; // flexible + N-1 mode
+
+      capPass = (capVal !== null && capVal !== undefined && capVal >= minMW);
+    }
+
+    /* Show only when BOTH rules pass */
+    if (groupPass && capPass) {
       if (!map.hasLayer(m.layer)) m.layer.addTo(map);
       visible++;
     } else {
-      if (map.hasLayer(m.layer))  map.removeLayer(m.layer);
+      if (map.hasLayer(m.layer)) map.removeLayer(m.layer);
     }
   });
 
-  /* Step C: update counter */
+  /* Step F — update the marker counter */
   document.getElementById('filter-count').textContent =
     'Rodoma ' + visible + ' iš ' + markers.length;
 }
