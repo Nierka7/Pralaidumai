@@ -498,7 +498,14 @@ function buildPopupHtml(sub) {
       fmt(sub.laisva_lp_n1) +
     '</div>' +
 
-    '<div><span class="popup-badge">' + badge + '</span></div>'
+    '<div class="popup-row">' +
+  '<span class="popup-label">Ruožo laisva galia EEKĮ prijungimui su sistemos balanso ribojimu, MW</span>' +
+  (sub.laisva_eeki != null
+    ? '<span class="popup-value">' + sub.laisva_eeki.toFixed(2) + ' MW</span>'
+    : '<span class="popup-null">Nėra duomenų</span>') +
+'</div>' +
+
+'<div><span class="popup-badge">' + badge + '</span></div>'
   );
 }
 
@@ -734,6 +741,11 @@ async function loadESO35kV() {
         laisva_lp_n1: attr.TPlanksti_laisvaN1 != null
                         ? Number(attr.TPlanksti_laisvaN1)
                         : null,
+
+           laisva_eeki: (attr['Laisva_galia_EKĮ_viršbalansinė'] != null &&
+                        isFinite(attr['Laisva_galia_EKĮ_viršbalansinė']))
+                         ? Number(attr['Laisva_galia_EKĮ_viršbalansinė'])
+                         : null,
           badge: 'ESO · 35 kV',
       });
     });
@@ -880,7 +892,10 @@ async function loadESO110kV() {
         laisva_lp_n1: (attr.SuN1naktine != null && isFinite(attr.SuN1naktine))
                         ? Number(attr.SuN1naktine)
                         : null,
-
+          laisva_eeki: (attr.LaisvaEEKI != null && isFinite(attr.LaisvaEEKI))
+                         ? Number(attr.LaisvaEEKI)
+                         : null,
+           
         badge: 'ESO · 110 kV',
       });
     });
