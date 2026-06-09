@@ -505,6 +505,13 @@ function buildPopupHtml(sub) {
     : '<span class="popup-null">Nėra duomenų</span>') +
 '</div>' +
 
+       '<div class="popup-row">' +
+  '<span class="popup-label">Rekonstrukcijos įgyvendinimo data</span>' +
+  (sub.rekon_data != null
+    ? '<span class="popup-value">' + sub.rekon_data + '</span>'
+    : '<span class="popup-null">Nėra duomenų</span>') +
+'</div>' +
+       
 '<div><span class="popup-badge">' + badge + '</span></div>'
   );
 }
@@ -746,6 +753,11 @@ async function loadESO35kV() {
                         isFinite(attr['Laisva_galia_EKĮ_viršbalansinė']))
                          ? Number(attr['Laisva_galia_EKĮ_viršbalansinė'])
                          : null,
+           
+             // NEW: reconstruction date for ESO 35 kV
+            rekon_data: (attr.PoR_data != null && attr.PoR_data !== '')
+                          ? attr.PoR_data
+                          : null,
           badge: 'ESO · 35 kV',
       });
     });
@@ -895,7 +907,9 @@ async function loadESO110kV() {
           laisva_eeki: (attr.LaisvaEEKI != null && isFinite(attr.LaisvaEEKI))
                          ? Number(attr.LaisvaEEKI)
                          : null,
-           
+           rekon_data: (attr.INV_metai != null && attr.INV_metai !== '')
+                ? attr.INV_metai
+                : null,
         badge: 'ESO · 110 kV',
       });
     });
