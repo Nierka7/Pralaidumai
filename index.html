@@ -360,7 +360,7 @@
         </label> -->
         <label class="cap-radio">
           <input type="radio" name="cap-mode" value="flexible"
-                 onchange="updateVisibleMarkers()">
+                 checked onchange="updateVisibleMarkers()">
           LP + N-1 ribojimas
         </label>
       </div>
@@ -610,7 +610,7 @@ function updateVisibleMarkers() {
 
   /* Step C — read capacity mode (n1 or flexible) */
   const modeEl = document.querySelector('input[name="cap-mode"]:checked');
-  const mode   = modeEl ? modeEl.value : 'n1';   // safe default
+  const mode   = modeEl ? modeEl.value : 'flexible';   // safe default
 
   /* Step D — update the label next to the slider */
   const labelEl = document.getElementById('cap-label');
