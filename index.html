@@ -691,17 +691,27 @@ function updateVisibleMarkers() {
          - Otherwise, the stored value must be >= the slider.         */
 let capPass;
     if (m.data.operator === 'Litgrid') {
-      // Litgrid markeriai NEpriklauso nuo galios sliderio — valdo tik checkbox'ai
-      capPass = true;
+      capPass = true;                 // Litgrid valdo tik checkbox'ai
     } else if (minMW === 0) {
-      capPass = true;                           // slider at zero → no filter
+      capPass = true;
     } else {
-      // ESO: nepakeista originali logika (slideris taikomas tik ESO)
-      const capVal = mode === 'n1'
-        ? m.data.laisva_surib   // N-1 mode
-        : m.data.laisva_lp_n1;  // flexible + N-1 mode
+      const capVal = mode === 'n1' ? m.data.laisva_surib : m.data.laisva_lp_n1;
       capPass = (capVal !== null && capVal !== undefined && capVal >= minMW);
     }
+
+    /* Show only when BOTH rules pass */   // ← šis blokas buvo dingęs
+    if (groupPass && capPass) {
+      if (!map.hasLayer(m.layer)) m.layer.addTo(map);
+      visible++;
+    } else {
+      if (map.hasLayer(m.layer)) map.removeLayer(m.layer);
+    }
+  });                                       // ← markers.forEach uždarymas, irgi buvo dingęs
+
+  /* Step F — update the marker counter */
+  document.getElementById('filter-count').textContent =
+    'Rodoma ' + visible + ' iš ' + markers.length;
+}
 
   /* Step F — update the marker counter */
   document.getElementById('filter-count').textContent =
