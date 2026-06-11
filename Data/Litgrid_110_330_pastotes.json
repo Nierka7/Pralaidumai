@@ -7609,7 +7609,7 @@
       "attributes" : {
         "PAS_ID" : 9999999, 
         "PAS_PAV" : "DARBĖNAI (PERSPEKTYVINĖ 330 kV PASTOTĖ)", 
-        "PAS_ITAMPA" : 0, 
+        "PAS_ITAMPA" : 330, 
         "CREATED_USER" : "kesvta", 
         "CREATED_DATE" : 1764291621524, 
         "LAST_EDITED_USER" : "kesvta", 
@@ -7638,7 +7638,7 @@
       "attributes" : {
         "PAS_ID" : 9999998, 
         "PAS_PAV" : "MŪŠA (PERSPEKTYVINĖ 330 kV PASTOTĖ)", 
-        "PAS_ITAMPA" : 0, 
+        "PAS_ITAMPA" : 330, 
         "CREATED_USER" : "kesvta", 
         "CREATED_DATE" : 1764291621524, 
         "LAST_EDITED_USER" : "kesvta", 
