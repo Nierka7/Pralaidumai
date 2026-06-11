@@ -287,6 +287,40 @@
     text-align: center;
     letter-spacing: 0.3px;
   }
+
+  /* ── Litgrid capacity sliders section (NEW) ───────────── */
+  #litgrid-cap-section {
+    border-top: 1px solid var(--border);
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  #litgrid-cap-section .fp-title {
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  .litgrid-slider-wrap {
+    margin-bottom: 10px;
+  }
+  .litgrid-slider-wrap:last-child {
+    margin-bottom: 0;
+  }
+  #ltg-se-slider,
+  #ltg-ve-slider,
+  #ltg-storage-slider {
+    width: 100%;
+    accent-color: var(--accent);
+    cursor: pointer;
+    height: 4px;
+  }
+  #ltg-se-label,
+  #ltg-ve-label,
+  #ltg-storage-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
 </style>
 </head>
 <body>
@@ -374,6 +408,38 @@
       </div>
 
     </div>
+
+    <!-- ── Litgrid capacity sliders (NEW) ───────────────── -->
+    <div id="litgrid-cap-section">
+
+      <div class="fp-title">Litgrid galios filtrai</div>
+
+      <!-- SE: Laisva prijungimo galia LITGRID tinkle SE, MW -->
+      <div class="slider-wrap litgrid-slider-wrap">
+        <input type="range" id="ltg-se-slider"
+               min="0" max="300" step="1" value="0"
+               oninput="updateVisibleMarkers()">
+        <div id="ltg-se-label">Min. SE: nėra apribojimo</div>
+      </div>
+
+      <!-- VE: Laisva prijungimo galia LITGRID tinkle VE, MW -->
+      <div class="slider-wrap litgrid-slider-wrap">
+        <input type="range" id="ltg-ve-slider"
+               min="0" max="300" step="1" value="0"
+               oninput="updateVisibleMarkers()">
+        <div id="ltg-ve-label">Min. VE: nėra apribojimo</div>
+      </div>
+
+      <!-- EEKĮ / kaupikliai: Laisva galia EEKĮ generavimui / kaupikliams, MW -->
+      <div class="slider-wrap litgrid-slider-wrap">
+        <input type="range" id="ltg-storage-slider"
+               min="0" max="300" step="1" value="0"
+               oninput="updateVisibleMarkers()">
+        <div id="ltg-storage-label">Min. EEKĮ / kaupikliai: nėra apribojimo</div>
+      </div>
+
+    </div>
+
   </div>
 
   <div id="map"></div>
@@ -648,6 +714,25 @@ function applyFilters() {
   updateVisibleMarkers();
 }
 
+/* ── Helper: does a value pass a single "minimum" slider? ─────────
+   - minValue === 0  → filter off, everything passes (null OK).
+   - minValue  >  0  → value must be a finite number >= minValue.
+                       null / undefined / NaN → fails (hidden), because
+                       we cannot confirm the marker meets the limit.   */
+function passesMinFilter(value, minValue) {
+  if (minValue === 0) return true;
+  return value !== null && value !== undefined && isFinite(value) && Number(value) >= minValue;
+}
+
+/* ── Helper: update a slider's text label ────────────────────────── */
+function updateSliderLabel(labelId, prefix, value) {
+  const el = document.getElementById(labelId);
+  if (!el) return;
+  el.textContent = Number(value) === 0
+    ? prefix + ': nėra apribojimo'
+    : prefix + ': ' + Number(value).toFixed(0) + ' MW';
+}
+
 /* ── Master visibility function ──────────────────────────────────── */
 function updateVisibleMarkers() {
 
@@ -659,15 +744,23 @@ function updateVisibleMarkers() {
     }
   });
 
-  /* Step B — read slider value (0 = no minimum, show everything) */
+  /* Step B — read ESO slider value (0 = no minimum, show everything) */
   const sliderEl = document.getElementById('cap-slider');
   const minMW    = sliderEl ? parseFloat(sliderEl.value) : 0;
 
-  /* Step C — read capacity mode (n1 or flexible) */
+  /* Step C — read ESO capacity mode (n1 or flexible) */
   const modeEl = document.querySelector('input[name="cap-mode"]:checked');
   const mode   = modeEl ? modeEl.value : 'flexible';   // safe default
 
-  /* Step D — update the label next to the slider */
+  /* Step C2 — read the three Litgrid sliders (0 = that filter is off) */
+  const ltgSeEl      = document.getElementById('ltg-se-slider');
+  const ltgVeEl      = document.getElementById('ltg-ve-slider');
+  const ltgStorageEl = document.getElementById('ltg-storage-slider');
+  const ltgSeMin      = ltgSeEl      ? parseFloat(ltgSeEl.value)      : 0;
+  const ltgVeMin      = ltgVeEl      ? parseFloat(ltgVeEl.value)      : 0;
+  const ltgStorageMin = ltgStorageEl ? parseFloat(ltgStorageEl.value) : 0;
+
+  /* Step D — update the ESO slider label */
   const labelEl = document.getElementById('cap-label');
   if (labelEl) {
     labelEl.textContent = minMW === 0
@@ -675,33 +768,47 @@ function updateVisibleMarkers() {
       : 'Minimali galia: ' + minMW.toFixed(0) + ' MW';
   }
 
+  /* Step D2 — update the three Litgrid slider labels */
+  updateSliderLabel('ltg-se-label',      'Min. SE',                ltgSeMin);
+  updateSliderLabel('ltg-ve-label',      'Min. VE',                ltgVeMin);
+  updateSliderLabel('ltg-storage-label', 'Min. EEKĮ / kaupikliai', ltgStorageMin);
+
   /* Step E — show or hide each marker */
   let visible = 0;
 
   markers.forEach(function(m) {
     const key = m.data.operator + '-' + m.data.voltage;
 
-    /* Rule 1: group must be checked */
+    /* Rule 1: group must be checked (applies to ALL markers) */
     const groupPass = activeGroups.has(key);
 
-    /* Rule 2: capacity must meet the minimum
-         - If slider is at 0, every marker passes regardless.
-         - If slider > 0 and the field is null (no data), the
-           marker is hidden — we cannot confirm it meets the limit.
-         - Otherwise, the stored value must be >= the slider.         */
-let capPass;
-    if (minMW === 0) {
-      capPass = true;                           // slider at zero → no filter
-    } else if (m.data.operator === 'Litgrid') {
-      // LITGRID: sliderio nepaisom — galią valdo tik checkbox'ai (f-ltg-110/330).
-      capPass = true;
-    } else {
-      // ESO: nepakeista originali logika.
-      const capVal = mode === 'n1'
-        ? m.data.laisva_surib   // N-1 mode
-        : m.data.laisva_lp_n1;  // flexible + N-1 mode
+    /* Rule 2: capacity — handled separately per operator.
+         ESO     → controlled ONLY by the ESO cap-slider (logic unchanged).
+         Litgrid → controlled ONLY by the three Litgrid sliders (AND logic).
+       The ESO slider never affects Litgrid, and the Litgrid sliders
+       never affect ESO. */
+    let capPass;
 
-      capPass = (capVal !== null && capVal !== undefined && capVal >= minMW);
+    if (m.data.operator === 'Litgrid') {
+      /* Litgrid: all active sliders must pass together (AND). */
+      capPass =
+        passesMinFilter(m.data.seCapacity,      ltgSeMin) &&
+        passesMinFilter(m.data.veCapacity,      ltgVeMin) &&
+        passesMinFilter(m.data.storageCapacity, ltgStorageMin);
+
+    } else {
+      /* ESO: original, unchanged logic.
+           - slider at 0 → no filter (everything passes)
+           - slider > 0  → stored value must exist and be >= slider */
+      if (minMW === 0) {
+        capPass = true;
+      } else {
+        const capVal = mode === 'n1'
+          ? m.data.laisva_surib   // N-1 mode
+          : m.data.laisva_lp_n1;  // flexible + N-1 mode
+
+        capPass = (capVal !== null && capVal !== undefined && capVal >= minMW);
+      }
     }
 
     /* Show only when BOTH rules pass */
