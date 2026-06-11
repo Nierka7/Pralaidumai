@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════════════════════
+# Kasdienis ESO pastočių duomenų atnaujinimas iš ArcGIS API
+# ═══════════════════════════════════════════════════════════════
+# Kas vyksta:
+#   1. Kasdien 04:15 UTC (07:15 Lietuvos vasaros laiku) paleidžiamas
+#      scripts/update_data.js
+#   2. Skriptas parsisiunčia API duomenis, palygina su esamais
+#      Data/*.json, perrašo failus ir sugeneruoja Data/change_log.json
+#   3. Jei kas nors pasikeitė — pakeitimai automatiškai commitinami
+#      į main šaką, GitHub Pages svetainė atsinaujina pati.
+#
+# Rankinis paleidimas: repo → Actions → "Atnaujinti ESO duomenis"
+# → Run workflow.
+
+name: Atnaujinti ESO duomenis
+
+on:
+  schedule:
+    - cron: '15 4 * * *'        # kasdien 04:15 UTC
+  workflow_dispatch:             # leidžia paleisti ranka iš Actions skilties
+
+permissions:
+  contents: write                # būtina, kad workflow galėtų commitinti
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Atsisiųsti repozitoriją
+        uses: actions/checkout@v4
+
+      - name: Paruošti Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Paleisti duomenų atnaujinimo skriptą
+        run: node scripts/update_data.js
+
+      - name: Commitinti atnaujintus duomenis
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Data/*.json
+          if git diff --cached --quiet; then
+            echo "Pokyčių nėra — commit nereikalingas."
+          else
+            git commit -m "Automatinis duomenų atnaujinimas $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
