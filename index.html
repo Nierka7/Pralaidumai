@@ -1100,6 +1100,104 @@ async function loadESO110kV() {
       .openOn(map);
   }
 }
+     /* ═══════════════════════════════════════════════════════════════
+   SECTION 10 — LOAD LITGRID 110 / 330 kV DATA  (NEW)
+   ═══════════════════════════════════════════════════════════════
+   // LITGRID 110/330 kV data loading
+   Šaltinis: Data/Litgrid_110_330_pastotes.json (ArcGIS eksportas).
+   Ta pati struktūra kaip ESO failų: features[].attributes + geometry.
+   Naudojam jau esamą lks94ToLatLng(), COLOURS['Litgrid-110/330'],
+   bendrą markers[], addMarkersToMap() ir filtrų grandinę.
+
+   KELIO PASTABA: naudojam RELIATYVŲ kelią ('Data/...'), kaip ESO
+   loaderiai — kad veiktų GitHub Pages projektų puslapiuose.
+   Priekinis brūkšnys ('/Data/...') rodytų į domeno šaknį ir grąžintų 404.
+
+   LAUKO PASTABA: realiame JSON kaupiklių laukas vadinasi
+   `Laisva_galia_kaupikliams` (NE `Laisva_prijungimo_galia_kaupikliams`).
+*/
+async function loadLitgrid() {
+  const path = 'Data/Litgrid_110_330_pastotes.json';
+
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error('Nepavyko įkelti failo: ' + path +
+                      '\nServerio atsakas: ' + response.status + ' ' + response.statusText);
+    }
+
+    const json = await response.json();
+    if (!json.features || !Array.isArray(json.features)) {
+      throw new Error('JSON formatas neteisingas faile: ' + path + ' (trūksta "features").');
+    }
+
+    let skippedCoords = 0, skippedVoltage = 0;
+    const substationList = [];
+
+    json.features.forEach(function(feature, index) {
+      const attr = feature.attributes || {};
+      const geom = feature.geometry   || {};
+
+      // Praleisti įrašus be koordinačių
+      const latLng = lks94ToLatLng(geom.x, geom.y);
+      if (!latLng) {
+        skippedCoords++;
+        console.warn('Litgrid — praleista (trūksta koordinačių):',
+                     attr.PAS_PAV || ('eilutė ' + index));
+        return;
+      }
+
+      // Tik 110 ir 330 kV; visa kita (pvz. perspektyvinės su PAS_ITAMPA=0) — praleidžiama
+      const itampa = Number(attr.PAS_ITAMPA);
+      if (itampa !== 110 && itampa !== 330) {
+        skippedVoltage++;
+        console.warn('Litgrid — praleista (įtampa ne 110/330):',
+                     attr.PAS_PAV || ('eilutė ' + index), '→', attr.PAS_ITAMPA);
+        return;
+      }
+
+      // Build Litgrid marker record — ta pati struktūra kaip ESO markeriams
+      substationList.push({
+        operator: 'Litgrid',
+        voltage:  String(itampa),        // '110' / '330' — sutampa su checkbox data-v
+        lat:      latLng[0],
+        lng:      latLng[1],
+        name:     attr.PAS_PAV || null,
+
+        // Litgrid popup fields (null kai nėra / ne skaičius)
+        seCapacity: (attr.Laisva_prijungimo_galia_SE != null && isFinite(attr.Laisva_prijungimo_galia_SE))
+                      ? Number(attr.Laisva_prijungimo_galia_SE) : null,
+        veCapacity: (attr.Laisva_prijungimo_galia_VE != null && isFinite(attr.Laisva_prijungimo_galia_VE))
+                      ? Number(attr.Laisva_prijungimo_galia_VE) : null,
+        storageCapacity: (attr.Laisva_galia_kaupikliams != null && isFinite(attr.Laisva_galia_kaupikliams))
+                      ? Number(attr.Laisva_galia_kaupikliams) : null,
+
+        info:  attr.Papildoma_informacija || null,
+        badge: 'Litgrid · ' + itampa + ' kV',
+      });
+    });
+
+    addMarkersToMap(substationList);
+    applyFilters();   // atnaujina bendrą matomų markerių skaitiklį
+
+    console.log('Įkelta Litgrid pastočių:', substationList.length,
+                '(praleista dėl koordinačių:', skippedCoords,
+                ', dėl įtampos:', skippedVoltage, ')');
+
+  } catch (err) {
+    // Litgrid klaida NEturi sugriauti jau įkeltų ESO sluoksnių
+    console.error('Klaida įkeliant Litgrid duomenis:', err);
+    L.popup({ maxWidth: 360 })
+      .setLatLng([55.3, 23.8])
+      .setContent(
+        '<b style="color:#f87171">⚠ Litgrid duomenys neįkelti</b><br><br>' +
+        '<code style="font-size:11px;word-break:break-all">' + err.message + '</code><br><br>' +
+        '<span style="font-size:11px;color:#aaa">Patikrinkite failą: ' +
+        '<b>Data/Litgrid_110_330_pastotes.json</b></span>'
+      )
+      .openOn(map);
+  }
+}
 </script>
 <script src="js/changelog.js"></script>
 </body>
