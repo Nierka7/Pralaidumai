@@ -1,0 +1,6 @@
+{
+  "35 kV.json": "https://services6.arcgis.com/QCymEZHwkXArKZie/ArcGIS/rest/services/laisvaGalia35_Vejas/FeatureServer/12/query?where=1%3D1&outFields=*&returnGeometry=true&f=json",
+  "ESO_yra_Litgrid_yra.json": "https://services6.arcgis.com/QCymEZHwkXArKZie/ArcGIS/rest/services/Vejui_gamintojai/FeatureServer/30/query?where=1%3D1&outFields=*&returnGeometry=true&f=json",
+  "ESO_yra_Litgrid_nera.json": "https://services6.arcgis.com/QCymEZHwkXArKZie/ArcGIS/rest/services/Vejui_gamintojai/FeatureServer/10/query?where=1%3D1&outFields=*&returnGeometry=true&f=json",
+  "ESO_nevaldoma.json": "https://services6.arcgis.com/QCymEZHwkXArKZie/ArcGIS/rest/services/Vejui_gamintojai/FeatureServer/41/query?where=1%3D1&outFields=*&returnGeometry=true&f=json"
+}
