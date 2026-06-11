@@ -689,13 +689,17 @@ function updateVisibleMarkers() {
          - If slider > 0 and the field is null (no data), the
            marker is hidden — we cannot confirm it meets the limit.
          - Otherwise, the stored value must be >= the slider.         */
-    let capPass;
+let capPass;
     if (minMW === 0) {
       capPass = true;                           // slider at zero → no filter
+    } else if (m.data.operator === 'Litgrid') {
+      // LITGRID: sliderio nepaisom — galią valdo tik checkbox'ai (f-ltg-110/330).
+      capPass = true;
     } else {
+      // ESO: nepakeista originali logika.
       const capVal = mode === 'n1'
         ? m.data.laisva_surib   // N-1 mode
-        : m.data.laisva_lp_n1; // flexible + N-1 mode
+        : m.data.laisva_lp_n1;  // flexible + N-1 mode
 
       capPass = (capVal !== null && capVal !== undefined && capVal >= minMW);
     }
