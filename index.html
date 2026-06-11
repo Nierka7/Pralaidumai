@@ -321,6 +321,73 @@
     text-align: center;
     letter-spacing: 0.3px;
   }
+
+  /* ── Atmestų pastočių žymėjimas (NEW) ─────────────────── */
+  /*
+     Popup'o apačioje rodomas checkbox "Pažymėti kaip
+     netinkamą / atmestą" + X markerio stilius žemėlapyje.
+     Spalvos parinktos taip, kad X būtų gerai matomas tiek
+     tamsioje, tiek šviesioje temoje (raudonas X su baltu
+     apvadu ir tamsiu šešėliu).
+  */
+  .popup-cross-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+  }
+  .popup-cross-row input[type="checkbox"] {
+    accent-color: #ef4444;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .popup-cross-label {
+    font-size: 11.5px;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .popup-cross-row:hover .popup-cross-label { color: #ef4444; }
+
+  /* Mažas "Atmesta" badge popup'e, kai pastotė pažymėta */
+  .popup-badge-rejected {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    margin-top: 6px;
+  }
+
+  /* divIcon konteineris — be Leaflet numatytojo balto fono */
+  .cross-marker-icon {
+    background: transparent;
+    border: none;
+  }
+  .cross-marker {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .cross-marker span {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 900;
+    color: #ef4444;
+    /* Baltas apvadas + tamsus šešėlis → kontrastas abiejose temose */
+    text-shadow:
+      -1.5px -1.5px 0 #ffffff,
+       1.5px -1.5px 0 #ffffff,
+      -1.5px  1.5px 0 #ffffff,
+       1.5px  1.5px 0 #ffffff,
+       0 0 6px rgba(0, 0, 0, 0.55);
+  }
 </style>
 </head>
 <body>
@@ -528,6 +595,172 @@ function colourFor(sub) {
 
 
 /* ═══════════════════════════════════════════════════════════════
+   SECTION 3B — ATMESTŲ PASTOČIŲ ŽYMĖJIMAS  (NEW)
+   ═══════════════════════════════════════════════════════════════
+
+   Vartotojas popup'e gali pažymėti pastotę kaip "netinkamą /
+   atmestą". Pažymėjus, jos markeris žemėlapyje virsta raudonu X;
+   nuėmus žymėjimą — grįžta į įprastą spalvotą tašką.
+
+   Architektūra:
+     crossedSubstations        — Set su pažymėtų pastočių ID
+     makeSubstationId()        — stabilus ID: operator|voltage|name
+                                 (fallback: operator|voltage|lat,lng)
+     escapeHtmlAttr()          — saugus ID įterpimas į HTML atributą
+     buildCrossCheckboxHtml()  — checkbox blokas popup'o apačioje
+     createCircleLayer()       — įprastas CircleMarker (kaip anksčiau)
+     createCrossLayer()        — X markeris (L.marker + L.divIcon)
+     toggleCrossedSubstation() — checkbox onchange handleris
+     updateMarkerVisual()      — sukeičia m.layer tarp circle ↔ X
+
+   SVARBU FILTRAMS:
+   updateVisibleMarkers() dirba tik su m.layer. Kai markerio
+   vizualas keičiamas, NAUJAS layer'is įrašomas į tą patį m.layer
+   lauką, todėl visa filtrų grandinė (grupių checkbox'ai, ESO
+   sliders, Litgrid sliders) toliau veikia be jokių pakeitimų:
+   X markeris paklūsta filtrams lygiai taip pat, kaip ir taškas.
+
+   Popup turinys bind'inamas kaip FUNKCIJA (ne statinis string),
+   todėl kiekvieną kartą atidarius popup'ą HTML generuojamas iš
+   naujo ir checkbox visada rodo teisingą (aktualią) būseną.
+
+   Žymėjimai galioja sesijos metu (be localStorage) — perkrovus
+   puslapį jie išsivalo.
+*/
+
+const crossedSubstations = new Set();
+
+/* Stabilus unikalus ID kiekvienai pastotei */
+function makeSubstationId(operator, voltage, name, lat, lng) {
+  if (name != null && String(name).trim() !== '') {
+    return operator + '|' + voltage + '|' + String(name).trim();
+  }
+  /* Fallback be pavadinimo: koordinatė (5 skaičiai ≈ ~1 m tikslumas) */
+  return operator + '|' + voltage + '|' +
+         Number(lat).toFixed(5) + ',' + Number(lng).toFixed(5);
+}
+
+/* Saugus tekstas HTML atributo reikšmei (kabutės, <, >, &) */
+function escapeHtmlAttr(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+/* Checkbox blokas, pridedamas kiekvieno popup'o apačioje.
+   ID į handlerį perduodamas per data-sub-id atributą
+   (this.getAttribute), todėl jis NIEKADA nepatenka į JS string'ą
+   — pakanka HTML atributo escape'inimo, net jei pavadinime yra
+   kabučių ar kitų specialių simbolių. */
+function buildCrossCheckboxHtml(sub) {
+  const idAttr    = escapeHtmlAttr(sub.id || '');
+  const isChecked = crossedSubstations.has(sub.id);
+
+  return (
+    '<label class="popup-cross-row">' +
+      '<input type="checkbox" data-sub-id="' + idAttr + '"' +
+        (isChecked ? ' checked' : '') +
+        ' onchange="toggleCrossedSubstation(this.getAttribute(\'data-sub-id\'), this.checked)">' +
+      '<span class="popup-cross-label">Pažymėti kaip netinkamą / atmestą</span>' +
+    '</label>' +
+    (isChecked
+      ? '<div><span class="popup-badge popup-badge-rejected">✕ Atmesta</span></div>'
+      : '')
+  );
+}
+
+/* Įprastas spalvotas taškas — identiškas ankstesnei
+   addMarkersToMap() vidinei logikai, tik iškeltas į factory,
+   kad nuėmus žymėjimą markerį būtų galima atkurti 1:1. */
+function createCircleLayer(sub) {
+  const c = colourFor(sub);
+
+  const layer = L.circleMarker([sub.lat, sub.lng], {
+    radius:      6,
+    fillColor:   c.fill,
+    color:       c.border,
+    weight:      1.5,
+    opacity:     1,
+    fillOpacity: 0.85,
+  });
+
+  /* Popup turinys — funkcija: HTML pergeneruojamas kiekvieną
+     kartą atidarant, todėl checkbox būsena visada teisinga. */
+  layer.bindPopup(function () { return buildPopupHtml(sub); }, { maxWidth: 280 });
+
+  return layer;
+}
+
+/* X markeris — L.divIcon, nes CircleMarker X nepiešia.
+   22×22 px, centras tiksliai ant pastotės koordinatės
+   (iconAnchor = [11, 11]). Tas pats popup kaip ir taško. */
+function createCrossLayer(sub) {
+  const icon = L.divIcon({
+    className:  'cross-marker-icon',
+    html:       '<div class="cross-marker" title="Pažymėta kaip netinkama"><span>×</span></div>',
+    iconSize:   [22, 22],
+    iconAnchor: [11, 11],
+  });
+
+  const layer = L.marker([sub.lat, sub.lng], {
+    icon:  icon,
+    title: 'Pažymėta kaip netinkama',   // natyvus tooltip užvedus pelę
+  });
+
+  layer.bindPopup(function () { return buildPopupHtml(sub); }, { maxWidth: 280 });
+
+  return layer;
+}
+
+/* Checkbox onchange handleris (kviečiamas iš popup HTML) */
+function toggleCrossedSubstation(id, checked) {
+  if (checked) {
+    crossedSubstations.add(id);
+  } else {
+    crossedSubstations.delete(id);
+  }
+
+  /* Atnaujinti visus markerius su šiuo ID (jei pavadinimai
+     dubliuotųsi, visi atitinkantys markeriai elgsis vienodai). */
+  markers.forEach(function (m) {
+    if (m.data.id === id) updateMarkerVisual(m);
+  });
+
+  /* Filtrų grandinė lieka vienintelis "matomumo teisėjas":
+     jei pastotė neatitinka filtrų, ji liks paslėpta net su X;
+     jei filtrai ją vėliau parodys — atsiras kaip X. */
+  updateVisibleMarkers();
+}
+
+/* Sukeičia markerio layer'į tarp circle ↔ X pagal Set būseną.
+   Naujas layer'is įrašomas į TĄ PATĮ m.layer lauką, todėl
+   updateVisibleMarkers() toliau veikia be jokių pakeitimų. */
+function updateMarkerVisual(m) {
+  const shouldBeCross = crossedSubstations.has(m.data.id);
+  const isCross       = !(m.layer instanceof L.CircleMarker);
+
+  if (shouldBeCross === isCross) return;   // vizualas jau teisingas
+
+  const wasVisible   = map.hasLayer(m.layer);
+  const popupWasOpen = !!(m.layer.isPopupOpen && m.layer.isPopupOpen());
+
+  if (wasVisible) map.removeLayer(m.layer);
+
+  m.layer = shouldBeCross ? createCrossLayer(m.data) : createCircleLayer(m.data);
+
+  if (wasVisible) {
+    m.layer.addTo(map);
+    /* Jei popup buvo atidarytas pažymint checkbox — atidaryti jį
+       iš naujo ant naujo layer'io (su atnaujinta būsena). */
+    if (popupWasOpen) m.layer.openPopup();
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
    SECTION 4 — POPUP HTML BUILDER
    ═══════════════════════════════════════════════════════════════
 
@@ -586,7 +819,10 @@ function buildPopupHtml(sub) {
         infoHtml +
       '</div>' +
 
-      '<div><span class="popup-badge">' + ltgBadge + '</span></div>'
+      '<div><span class="popup-badge">' + ltgBadge + '</span></div>' +
+
+      /* NEW: atmetimo checkbox popup'o apačioje */
+      buildCrossCheckboxHtml(sub)
     );
   }
   // ── end Litgrid branch ───────────────────────────────────────
@@ -626,7 +862,10 @@ function buildPopupHtml(sub) {
     : '<span class="popup-null">Nėra duomenų</span>') +
 '</div>' +
        
-'<div><span class="popup-badge">' + badge + '</span></div>'
+'<div><span class="popup-badge">' + badge + '</span></div>' +
+
+    /* NEW: atmetimo checkbox popup'o apačioje */
+    buildCrossCheckboxHtml(sub)
   );
 }
 
@@ -637,28 +876,34 @@ function buildPopupHtml(sub) {
 
    `markers` holds every marker object in the format:
      { data: { operator, voltage, name, lat, lng, … },
-       layer: <Leaflet CircleMarker> }
+       layer: <Leaflet CircleMarker arba X marker> }
 
    This is the same structure used by applyFilters() below,
    so markers from JSON and any manually-added markers all
    work with the same filter checkbox logic.
+
+   NEW: sub.id čia priskiriamas CENTRALIZUOTAI, todėl visi trys
+   loaderiai (loadESO35kV, loadESO110kV, loadLitgrid) gauna ID
+   automatiškai — pačių loaderių kodo keisti nereikėjo.
+   Markerio layer'is kuriamas per factory funkcijas, kad
+   atmetimo būsena (X / circle) būtų teisinga ir tuo atveju,
+   jei duomenys būtų perkraunami po žymėjimo.
 */
 const markers = [];
 
 function addMarkersToMap(substationList) {
   substationList.forEach(function(sub) {
-    const c = colourFor(sub);
 
-    const layer = L.circleMarker([sub.lat, sub.lng], {
-      radius:      6,
-      fillColor:   c.fill,
-      color:       c.border,
-      weight:      1.5,
-      opacity:     1,
-      fillOpacity: 0.85,
-    });
+    /* NEW: stabilus unikalus ID (operator|voltage|name,
+       fallback — koordinatė, jei pavadinimo nėra) */
+    if (!sub.id) {
+      sub.id = makeSubstationId(sub.operator, sub.voltage, sub.name, sub.lat, sub.lng);
+    }
 
-    layer.bindPopup(buildPopupHtml(sub), { maxWidth: 280 });
+    /* NEW: layer per factory — circle arba X pagal Set būseną */
+    const layer = crossedSubstations.has(sub.id)
+      ? createCrossLayer(sub)
+      : createCircleLayer(sub);
 
     layer.addTo(map);
     markers.push({ data: sub, layer: layer });
@@ -707,6 +952,12 @@ function addMarkersToMap(substationList) {
    Because the mapping happens in the loader, this function only
    ever reads sub.laisva_surib and sub.laisva_lp_n1 — it never
    needs to know the original raw field names.
+
+   PASTABA DĖL X MARKERIŲ (NEW):
+   Ši funkcija dirba tik su m.layer ir nieko nežino apie tai,
+   ar layer'is yra taškas, ar X — updateMarkerVisual() visada
+   įrašo aktualų layer'į į m.layer, todėl filtrai veikia abiem
+   atvejais identiškai.
 */
 
 /* ── Thin wrapper — keeps HTML onchange="applyFilters()" working ── */
@@ -964,104 +1215,6 @@ loadESO35kV();
 loadESO110kV();
 loadLitgrid();   // NEW: Litgrid 110/330 kV
 
-     /* ═══════════════════════════════════════════════════════════════
-   SECTION 10 — LOAD LITGRID 110 / 330 kV DATA  (NEW)
-   ═══════════════════════════════════════════════════════════════
-   // LITGRID 110/330 kV data loading
-   Šaltinis: Data/Litgrid_110_330_pastotes.json (ArcGIS eksportas).
-   Ta pati struktūra kaip ESO failų: features[].attributes + geometry.
-   Naudojam jau esamą lks94ToLatLng(), COLOURS['Litgrid-110/330'],
-   bendrą markers[], addMarkersToMap() ir filtrų grandinę.
-
-   KELIO PASTABA: naudojam RELIATYVŲ kelią ('Data/...'), kaip ESO
-   loaderiai — kad veiktų GitHub Pages projektų puslapiuose.
-   Priekinis brūkšnys ('/Data/...') rodytų į domeno šaknį ir grąžintų 404.
-
-   LAUKO PASTABA: realiame JSON kaupiklių laukas vadinasi
-   `Laisva_galia_kaupikliams` (NE `Laisva_prijungimo_galia_kaupikliams`).
-*/
-async function loadLitgrid() {
-  const path = 'Data/Litgrid_110_330_pastotes.json';
-
-  try {
-    const response = await fetch(path);
-    if (!response.ok) {
-      throw new Error('Nepavyko įkelti failo: ' + path +
-                      '\nServerio atsakas: ' + response.status + ' ' + response.statusText);
-    }
-
-    const json = await response.json();
-    if (!json.features || !Array.isArray(json.features)) {
-      throw new Error('JSON formatas neteisingas faile: ' + path + ' (trūksta "features").');
-    }
-
-    let skippedCoords = 0, skippedVoltage = 0;
-    const substationList = [];
-
-    json.features.forEach(function(feature, index) {
-      const attr = feature.attributes || {};
-      const geom = feature.geometry   || {};
-
-      // Praleisti įrašus be koordinačių
-      const latLng = lks94ToLatLng(geom.x, geom.y);
-      if (!latLng) {
-        skippedCoords++;
-        console.warn('Litgrid — praleista (trūksta koordinačių):',
-                     attr.PAS_PAV || ('eilutė ' + index));
-        return;
-      }
-
-      // Tik 110 ir 330 kV; visa kita (pvz. perspektyvinės su PAS_ITAMPA=0) — praleidžiama
-      const itampa = Number(attr.PAS_ITAMPA);
-      if (itampa !== 110 && itampa !== 330) {
-        skippedVoltage++;
-        console.warn('Litgrid — praleista (įtampa ne 110/330):',
-                     attr.PAS_PAV || ('eilutė ' + index), '→', attr.PAS_ITAMPA);
-        return;
-      }
-
-      // Build Litgrid marker record — ta pati struktūra kaip ESO markeriams
-      substationList.push({
-        operator: 'Litgrid',
-        voltage:  String(itampa),        // '110' / '330' — sutampa su checkbox data-v
-        lat:      latLng[0],
-        lng:      latLng[1],
-        name:     attr.PAS_PAV || null,
-
-        // Litgrid popup fields (null kai nėra / ne skaičius)
-        seCapacity: (attr.Laisva_prijungimo_galia_SE != null && isFinite(attr.Laisva_prijungimo_galia_SE))
-                      ? Number(attr.Laisva_prijungimo_galia_SE) : null,
-        veCapacity: (attr.Laisva_prijungimo_galia_VE != null && isFinite(attr.Laisva_prijungimo_galia_VE))
-                      ? Number(attr.Laisva_prijungimo_galia_VE) : null,
-        storageCapacity: (attr.Laisva_galia_kaupikliams != null && isFinite(attr.Laisva_galia_kaupikliams))
-                      ? Number(attr.Laisva_galia_kaupikliams) : null,
-
-        info:  attr.Papildoma_informacija_1747116922273 || null,
-        badge: 'Litgrid · ' + itampa + ' kV',
-      });
-    });
-
-    addMarkersToMap(substationList);
-    applyFilters();   // atnaujina bendrą matomų markerių skaitiklį
-
-    console.log('Įkelta Litgrid pastočių:', substationList.length,
-                '(praleista dėl koordinačių:', skippedCoords,
-                ', dėl įtampos:', skippedVoltage, ')');
-
-  } catch (err) {
-    // Litgrid klaida NEturi sugriauti jau įkeltų ESO sluoksnių
-    console.error('Klaida įkeliant Litgrid duomenis:', err);
-    L.popup({ maxWidth: 360 })
-      .setLatLng([55.3, 23.8])
-      .setContent(
-        '<b style="color:#f87171">⚠ Litgrid duomenys neįkelti</b><br><br>' +
-        '<code style="font-size:11px;word-break:break-all">' + err.message + '</code><br><br>' +
-        '<span style="font-size:11px;color:#aaa">Patikrinkite failą: ' +
-        '<b>Data/Litgrid_110_330_pastotes.json</b></span>'
-      )
-      .openOn(map);
-  }
-}
 /* ═══════════════════════════════════════════════════════════════
    SECTION 9 — LOAD ESO 110 kV DATA (THREE FILES, MERGED)
    ═══════════════════════════════════════════════════════════════
@@ -1198,7 +1351,8 @@ async function loadESO110kV() {
       .openOn(map);
   }
 }
-     /* ═══════════════════════════════════════════════════════════════
+
+/* ═══════════════════════════════════════════════════════════════
    SECTION 10 — LOAD LITGRID 110 / 330 kV DATA  (NEW)
    ═══════════════════════════════════════════════════════════════
    // LITGRID 110/330 kV data loading
