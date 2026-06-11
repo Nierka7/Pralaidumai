@@ -517,7 +517,7 @@
         "ruo12": "",
         "ruo13": "",
         "ruo14": null,
-        "LaisvaSUN1": 5,
+        "LaisvaSUN1": 6.68,
         "LaisvaBEn1": 6.68,
         "PaskirtaVEbe": 0,
         "PrijungtVEbe": 0,
@@ -545,7 +545,7 @@
         "INV_galia_visi_90proc": null,
         "INV_laisva_galia_N1": null,
         "INV_laisva_galia": null,
-        "INV_metai": 2027,
+        "INV_metai": null,
         "INV_pastabos": null,
         "GlobalID": "95bc8929-0fac-4daf-995a-617b67c29b85"
       },
