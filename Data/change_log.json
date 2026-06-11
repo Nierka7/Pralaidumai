@@ -1,30 +1,12 @@
 {
-  "last_update": "2026-06-11T09:31:13.660Z",
-  "changes": [
-    {
-      "type": "changed",
-      "name": "Kartena",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid nėra",
-      "file": "ESO_yra_Litgrid_nera.json",
-      "field": "LaisvaSUN1",
-      "old_value": 5,
-      "new_value": 6.68,
-      "timestamp": "2026-06-11T09:31:13.660Z"
-    },
-    {
-      "type": "changed",
-      "name": "Kartena",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid nėra",
-      "file": "ESO_yra_Litgrid_nera.json",
-      "field": "INV_metai",
-      "old_value": 2027,
-      "new_value": null,
-      "timestamp": "2026-06-11T09:31:13.660Z"
-    }
-  ],
+  "last_update": "2026-06-11T10:34:45.871Z",
+  "changes": [],
   "history": [
+    {
+      "timestamp": "2026-06-11T10:34:45.871Z",
+      "changes_count": 0,
+      "changes": []
+    },
     {
       "timestamp": "2026-06-11T09:31:13.660Z",
       "changes_count": 2,
