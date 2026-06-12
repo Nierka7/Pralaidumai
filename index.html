@@ -630,6 +630,98 @@ function colourFor(sub) {
 
 const crossedSubstations = new Set();
 
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 3B-SYNC — SUPABASE BENDRA SAUGYKLA  (NEW)
+   ═══════════════════════════════════════════════════════════════
+
+   Atmesti ("X") žymėjimai saugomi Supabase DB, todėl jie:
+     • lieka po puslapio perkrovimo,
+     • matomi VISIEMS lankytojams (bendra saugykla),
+     • veikia ir ant statinio GitHub Pages (rašom per Supabase REST
+       API, ne tiesiai į GitHub — todėl jokio tokeno nereikia).
+
+   Anon raktas viešas SĄMONINGAI — prieigą valdo RLS politikos
+   (žr. supabase_setup.sql).
+
+   ⚠ ĮRAŠYK savo projekto reikšmes:
+        Supabase dashboard → Project Settings → API
+*/
+const SUPABASE_URL      = 'https://vjysqwwnzjnjougmigym.supabase.co';  // <-- pakeisk
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqeXNxd3duempuam91Z21pZ3ltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNDgyOTMsImV4cCI6MjA5NjgyNDI5M30.pAxmshFmgjDmoAlmZwnzBKdS5QVCb2qeTiqFzD5W6AM';               // <-- pakeisk
+const REJECTED_TABLE    = 'rejected_substations';
+
+/* Bendros antraštės kiekvienai Supabase REST užklausai */
+const SB_HEADERS = {
+  'apikey':        SUPABASE_ANON_KEY,
+  'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+  'Content-Type':  'application/json',
+};
+
+/* Ar Supabase sukonfigūruotas? (jei ne — veikia tik sesijos metu) */
+function supabaseReady() {
+  return SUPABASE_URL.indexOf('YOUR-PROJECT') === -1 &&
+         SUPABASE_ANON_KEY.indexOf('YOUR-ANON') === -1;
+}
+
+/* Įkelti VISŲ atmestų pastočių sąrašą iš serverio → Set → markeriai.
+   Kviečiama starto metu ir (pasirinktinai) pollinimo metu. */
+async function loadRejectedFromServer() {
+  if (!supabaseReady()) {
+    console.warn('Supabase nesukonfigūruotas — X žymėjimai galios tik sesijos metu.');
+    return;
+  }
+  try {
+    const res = await fetch(
+      SUPABASE_URL + '/rest/v1/' + REJECTED_TABLE + '?select=id',
+      { headers: SB_HEADERS }
+    );
+    if (!res.ok) throw new Error('HTTP ' + res.status + ' ' + res.statusText);
+
+    const rows = await res.json();
+    crossedSubstations.clear();
+    rows.forEach(function (r) { crossedSubstations.add(r.id); });
+
+    applyRejectedToAllMarkers();   // perpiešia jau įkeltus markerius
+    console.log('Supabase: įkelta atmestų pastočių:', crossedSubstations.size);
+  } catch (err) {
+    console.error('Supabase: nepavyko įkelti atmestų pastočių:', err);
+  }
+}
+
+/* Pritaikyti Set būseną VISIEMS jau esantiems markeriams.
+   (Vėliau įsikraunantys markeriai teisingą vizualą gauna iš
+   addMarkersToMap() factory, nes Set jau užpildytas.) */
+function applyRejectedToAllMarkers() {
+  markers.forEach(function (m) { updateMarkerVisual(m); });
+  updateVisibleMarkers();
+}
+
+/* Išsaugoti vieną perjungimą serveryje (insert arba delete).
+   Optimistiškai: UI atnaujinamas iškart, serveris sinchronizuojamas
+   fone; jei klaida — tik logas (galima pridėti revert, jei reikės). */
+async function syncRejectedToServer(id, rejected) {
+  if (!supabaseReady()) return;
+  try {
+    if (rejected) {
+      /* merge-duplicates → jei jau yra, klaidos nemes */
+      const res = await fetch(SUPABASE_URL + '/rest/v1/' + REJECTED_TABLE, {
+        method:  'POST',
+        headers: Object.assign({}, SB_HEADERS, { 'Prefer': 'resolution=merge-duplicates' }),
+        body:    JSON.stringify({ id: id }),
+      });
+      if (!res.ok) throw new Error('POST HTTP ' + res.status);
+    } else {
+      const res = await fetch(
+        SUPABASE_URL + '/rest/v1/' + REJECTED_TABLE + '?id=eq.' + encodeURIComponent(id),
+        { method: 'DELETE', headers: SB_HEADERS }
+      );
+      if (!res.ok) throw new Error('DELETE HTTP ' + res.status);
+    }
+  } catch (err) {
+    console.error('Supabase: nepavyko sinchronizuoti (' + id + '):', err);
+  }
+}
+
 /* Stabilus unikalus ID kiekvienai pastotei */
 function makeSubstationId(operator, voltage, name, lat, lng) {
   if (name != null && String(name).trim() !== '') {
@@ -733,6 +825,10 @@ function toggleCrossedSubstation(id, checked) {
      jei pastotė neatitinka filtrų, ji liks paslėpta net su X;
      jei filtrai ją vėliau parodys — atsiras kaip X. */
   updateVisibleMarkers();
+
+  /* NEW: išsaugoti pakeitimą bendroje Supabase saugykloje, kad
+     kiti lankytojai irgi matytų (ir kad liktų po perkrovimo). */
+  syncRejectedToServer(id, checked);
 }
 
 /* Sukeičia markerio layer'į tarp circle ↔ X pagal Set būseną.
@@ -1215,6 +1311,19 @@ loadESO35kV();
 loadESO110kV();
 loadLitgrid();   // NEW: Litgrid 110/330 kV
 
+/* NEW: įkelti bendrą atmestų ("X") pastočių sąrašą iš Supabase.
+   Eiliškumas nesvarbus — markeriai ir šis sąrašas kraunasi
+   asinchroniškai; applyRejectedToAllMarkers() suderina abu. */
+loadRejectedFromServer();
+
+/* NEW (pasirinktinai) — "beveik gyvas" atnaujinimas: kas 30 s
+   perskaito sąrašą iš serverio, kad pamatytum kitų pažymėtus X
+   be perkrovimo. updateMarkerVisual() perpiešia tik pasikeitusius
+   markerius, todėl atidarytas popup'as netrukdomas be reikalo.
+   Nori realaus push'o (be pollinimo)? Žr. paaiškinimą pokalbyje.
+   Norėdamas įjungti — nuimk komentarą: */
+// setInterval(loadRejectedFromServer, 30000);
+
 /* ═══════════════════════════════════════════════════════════════
    SECTION 9 — LOAD ESO 110 kV DATA (THREE FILES, MERGED)
    ═══════════════════════════════════════════════════════════════
@@ -1424,7 +1533,7 @@ async function loadLitgrid() {
         storageCapacity: (attr.Laisva_galia_kaupikliams != null && isFinite(attr.Laisva_galia_kaupikliams))
                       ? Number(attr.Laisva_galia_kaupikliams) : null,
 
-        info:  attr.Papildoma_informacija_1747116922273 || null,
+        info:  attr.Papildoma_informacija || null,
         badge: 'Litgrid · ' + itampa + ' kV',
       });
     });
