@@ -82,6 +82,35 @@ const DATASETS = [
     nameOf: a => a.PAS_PAVADINIMAS || `OBJECTID ${a.OBJECTID_1}`,
     watch: ['LaisvaSUN1', 'SuN1naktine', 'LaisvaEEKI', 'INV_metai'],
   },
+  {
+    /* LITGRID 110/330 kV pastotės — kitas ArcGIS servisas (services-eu1),
+       bet ta pati features[].attributes struktūra, tad tinka esama
+       fetchArcgis() + diffDataset() logika be jokių pakeitimų.
+
+       keyOf — PAS_PAV vienas NĖRA unikalus: ta pati pastotė (pvz.
+       AEROUOSTAS 110 kV) turi kelias sekcijas su skirtingomis galiomis.
+       Stabilus + unikalus identifikatorius yra PAS_PAV_Excel
+       (pvz. „AEROUOSTAS Š1-110" / „AEROUOSTAS Š2-110"), todėl jį naudojam
+       palyginimui. Atsarginiai variantai — ObjectId, tada PAS_ID.
+
+       nameOf — žurnale rodom žmogui suprantamą PAS_PAV (pvz. „AEROUOSTAS").
+
+       watch — tiksliai tie patys laukai, kuriuos index.html naudoja
+       Litgrid filtrams/popup'ams (SE / VE / kaupikliai-EEKĮ). */
+    file:    'Litgrid_110_330_pastotes.json',
+    layer:   'Litgrid 110/330 kV',
+    voltage: '110/330 kV',
+    keyOf:  a => (a.PAS_PAV_Excel != null && a.PAS_PAV_Excel !== '')
+                   ? String(a.PAS_PAV_Excel)
+                   : (a.ObjectId != null ? `OID:${a.ObjectId}`
+                      : (a.PAS_ID != null ? `PID:${a.PAS_ID}` : `OID:${a.OBJECTID_1}`)),
+    nameOf: a => a.PAS_PAV || a.PAS_PAV_Excel || `ObjectId ${a.ObjectId}`,
+    watch: [
+      'Laisva_prijungimo_galia_SE',   // SE — saulės elektrinės
+      'Laisva_prijungimo_galia_VE',   // VE — vėjo elektrinės
+      'Laisva_galia_kaupikliams',     // EEKĮ generavimui / kaupikliams
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────
