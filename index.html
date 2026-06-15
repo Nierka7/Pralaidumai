@@ -388,6 +388,75 @@
        1.5px  1.5px 0 #ffffff,
        0 0 6px rgba(0, 0, 0, 0.55);
   }
+  /* ── LOCKED funkcionalumas (NEW) ───────────────────────── */
+
+  /* Spynos overlay markeris (atskiras nuo X — abi būsenos matosi kartu) */
+  .lock-overlay-icon { background: transparent; border: none; pointer-events: none; }
+  .lock-overlay {
+    width: 17px; height: 17px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; line-height: 1;
+    background: #f59e0b;                 /* ryškus oranžinis — kitokia spalva nei raudonas X */
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0,0.55);
+  }
+
+  /* Popup: Locked checkbox eilutė */
+  .popup-lock-row {
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 8px; padding-top: 9px;
+    border-top: 1px solid var(--border);
+    cursor: pointer; user-select: none;
+  }
+  .popup-lock-row input[type="checkbox"] {
+    accent-color: #f59e0b; width: 14px; height: 14px; cursor: pointer; flex-shrink: 0;
+  }
+  .popup-lock-label { font-size: 11.5px; color: var(--text); transition: color 0.2s; }
+  .popup-lock-row:hover .popup-lock-label { color: #f59e0b; }
+
+  /* Popup: vadovo dropdown + įspėjimas */
+  .popup-lock-manager { margin-top: 8px; }
+  .popup-lock-select {
+    width: 100%; padding: 5px 7px; font-size: 11.5px;
+    background: var(--btn-bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+  }
+  .popup-lock-warning { margin-top: 6px; font-size: 11px; color: #ef4444; font-weight: 600; }
+  .popup-badge-locked { background: rgba(245,158,11,0.18); color: #f59e0b; margin-top: 6px; }
+
+  /* Dešinės pusės "Locked" suvestinės panelė */
+  #locked-panel {
+    position: absolute; top: 12px; right: 12px; z-index: 1000;
+    background: var(--popup-bg);
+    border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow);
+    width: 232px; max-height: calc(100% - 24px);
+    display: flex; flex-direction: column;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .lp-head {
+    padding: 11px 14px; font-size: 12px; font-weight: 700; color: var(--text2);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 6px;
+  }
+  #locked-summary-list { overflow-y: auto; padding: 8px 14px; flex: 1; }
+  .lsum-group { margin-bottom: 12px; }
+  .lsum-group:last-child { margin-bottom: 0; }
+  .lsum-manager {
+    font-size: 11px; font-weight: 700; color: #f59e0b; letter-spacing: 0.4px;
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 5px; padding-bottom: 4px; border-bottom: 1px solid var(--border);
+  }
+  .lsum-count { background: var(--btn-active); color: var(--accent); border-radius: 8px; padding: 0 6px; font-size: 10px; }
+  .lsum-stations { list-style: none; margin: 0; padding: 0; }
+  .lsum-stations li { font-size: 11.5px; color: var(--text); padding: 2px 0 2px 12px; position: relative; }
+  .lsum-stations li:before { content: '•'; position: absolute; left: 0; color: var(--muted); }
+  .lsum-empty { font-size: 11px; color: var(--muted); font-style: italic; padding-left: 12px; }
+  #locked-summary-total {
+    padding: 9px 14px; font-size: 10px; color: var(--muted);
+    border-top: 1px solid var(--border); text-align: right;
+  }   
 </style>
 </head>
 <body>
@@ -508,7 +577,12 @@
     </div>
 
   </div>
-
+<!-- ── Locked suvestinės panelė (NEW) ───────────────────── -->
+  <div id="locked-panel">
+    <div class="lp-head">🔒&nbsp;Užrakintos pastotės</div>
+    <div id="locked-summary-list"></div>
+    <div id="locked-summary-total">Iš viso užrakinta: 0</div>
+  </div>
   <div id="map"></div>
 </div>
 
@@ -917,8 +991,9 @@ function buildPopupHtml(sub) {
 
       '<div><span class="popup-badge">' + ltgBadge + '</span></div>' +
 
-      /* NEW: atmetimo checkbox popup'o apačioje */
-      buildCrossCheckboxHtml(sub)
+     buildCrossCheckboxHtml(sub) +
+      /* NEW: Locked checkbox + vadovo dropdown */
+      buildLockedCheckboxHtml(sub)
     );
   }
   // ── end Litgrid branch ───────────────────────────────────────
@@ -960,8 +1035,9 @@ function buildPopupHtml(sub) {
        
 '<div><span class="popup-badge">' + badge + '</span></div>' +
 
-    /* NEW: atmetimo checkbox popup'o apačioje */
-    buildCrossCheckboxHtml(sub)
+     buildCrossCheckboxHtml(sub) +
+      /* NEW: Locked checkbox + vadovo dropdown */
+      buildLockedCheckboxHtml(sub)
   );
 }
 
@@ -1004,6 +1080,8 @@ function addMarkersToMap(substationList) {
     layer.addTo(map);
     markers.push({ data: sub, layer: layer });
   });
+     /* NEW: atnaujinam Locked suvestinę (vardai gaunami iš ką tik įkrautų markerių) */
+  updateLockedSummaryPanel();
 }
 
 
@@ -1165,6 +1243,8 @@ function updateVisibleMarkers() {
     } else {
       if (map.hasLayer(m.layer)) map.removeLayer(m.layer);
     }
+     /* NEW: spynos overlay seka pagrindinio markerio matomumą */
+    updateLockOverlay(m);
   });
 
   /* Step F — update the marker counter */
@@ -1303,7 +1383,289 @@ async function loadESO35kV() {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 3C — LOCKED PASTOČIŲ FUNKCIJA  (NEW)
+   ═══════════════════════════════════════════════════════════════
 
+   Visiškai atskira nuo "atmesta" (crossedSubstations / X) logikos.
+   Pagrindinis markeris (taškas arba X) NEKEIČIAMAS — spyna rodoma
+   atskiru overlay markeriu (m.lockLayer) ant viršaus, todėl
+   updateMarkerVisual() ir visa filtrų grandinė lieka nepaliesta.
+
+   Naudoja jau esamus: SB_HEADERS, supabaseReady(), escapeHtmlAttr(),
+   makeSubstationId() (per addMarkersToMap), markers[], map.
+
+   Saugykla: Supabase lentelė locked_substations (id, manager, updated_at).
+   Vadovo pasirinkimas PRIVALOMAS — be jo niekas nesaugoma serveryje.
+*/
+
+const LOCKED_TABLE = 'locked_substations';
+const PROJECT_MANAGERS = ['Nerijus Ketrys', 'Justina Aganauskaitė', 'Mantas Naujokas'];
+
+/* id → manager. Turi TIK patvirtintus lock'us (su vadovu).
+   Pažymėjus "Locked", bet dar nepasirinkus vadovo — į šį Map NEDEDAMA,
+   todėl niekas neišsaugoma (atitinka "neleisti išsaugoti be vadovo"). */
+const lockedSubstations = new Map();
+
+/* ── Supabase: įkelti visus lock'us iš serverio ──────────────────── */
+async function loadLockedFromServer() {
+  if (!supabaseReady()) {
+    console.warn('Supabase nesukonfigūruotas — Locked galios tik sesijos metu.');
+    return;
+  }
+  try {
+    const res = await fetch(
+      SUPABASE_URL + '/rest/v1/' + LOCKED_TABLE + '?select=id,manager',
+      { headers: SB_HEADERS }
+    );
+    if (!res.ok) throw new Error('HTTP ' + res.status + ' ' + res.statusText);
+
+    const rows = await res.json();
+    lockedSubstations.clear();
+    rows.forEach(function (r) {
+      if (r.id != null && r.manager) lockedSubstations.set(r.id, r.manager);
+    });
+
+    applyLockedToAllMarkers();   // perpiešia spynas + suvestinę
+    console.log('Supabase: įkelta užrakintų pastočių:', lockedSubstations.size);
+  } catch (err) {
+    console.error('Supabase: nepavyko įkelti užrakintų pastočių:', err);
+  }
+}
+
+/* ── Supabase: išsaugoti vieną pakeitimą (upsert arba delete) ─────── */
+async function syncLockedToServer(id, locked, manager) {
+  if (!supabaseReady()) return;
+  try {
+    if (locked) {
+      const res = await fetch(SUPABASE_URL + '/rest/v1/' + LOCKED_TABLE, {
+        method:  'POST',
+        headers: Object.assign({}, SB_HEADERS, { 'Prefer': 'resolution=merge-duplicates' }),
+        body:    JSON.stringify({ id: id, manager: manager, updated_at: new Date().toISOString() }),
+      });
+      if (!res.ok) throw new Error('POST HTTP ' + res.status);
+    } else {
+      const res = await fetch(
+        SUPABASE_URL + '/rest/v1/' + LOCKED_TABLE + '?id=eq.' + encodeURIComponent(id),
+        { method: 'DELETE', headers: SB_HEADERS }
+      );
+      if (!res.ok) throw new Error('DELETE HTTP ' + res.status);
+    }
+  } catch (err) {
+    console.error('Supabase: nepavyko sinchronizuoti Locked (' + id + '):', err);
+  }
+}
+
+/* ── Spynos overlay markeris (atskiras nuo pagrindinio layer'io) ──── */
+function createLockOverlay(sub) {
+  const manager = lockedSubstations.get(sub.id) || '';
+  const icon = L.divIcon({
+    className:  'lock-overlay-icon',
+    html:       '<div class="lock-overlay" title="Užrakinta' +
+                (manager ? (': ' + escapeHtmlAttr(manager)) : '') +
+                '"><span>🔒</span></div>',
+    iconSize:   [17, 17],
+    iconAnchor: [-4, 20],          // pasislinkęs į viršų-dešinę nuo taško/X
+  });
+  return L.marker([sub.lat, sub.lng], {
+    icon:         icon,
+    interactive:  false,           // neperima paspaudimų — popup atsidaro iš pagrindinio markerio
+    keyboard:     false,
+    zIndexOffset: 1000,            // visada virš taško/X
+  });
+}
+
+/* Parodo/paslepia spyną pagal lock būseną IR pagrindinio markerio matomumą */
+function updateLockOverlay(m) {
+  const shouldShow = lockedSubstations.has(m.data.id) && map.hasLayer(m.layer);
+  const shown      = !!(m.lockLayer && map.hasLayer(m.lockLayer));
+
+  if (shouldShow && !shown) {
+    if (!m.lockLayer) m.lockLayer = createLockOverlay(m.data);
+    m.lockLayer.addTo(map);
+  } else if (!shouldShow && shown) {
+    map.removeLayer(m.lockLayer);
+  }
+}
+
+/* Priverstinis perpiešimas (kai pasikeičia vadovas → atsinaujina title) */
+function refreshLockOverlay(m) {
+  if (m.lockLayer) {
+    if (map.hasLayer(m.lockLayer)) map.removeLayer(m.lockLayer);
+    m.lockLayer = null;
+  }
+  updateLockOverlay(m);
+}
+
+/* Pritaikyti būseną visiems markeriams (po įkėlimo iš serverio) */
+function applyLockedToAllMarkers() {
+  markers.forEach(function (m) { refreshLockOverlay(m); });
+  updateLockedSummaryPanel();
+}
+
+/* ── Popup HTML: Locked checkbox + vadovo dropdown + įspėjimas ────── */
+function renderLockBadge(id) {
+  const manager = lockedSubstations.get(id) || '';
+  return manager
+    ? '<span class="popup-badge popup-badge-locked">🔒 Locked: ' + escapeHtmlAttr(manager) + '</span>'
+    : '';
+}
+
+function buildLockedCheckboxHtml(sub) {
+  const idAttr   = escapeHtmlAttr(sub.id || '');
+  const manager  = lockedSubstations.get(sub.id) || '';
+  const isLocked = lockedSubstations.has(sub.id);
+
+  let optionsHtml = '<option value="">— Pasirinkite projektų vadovą —</option>';
+  PROJECT_MANAGERS.forEach(function (mgr) {
+    const sel = (mgr === manager) ? ' selected' : '';
+    optionsHtml += '<option value="' + escapeHtmlAttr(mgr) + '"' + sel + '>' +
+                   escapeHtmlAttr(mgr) + '</option>';
+  });
+
+  return (
+    '<label class="popup-lock-row">' +
+      '<input type="checkbox" class="popup-lock-cb" data-sub-id="' + idAttr + '"' +
+        (isLocked ? ' checked' : '') +
+        ' onchange="toggleLockedSubstation(this.getAttribute(\'data-sub-id\'), this.checked)">' +
+      '<span class="popup-lock-label">Locked</span>' +
+    '</label>' +
+
+    '<div class="popup-lock-manager" data-sub-id="' + idAttr + '"' +
+      ' style="display:' + (isLocked ? 'block' : 'none') + ';">' +
+      '<select class="popup-lock-select" data-sub-id="' + idAttr + '"' +
+        ' onchange="updateLockedManager(this.getAttribute(\'data-sub-id\'), this.value)">' +
+        optionsHtml +
+      '</select>' +
+      '<div class="popup-lock-warning" data-sub-id="' + idAttr + '"' +
+        ' style="display:' + ((isLocked && !manager) ? 'block' : 'none') + ';">' +
+        '⚠ Privaloma pasirinkti projektų vadovą' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="popup-lock-badge-slot" data-sub-id="' + idAttr + '">' +
+      renderLockBadge(sub.id) +
+    '</div>'
+  );
+}
+
+/* ── Pagalbinės: rasti elementą atidarytame popup'e pagal ID ──────── */
+function findInOpenPopup(selector, id) {
+  const nodes = document.querySelectorAll('.leaflet-popup-content ' + selector);
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].getAttribute('data-sub-id') === id) return nodes[i];
+  }
+  return null;
+}
+
+function showLockManagerUI(id, show) {
+  const div = findInOpenPopup('.popup-lock-manager', id);
+  if (div) div.style.display = show ? 'block' : 'none';
+  if (!show) {
+    const sel = findInOpenPopup('.popup-lock-select', id);
+    if (sel) sel.value = '';
+  }
+  updateLockWarningUI(id);
+}
+
+function updateLockWarningUI(id) {
+  const warn = findInOpenPopup('.popup-lock-warning', id);
+  if (!warn) return;
+  const cb      = findInOpenPopup('.popup-lock-cb', id);
+  const checked = cb ? cb.checked : false;
+  const manager = lockedSubstations.get(id) || '';
+  warn.style.display = (checked && !manager) ? 'block' : 'none';
+}
+
+function updateLockedBadgeUI(id) {
+  const slot = findInOpenPopup('.popup-lock-badge-slot', id);
+  if (slot) slot.innerHTML = renderLockBadge(id);
+}
+
+/* ── Handleriai (kviečiami iš popup HTML) ─────────────────────────── */
+function toggleLockedSubstation(id, checked) {
+  if (checked) {
+    // Parodom vadovo pasirinkimą + įspėjimą. NIEKO nesaugom, kol nėra vadovo.
+    showLockManagerUI(id, true);
+  } else {
+    // Nuimam Locked → pašalinam priskyrimą (ir iš serverio).
+    const was = lockedSubstations.has(id);
+    lockedSubstations.delete(id);
+    showLockManagerUI(id, false);
+    updateLockedBadgeUI(id);
+    markers.forEach(function (m) { if (m.data.id === id) refreshLockOverlay(m); });
+    updateLockedSummaryPanel();
+    if (was) syncLockedToServer(id, false, null);
+  }
+}
+
+function updateLockedManager(id, manager) {
+  manager = (manager || '').trim();
+
+  if (manager === '') {
+    // Vadovas atšauktas → traktuojam kaip ne-locked (be vadovo nesaugom).
+    if (lockedSubstations.has(id)) {
+      lockedSubstations.delete(id);
+      syncLockedToServer(id, false, null);
+    }
+  } else {
+    lockedSubstations.set(id, manager);
+    syncLockedToServer(id, true, manager);
+  }
+
+  markers.forEach(function (m) { if (m.data.id === id) refreshLockOverlay(m); });
+  updateLockWarningUI(id);
+  updateLockedBadgeUI(id);
+  updateLockedSummaryPanel();
+}
+
+/* ── Dešinės pusės suvestinė: grupuojama pagal vadovą ─────────────── */
+function updateLockedSummaryPanel() {
+  const container = document.getElementById('locked-summary-list');
+  if (!container) return;
+
+  // id → pavadinimas (sub.name jau normalizuotas visuose loaderiuose)
+  const idToName = {};
+  markers.forEach(function (m) {
+    if (m.data.id != null && !(m.data.id in idToName)) {
+      idToName[m.data.id] = m.data.name || m.data.id;
+    }
+  });
+
+  // Grupavimas — visi vadovai rodomi visada (net jei tušti)
+  const byManager = {};
+  PROJECT_MANAGERS.forEach(function (mgr) { byManager[mgr] = []; });
+
+  let total = 0;
+  lockedSubstations.forEach(function (manager, id) {
+    if (!manager) return;
+    if (!(manager in byManager)) byManager[manager] = [];   // saugiklis nežinomam vadovui
+    byManager[manager].push(idToName[id] || id);
+    total++;
+  });
+
+  let html = '';
+  Object.keys(byManager).forEach(function (mgr) {
+    const list = byManager[mgr].slice().sort(function (a, b) {
+      return String(a).localeCompare(String(b), 'lt');
+    });
+    html += '<div class="lsum-group">' +
+              '<div class="lsum-manager">' + escapeHtmlAttr(mgr) +
+                ' <span class="lsum-count">' + list.length + '</span></div>';
+    if (list.length === 0) {
+      html += '<div class="lsum-empty">— nėra —</div>';
+    } else {
+      html += '<ul class="lsum-stations">';
+      list.forEach(function (nm) { html += '<li>' + escapeHtmlAttr(nm) + '</li>'; });
+      html += '</ul>';
+    }
+    html += '</div>';
+  });
+  container.innerHTML = html;
+
+  const totalEl = document.getElementById('locked-summary-total');
+  if (totalEl) totalEl.textContent = 'Iš viso užrakinta: ' + total;
+}
 /* ═══════════════════════════════════════════════════════════════
    SECTION 8 — START
    ═══════════════════════════════════════════════════════════════ */
@@ -1316,6 +1678,12 @@ loadLitgrid();   // NEW: Litgrid 110/330 kV
    asinchroniškai; applyRejectedToAllMarkers() suderina abu. */
 loadRejectedFromServer();
 
+/* NEW: įkelti bendrą užrakintų ("Locked") pastočių sąrašą iš Supabase */
+loadLockedFromServer();
+
+/* NEW (pasirinktinai) – periodinis atnaujinimas, kaip rejected: */
+// setInterval(loadLockedFromServer, 30000);
+     
 /* NEW (pasirinktinai) — "beveik gyvas" atnaujinimas: kas 30 s
    perskaito sąrašą iš serverio, kad pamatytum kitų pažymėtus X
    be perkrovimo. updateMarkerVisual() perpiešia tik pasikeitusius
