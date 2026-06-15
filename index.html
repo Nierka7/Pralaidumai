@@ -391,15 +391,29 @@
   /* ── LOCKED funkcionalumas (NEW) ───────────────────────── */
 
   /* Spynos overlay markeris (atskiras nuo X — abi būsenos matosi kartu) */
-  .lock-overlay-icon { background: transparent; border: none; pointer-events: none; }
+.lock-overlay-icon { background: transparent; border: none; pointer-events: none; }
+
+  /* Žiedas — centruotas tiksliai ant pastotės taško */
   .lock-overlay {
-    width: 17px; height: 17px;
+    width: 30px; height: 30px;
+    box-sizing: border-box;
+    border: 2.5px solid #f59e0b;       /* oranžinis — kitokia spalva nei raudonas X */
+    border-radius: 50%;
+    background: transparent;            /* vidurys permatomas → matosi taškas/X po juo */
+    box-shadow: 0 0 4px rgba(0,0,0,0.55);
+    position: relative;
+  }
+  /* Spynos badge ant žiedo viršaus */
+  .lock-overlay span {
+    position: absolute;
+    top: -9px; left: 50%; transform: translateX(-50%);
+    width: 16px; height: 16px;
     display: flex; align-items: center; justify-content: center;
     font-size: 10px; line-height: 1;
-    background: #f59e0b;                 /* ryškus oranžinis — kitokia spalva nei raudonas X */
+    background: #f59e0b;
     border: 1.5px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(0,0,0,0.55);
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
   }
 
   /* Popup: Locked checkbox eilutė */
@@ -427,11 +441,15 @@
 
   /* Dešinės pusės "Locked" suvestinės panelė */
   #locked-panel {
-    position: absolute; top: 12px; right: 12px; z-index: 1000;
+    position: absolute;
+    bottom: 12px;                    /* buvo: top: 12px — perkelta į apačią */
+    right: 12px;
+    z-index: 1000;
     background: var(--popup-bg);
     border: 1px solid var(--border); border-radius: 10px;
     box-shadow: 0 4px 20px var(--shadow);
-    width: 232px; max-height: calc(100% - 24px);
+    width: 232px;
+    max-height: 60%;                 /* neauga į žurnalo zoną viršuje */
     display: flex; flex-direction: column;
     transition: background 0.25s, border-color 0.25s;
   }
@@ -628,7 +646,9 @@ function lks94ToLatLng(x, y) {
    ═══════════════════════════════════════════════════════════════ */
 
 const map = L.map('map', { center: [55.3, 23.8], zoom: 7, zoomControl: true });
-
+     
+map.attributionControl.setPosition('bottomleft');
+     
 let tileLayer = L.tileLayer(
   'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
   { attribution: '© OpenStreetMap © CARTO', maxZoom: 19 }
@@ -1464,8 +1484,8 @@ function createLockOverlay(sub) {
     html:       '<div class="lock-overlay" title="Užrakinta' +
                 (manager ? (': ' + escapeHtmlAttr(manager)) : '') +
                 '"><span>🔒</span></div>',
-    iconSize:   [17, 17],
-    iconAnchor: [-4, 20],          // pasislinkęs į viršų-dešinę nuo taško/X
+    iconSize:   [30, 30],
+    iconAnchor: [15, 15],          // centras tiksliai ant taško — nebenukrypsta
   });
   return L.marker([sub.lat, sub.lng], {
     icon:         icon,
