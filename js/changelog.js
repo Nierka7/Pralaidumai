@@ -30,6 +30,10 @@
     'Laisva_galia_35110_surib':        'Laisva galia su ribojimu (35/110), MW',
     'TPlanksti_laisvaN1':              'Lanksti laisva galia N-1, MW',
     'Laisva_galia_EK\u012e_vir\u0161balansin\u0117': 'Laisva galia EK\u012e vir\u0161balansin\u0117, MW',
+    /* Litgrid 110/330 kV laukai — pavadinimai sutampa su index.html popup'ais */
+    'Laisva_prijungimo_galia_SE': 'Laisva prijungimo galia LITGRID tinkle SE, MW',
+    'Laisva_prijungimo_galia_VE': 'Laisva prijungimo galia LITGRID tinkle VE, MW',
+    'Laisva_galia_kaupikliams':   'Laisva prijungimo galia LITGRID tinkle EEK\u012e generavimui / kaupikliams, MW',
   };
 
   /* ── 1. CSS įterpimas ─────────────────────────────────────── */
