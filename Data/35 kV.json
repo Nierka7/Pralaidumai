@@ -344,6 +344,22 @@
       "sqlType": "sqlTypeOther",
       "domain": null,
       "defaultValue": null
+    },
+    {
+      "name": "laisva_naktine",
+      "type": "esriFieldTypeDouble",
+      "alias": "laisva_naktine",
+      "sqlType": "sqlTypeOther",
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "laisva_dienine",
+      "type": "esriFieldTypeDouble",
+      "alias": "laisva_dienine",
+      "sqlType": "sqlTypeOther",
+      "domain": null,
+      "defaultValue": null
     }
   ],
   "features": [
@@ -354,12 +370,12 @@
         "nameproduct": "Kriukai",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
         "F110_kV_TP_pavadinimas": "Joniškis",
-        "F110kV_TP_Laisva_galia_be_N_1": 8.16,
+        "F110kV_TP_Laisva_galia_be_N_1": 8.15,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Kriukai",
         "F35kV_TP_GT": "T-2",
@@ -389,7 +405,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 488938.29700000025,
@@ -405,7 +423,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -438,7 +456,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 525296.9979999997,
@@ -454,7 +474,7 @@
         "Laisva_galia_VE_viršbalansinė": 1.99,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 11.28,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 11.27,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 9.37,
         "F110_kV_TP_pavadinimas": "Venta",
         "F110kV_TP_Laisva_galia_be_N_1": 14.53,
@@ -466,7 +486,7 @@
         "F35kV_TP_prijungta_galia__MW": 1.05,
         "F35kV_TP_prijungta_galia_saulė__MW": 1,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
-        "F35kV_TP_prijungta_galia_EKĮ__MW": 0.12,
+        "F35kV_TP_prijungta_galia_EKĮ__MW": 0.14,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
         "F35kV_TP_rezervuota_galia__MW": 0.03,
         "F35kV_TP_rezervuota_galia_saulė__MW": 0.03,
@@ -482,12 +502,14 @@
         "Pastot35_laisva80": 1.66,
         "Pastot35_laisva80_ivert110": 1.66,
         "laisva_LNG": 1.1,
-        "TPlanksti_laisvaN1": 1.61,
+        "TPlanksti_laisvaN1": 1.6,
         "TPlanksti_laisva": 1.61,
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 41.5,
+        "laisva_dienine": 2.4677000000000007
       },
       "geometry": {
         "x": 422590.29110000003,
@@ -501,12 +523,12 @@
         "nameproduct": "Lauksodis",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
         "F110_kV_TP_pavadinimas": "Joniškis",
-        "F110kV_TP_Laisva_galia_be_N_1": 8.16,
+        "F110kV_TP_Laisva_galia_be_N_1": 8.15,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Lauksodis",
         "F35kV_TP_GT": "T-1",
@@ -536,7 +558,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 499575.58770000003,
@@ -550,12 +574,12 @@
         "nameproduct": "Lauksodis",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
         "F110_kV_TP_pavadinimas": "Joniškis",
-        "F110kV_TP_Laisva_galia_be_N_1": 8.16,
+        "F110kV_TP_Laisva_galia_be_N_1": 8.15,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Lauksodis",
         "F35kV_TP_GT": "T-2",
@@ -585,7 +609,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 499575.58770000003,
@@ -601,7 +627,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -634,7 +660,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 518609.53000000026,
@@ -650,7 +678,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -678,12 +706,14 @@
         "Pastot35_laisva80": 1.75,
         "Pastot35_laisva80_ivert110": 0.63,
         "laisva_LNG": 0,
-        "TPlanksti_laisvaN1": 1.2,
+        "TPlanksti_laisvaN1": 1.21,
         "TPlanksti_laisva": 3.63,
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 544898.2448000005,
@@ -699,7 +729,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -732,7 +762,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 513266.14499999955,
@@ -748,7 +780,7 @@
         "Laisva_galia_VE_viršbalansinė": 1.99,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 11.28,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 11.27,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 9.37,
         "F110_kV_TP_pavadinimas": "Venta",
         "F110kV_TP_Laisva_galia_be_N_1": 14.53,
@@ -781,7 +813,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 41.5,
+        "laisva_dienine": 2.4677000000000007
       },
       "geometry": {
         "x": 424490.17399999965,
@@ -795,7 +829,7 @@
         "nameproduct": "Papilė",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
@@ -830,7 +864,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 424490.17399999965,
@@ -844,19 +880,19 @@
         "nameproduct": "Jankūnai",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
         "F110_kV_TP_pavadinimas": "Joniškis",
-        "F110kV_TP_Laisva_galia_be_N_1": 8.16,
+        "F110kV_TP_Laisva_galia_be_N_1": 8.15,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Jankūnai",
         "F35kV_TP_GT": "T-1",
         "Galia__35kV_trafas__90___MW": 3.6,
         "F1": 0,
         "F35kV_TP_prijungta_galia__MW": 0.51,
-        "F35kV_TP_prijungta_galia_saulė__MW": 0.5,
+        "F35kV_TP_prijungta_galia_saulė__MW": 0.51,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
         "F35kV_TP_prijungta_galia_EKĮ__MW": 0.06,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
@@ -879,7 +915,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 463232.91700000037,
@@ -893,12 +931,12 @@
         "nameproduct": "Pašvitinys",
         "Laisva_galia_VE_ikibalansinė": 0.01,
         "Laisva_galia_VE_viršbalansinė": 0,
-        "Laisva_galia_EKĮ_viršbalansinė": 17.48,
+        "Laisva_galia_EKĮ_viršbalansinė": 17.47,
         "Laisva_galia_KITA_viršbalansinė": 0,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 14.99,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 89.16,
         "F110_kV_TP_pavadinimas": "Joniškis",
-        "F110kV_TP_Laisva_galia_be_N_1": 8.16,
+        "F110kV_TP_Laisva_galia_be_N_1": 8.15,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Pašvitinys",
         "F35kV_TP_GT": "T-1",
@@ -928,7 +966,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 25.94814,
+        "laisva_dienine": 20.51738
       },
       "geometry": {
         "x": 488031.9979999997,
@@ -944,7 +984,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -977,7 +1017,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 533406.0549999997,
@@ -1026,7 +1068,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.91575,
+        "laisva_dienine": 12.6555
       },
       "geometry": {
         "x": 496941.00820000004,
@@ -1075,7 +1119,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.91575,
+        "laisva_dienine": 12.6555
       },
       "geometry": {
         "x": 496941.00820000004,
@@ -1091,7 +1137,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -1124,7 +1170,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 509794.41000000015,
@@ -1140,7 +1188,7 @@
         "Laisva_galia_VE_viršbalansinė": 10.07,
         "Laisva_galia_EKĮ_viršbalansinė": 18.6,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.85,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 0.82,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 0.32,
         "F110_kV_TP_pavadinimas": "Pasvalys",
         "F110kV_TP_Laisva_galia_be_N_1": 2.18,
@@ -1173,7 +1221,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 65.4401,
+        "laisva_dienine": 35.07277
       },
       "geometry": {
         "x": 509794.41000000015,
@@ -1222,7 +1272,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.91575,
+        "laisva_dienine": 12.6555
       },
       "geometry": {
         "x": 497233.4567999998,
@@ -1271,7 +1323,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.91575,
+        "laisva_dienine": 12.6555
       },
       "geometry": {
         "x": 497233.4567999998,
@@ -1320,7 +1374,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 16.8,
+        "laisva_dienine": 8.457450000000001
       },
       "geometry": {
         "x": 611792.5573000005,
@@ -1346,7 +1402,7 @@
         "Galia__35kV_trafas__90___MW": 3.6,
         "F1": 18.87,
         "F35kV_TP_prijungta_galia__MW": 2.48,
-        "F35kV_TP_prijungta_galia_saulė__MW": 0.97,
+        "F35kV_TP_prijungta_galia_saulė__MW": 0.98,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
         "F35kV_TP_prijungta_galia_EKĮ__MW": 0.01,
         "F35kV_TP_prijungta_galia_kita__MW": 1.5,
@@ -1369,7 +1425,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 16.8,
+        "laisva_dienine": 8.457450000000001
       },
       "geometry": {
         "x": 611792.5573000005,
@@ -1418,7 +1476,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.91575,
+        "laisva_dienine": 12.6555
       },
       "geometry": {
         "x": 494578.26489999983,
@@ -1432,12 +1492,12 @@
         "nameproduct": "Žlibinai",
         "Laisva_galia_VE_ikibalansinė": 5.41,
         "Laisva_galia_VE_viršbalansinė": 2.47,
-        "Laisva_galia_EKĮ_viršbalansinė": 7.32,
+        "Laisva_galia_EKĮ_viršbalansinė": 7.31,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.79,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.78,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 4.76,
         "F110_kV_TP_pavadinimas": "Rietavas",
-        "F110kV_TP_Laisva_galia_be_N_1": 5.45,
+        "F110kV_TP_Laisva_galia_be_N_1": 5.44,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Žlibinai",
         "F35kV_TP_GT": "T-1",
@@ -1467,7 +1527,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 28.8,
+        "laisva_dienine": 7.790400000000002
       },
       "geometry": {
         "x": 375270.4391999999,
@@ -1481,12 +1543,12 @@
         "nameproduct": "Kuliai",
         "Laisva_galia_VE_ikibalansinė": 5.41,
         "Laisva_galia_VE_viršbalansinė": 2.47,
-        "Laisva_galia_EKĮ_viršbalansinė": 7.32,
+        "Laisva_galia_EKĮ_viršbalansinė": 7.31,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.79,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.78,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 4.76,
         "F110_kV_TP_pavadinimas": "Rietavas",
-        "F110kV_TP_Laisva_galia_be_N_1": 5.45,
+        "F110kV_TP_Laisva_galia_be_N_1": 5.44,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Kuliai",
         "F35kV_TP_GT": "T-1",
@@ -1516,7 +1578,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 28.8,
+        "laisva_dienine": 7.790400000000002
       },
       "geometry": {
         "x": 354099.71640000027,
@@ -1565,7 +1629,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 16.8,
+        "laisva_dienine": 8.457450000000001
       },
       "geometry": {
         "x": 595027.9228999997,
@@ -1614,7 +1680,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 16.8,
+        "laisva_dienine": 8.457450000000001
       },
       "geometry": {
         "x": 595027.9228999997,
@@ -1663,7 +1731,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 16.8,
+        "laisva_dienine": 8.457450000000001
       },
       "geometry": {
         "x": 604851.7750000004,
@@ -1677,12 +1747,12 @@
         "nameproduct": "Tverai",
         "Laisva_galia_VE_ikibalansinė": 5.41,
         "Laisva_galia_VE_viršbalansinė": 2.47,
-        "Laisva_galia_EKĮ_viršbalansinė": 7.32,
+        "Laisva_galia_EKĮ_viršbalansinė": 7.31,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.79,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.78,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 4.76,
         "F110_kV_TP_pavadinimas": "Rietavas",
-        "F110kV_TP_Laisva_galia_be_N_1": 5.45,
+        "F110kV_TP_Laisva_galia_be_N_1": 5.44,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Tverai",
         "F35kV_TP_GT": "T-1",
@@ -1712,7 +1782,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 28.8,
+        "laisva_dienine": 7.790400000000002
       },
       "geometry": {
         "x": 384029.12739999965,
@@ -1761,7 +1833,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 318695.6475999998,
@@ -1810,7 +1884,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 318695.6475999998,
@@ -1836,7 +1912,7 @@
         "Galia__35kV_trafas__90___MW": 2.25,
         "F1": 52.36,
         "F35kV_TP_prijungta_galia__MW": 0.39,
-        "F35kV_TP_prijungta_galia_saulė__MW": 0.38,
+        "F35kV_TP_prijungta_galia_saulė__MW": 0.39,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
         "F35kV_TP_prijungta_galia_EKĮ__MW": 0.02,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
@@ -1859,7 +1935,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 8.7,
+        "laisva_dienine": 7.357999999999999
       },
       "geometry": {
         "x": 561822.3860999998,
@@ -1908,7 +1986,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 319070.7659,
@@ -1922,12 +2002,12 @@
         "nameproduct": "Veiviržėnai",
         "Laisva_galia_VE_ikibalansinė": 5.41,
         "Laisva_galia_VE_viršbalansinė": 2.47,
-        "Laisva_galia_EKĮ_viršbalansinė": 7.32,
+        "Laisva_galia_EKĮ_viršbalansinė": 7.31,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.79,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.78,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 4.76,
         "F110_kV_TP_pavadinimas": "Rietavas",
-        "F110kV_TP_Laisva_galia_be_N_1": 5.45,
+        "F110kV_TP_Laisva_galia_be_N_1": 5.44,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Veiviržėnai",
         "F35kV_TP_GT": "T-1",
@@ -1957,7 +2037,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 28.8,
+        "laisva_dienine": 7.790400000000002
       },
       "geometry": {
         "x": 347644.4040000001,
@@ -1971,12 +2053,12 @@
         "nameproduct": "Judrėnai",
         "Laisva_galia_VE_ikibalansinė": 5.41,
         "Laisva_galia_VE_viršbalansinė": 2.47,
-        "Laisva_galia_EKĮ_viršbalansinė": 7.32,
+        "Laisva_galia_EKĮ_viršbalansinė": 7.31,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.79,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 12.78,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 4.76,
         "F110_kV_TP_pavadinimas": "Rietavas",
-        "F110kV_TP_Laisva_galia_be_N_1": 5.45,
+        "F110kV_TP_Laisva_galia_be_N_1": 5.44,
         "F110kV_TP_Laisva_galia_su_N_1__MW": 0,
         "F35kV_TP_pavadinimas": "Judrėnai",
         "F35kV_TP_GT": "T-1",
@@ -2006,7 +2088,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 28.8,
+        "laisva_dienine": 7.790400000000002
       },
       "geometry": {
         "x": 360669.03830000013,
@@ -2055,7 +2139,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 457412.73479999974,
@@ -2104,7 +2190,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 417320.55200000014,
@@ -2153,7 +2241,9 @@
         "PoR_35TPgaliasuINV": 3.6,
         "PoR_galiasuN1": 0,
         "PoRlaisva_INV": 3.6,
-        "PoR_data": 2026
+        "PoR_data": 2026,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 316151.2971000001,
@@ -2202,7 +2292,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 429548.8552000001,
@@ -2228,7 +2320,7 @@
         "Galia__35kV_trafas__90___MW": 5.67,
         "F1": 39.5,
         "F35kV_TP_prijungta_galia__MW": 2.13,
-        "F35kV_TP_prijungta_galia_saulė__MW": 2.12,
+        "F35kV_TP_prijungta_galia_saulė__MW": 2.13,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
         "F35kV_TP_prijungta_galia_EKĮ__MW": 0.41,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
@@ -2251,7 +2343,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 429548.8552000001,
@@ -2300,7 +2394,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 469033.22479999997,
@@ -2349,7 +2445,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 460516.35840000026,
@@ -2398,7 +2496,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 308872.1786000002,
@@ -2447,7 +2547,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 308872.1786000002,
@@ -2496,7 +2598,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 34.1843,
+        "laisva_dienine": 21.0551
       },
       "geometry": {
         "x": 657430.2922,
@@ -2545,7 +2649,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 22.9,
+        "laisva_dienine": 15.68264
       },
       "geometry": {
         "x": 444795.22339999955,
@@ -2594,7 +2700,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 34.1843,
+        "laisva_dienine": 21.0551
       },
       "geometry": {
         "x": 664326.5943999998,
@@ -2643,7 +2751,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 34.1843,
+        "laisva_dienine": 21.0551
       },
       "geometry": {
         "x": 629437.6880000001,
@@ -2659,7 +2769,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Šilainiai",
         "F110kV_TP_Laisva_galia_be_N_1": 18.84,
@@ -2669,7 +2779,7 @@
         "Galia__35kV_trafas__90___MW": 3.6,
         "F1": 47.83,
         "F35kV_TP_prijungta_galia__MW": 2.39,
-        "F35kV_TP_prijungta_galia_saulė__MW": 2.38,
+        "F35kV_TP_prijungta_galia_saulė__MW": 2.39,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
         "F35kV_TP_prijungta_galia_EKĮ__MW": 0.13,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
@@ -2692,7 +2802,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 474194.35649999976,
@@ -2718,9 +2830,9 @@
         "Galia__35kV_trafas__90___MW": 3.6,
         "F1": 47.83,
         "F35kV_TP_prijungta_galia__MW": 3.09,
-        "F35kV_TP_prijungta_galia_saulė__MW": 3.07,
+        "F35kV_TP_prijungta_galia_saulė__MW": 3.08,
         "F35kV_TP_prijungta_galia_vėjas__MW": 0,
-        "F35kV_TP_prijungta_galia_EKĮ__MW": 0.08,
+        "F35kV_TP_prijungta_galia_EKĮ__MW": 0.09,
         "F35kV_TP_prijungta_galia_kita__MW": 0,
         "F35kV_TP_rezervuota_galia__MW": 0.18,
         "F35kV_TP_rezervuota_galia_saulė__MW": 0.18,
@@ -2741,7 +2853,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 13.4296,
+        "laisva_dienine": 5.581899999999999
       },
       "geometry": {
         "x": 474194.35649999976,
@@ -2757,7 +2871,7 @@
         "Laisva_galia_VE_viršbalansinė": 2.83,
         "Laisva_galia_EKĮ_viršbalansinė": 29.09,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 5.88,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 5.87,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 25.47,
         "F110_kV_TP_pavadinimas": "Pabradė",
         "F110kV_TP_Laisva_galia_be_N_1": 15.69,
@@ -2790,7 +2904,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 15.3,
+        "laisva_dienine": 15.3
       },
       "geometry": {
         "x": 596628.5549999997,
@@ -2806,7 +2922,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Aleksotas",
         "F110kV_TP_Laisva_galia_be_N_1": 10.13,
@@ -2839,7 +2955,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 468084.58110000007,
@@ -2855,7 +2973,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Eiguliai",
         "F110kV_TP_Laisva_galia_be_N_1": 35.17,
@@ -2888,7 +3006,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 490964.21410000045,
@@ -2904,7 +3024,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Eiguliai",
         "F110kV_TP_Laisva_galia_be_N_1": 35.17,
@@ -2937,7 +3057,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 490964.21410000045,
@@ -2953,7 +3075,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Šilainiai",
         "F110kV_TP_Laisva_galia_be_N_1": 18.84,
@@ -2986,7 +3108,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 478412.8569,
@@ -3002,7 +3126,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Šilainiai",
         "F110kV_TP_Laisva_galia_be_N_1": 18.84,
@@ -3035,7 +3159,9 @@
         "PoR_35TPgaliasuINV": 18,
         "PoR_galiasuN1": 9,
         "PoRlaisva_INV": 18,
-        "PoR_data": 2025
+        "PoR_data": 2025,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 485618.0493999999,
@@ -3051,7 +3177,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Šilainiai",
         "F110kV_TP_Laisva_galia_be_N_1": 18.84,
@@ -3084,7 +3210,9 @@
         "PoR_35TPgaliasuINV": 18,
         "PoR_galiasuN1": 9,
         "PoRlaisva_INV": 18,
-        "PoR_data": 2025
+        "PoR_data": 2025,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 485618.0493999999,
@@ -3100,7 +3228,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Eiguliai",
         "F110kV_TP_Laisva_galia_be_N_1": 35.17,
@@ -3133,7 +3261,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 494793.63430000003,
@@ -3149,7 +3279,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Eiguliai",
         "F110kV_TP_Laisva_galia_be_N_1": 35.17,
@@ -3182,7 +3312,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 494793.63430000003,
@@ -3198,7 +3330,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Aleksotas",
         "F110kV_TP_Laisva_galia_be_N_1": 10.13,
@@ -3231,7 +3363,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 475718.6233999999,
@@ -3247,7 +3381,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Aleksotas",
         "F110kV_TP_Laisva_galia_be_N_1": 10.13,
@@ -3280,7 +3414,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 475718.6233999999,
@@ -3296,7 +3432,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Petrašiūnų E",
         "F110kV_TP_Laisva_galia_be_N_1": 30.92,
@@ -3329,7 +3465,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 495618.01020000037,
@@ -3345,7 +3483,7 @@
         "Laisva_galia_VE_viršbalansinė": 24.15,
         "Laisva_galia_EKĮ_viršbalansinė": 0,
         "Laisva_galia_KITA_viršbalansinė": 1,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.73,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 41.69,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 266.72,
         "F110_kV_TP_pavadinimas": "Petrašiūnų E",
         "F110kV_TP_Laisva_galia_be_N_1": 30.92,
@@ -3378,7 +3516,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 71.2,
+        "laisva_dienine": 13.713250000000002
       },
       "geometry": {
         "x": 495618.01020000037,
@@ -3394,7 +3534,7 @@
         "Laisva_galia_VE_viršbalansinė": 2.83,
         "Laisva_galia_EKĮ_viršbalansinė": 29.09,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 5.88,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 5.87,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 25.47,
         "F110_kV_TP_pavadinimas": "Pabradė",
         "F110kV_TP_Laisva_galia_be_N_1": 15.69,
@@ -3427,7 +3567,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 15.3,
+        "laisva_dienine": 15.3
       },
       "geometry": {
         "x": 610680.5333000002,
@@ -3476,7 +3618,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.7,
+        "laisva_dienine": 14.1955
       },
       "geometry": {
         "x": 607451.3854999999,
@@ -3490,9 +3634,9 @@
         "nameproduct": "Grąžtai",
         "Laisva_galia_VE_ikibalansinė": 32.99,
         "Laisva_galia_VE_viršbalansinė": 15.04,
-        "Laisva_galia_EKĮ_viršbalansinė": 47.74,
+        "Laisva_galia_EKĮ_viršbalansinė": 47.73,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 47.08,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 47.06,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 60.67,
         "F110_kV_TP_pavadinimas": "VE-2",
         "F110kV_TP_Laisva_galia_be_N_1": 43.15,
@@ -3525,7 +3669,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 41.1,
+        "laisva_dienine": 41.1
       },
       "geometry": {
         "x": 581293.1250999998,
@@ -3539,9 +3685,9 @@
         "nameproduct": "Grąžtai",
         "Laisva_galia_VE_ikibalansinė": 32.99,
         "Laisva_galia_VE_viršbalansinė": 15.04,
-        "Laisva_galia_EKĮ_viršbalansinė": 47.74,
+        "Laisva_galia_EKĮ_viršbalansinė": 47.73,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 47.08,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 47.06,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 60.67,
         "F110_kV_TP_pavadinimas": "VE-2",
         "F110kV_TP_Laisva_galia_be_N_1": 43.15,
@@ -3574,7 +3720,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 41.1,
+        "laisva_dienine": 41.1
       },
       "geometry": {
         "x": 581293.1250999998,
@@ -3623,7 +3771,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 18.7,
+        "laisva_dienine": 14.1955
       },
       "geometry": {
         "x": 601736.8250000002,
@@ -3637,9 +3787,9 @@
         "nameproduct": "Jurgonys",
         "Laisva_galia_VE_ikibalansinė": 6.89,
         "Laisva_galia_VE_viršbalansinė": 3.14,
-        "Laisva_galia_EKĮ_viršbalansinė": 5.52,
+        "Laisva_galia_EKĮ_viršbalansinė": 5.51,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.37,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.36,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 15.38,
         "F110_kV_TP_pavadinimas": "Šalčininkai",
         "F110kV_TP_Laisva_galia_be_N_1": 15.43,
@@ -3672,7 +3822,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 15.3,
+        "laisva_dienine": 3.5
       },
       "geometry": {
         "x": 577033.7416000003,
@@ -3686,9 +3838,9 @@
         "nameproduct": "Dieveniškės",
         "Laisva_galia_VE_ikibalansinė": 6.89,
         "Laisva_galia_VE_viršbalansinė": 3.14,
-        "Laisva_galia_EKĮ_viršbalansinė": 5.52,
+        "Laisva_galia_EKĮ_viršbalansinė": 5.51,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.37,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.36,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 15.38,
         "F110_kV_TP_pavadinimas": "Šalčininkai",
         "F110kV_TP_Laisva_galia_be_N_1": 15.43,
@@ -3721,7 +3873,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 15.3,
+        "laisva_dienine": 3.5
       },
       "geometry": {
         "x": 605792.9358000001,
@@ -3735,9 +3889,9 @@
         "nameproduct": "Dieveniškės",
         "Laisva_galia_VE_ikibalansinė": 6.89,
         "Laisva_galia_VE_viršbalansinė": 3.14,
-        "Laisva_galia_EKĮ_viršbalansinė": 5.52,
+        "Laisva_galia_EKĮ_viršbalansinė": 5.51,
         "Laisva_galia_KITA_viršbalansinė": 0,
-        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.37,
+        "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_be_sistemos_balan": 6.36,
         "LITGRID_Ruožo_laisva_ESO_tinklo_techninė_galia_su_sistemos_balan": 15.38,
         "F110_kV_TP_pavadinimas": "Šalčininkai",
         "F110kV_TP_Laisva_galia_be_N_1": 15.43,
@@ -3770,7 +3924,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 15.3,
+        "laisva_dienine": 3.5
       },
       "geometry": {
         "x": 605792.9358000001,
@@ -3819,7 +3975,9 @@
         "PoR_35TPgaliasuINV": null,
         "PoR_galiasuN1": null,
         "PoRlaisva_INV": null,
-        "PoR_data": null
+        "PoR_data": null,
+        "laisva_naktine": 63.379,
+        "laisva_dienine": 43.9754
       },
       "geometry": {
         "x": 312062.5580000002,
