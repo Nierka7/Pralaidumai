@@ -1,49 +1,38 @@
 {
-  "last_update": "2026-06-30T08:02:20.168Z",
+  "last_update": "2026-07-01T08:32:24.497Z",
   "changes": [
     {
       "type": "changed",
-      "name": "Kriukai T-2",
+      "name": "Saločiai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Akmenė T-1",
+      "name": "Namišiai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "TPlanksti_laisvaN1",
-      "old_value": 1.61,
-      "new_value": 1.6,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Lauksodis T-1",
+      "name": "Biržai T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Lauksodis T-2",
-      "voltage": "35 kV",
-      "layer": "35 kV VE ESO",
-      "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -52,9 +41,20 @@
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
       "field": "TPlanksti_laisvaN1",
-      "old_value": 1.2,
-      "new_value": 1.21,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 1.21,
+      "new_value": 1.2,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Papilė T-1",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": "TPlanksti_laisvaN1",
+      "old_value": 0.85,
+      "new_value": 0.86,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -62,153 +62,197 @@
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "TPlanksti_laisvaN1",
+      "old_value": 0.85,
+      "new_value": 0.86,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Jankūnai T-1",
+      "name": "Kraštai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Pašvitinys T-1",
+      "name": "Linkuva T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Žlibinai T-1",
+      "name": "Linkuva T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Kuliai T-1",
+      "name": "Joniškėlis T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Tverai T-1",
+      "name": "Joniškėlis T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Veiviržėnai T-1",
+      "name": "Petrašiūnai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Judrėnai T-1",
+      "name": "Petrašiūnai T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Grąžtai T-1",
+      "name": "Rozalimas T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 47.74,
-      "new_value": 47.73,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
-      "type": "changed",
-      "name": "Grąžtai T-2",
+      "type": "added",
+      "name": "Dusetos T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 47.74,
-      "new_value": 47.73,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
-      "type": "changed",
-      "name": "Jurgonys T-2",
+      "type": "added",
+      "name": "Skaudvilė T-2",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 5.52,
-      "new_value": 5.51,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
-      "type": "changed",
-      "name": "Dieveniškės T-1",
+      "type": "added",
+      "name": "Sirvydai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 5.52,
-      "new_value": 5.51,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Dieveniškės T-2",
+      "name": "Lekėčiai T-1",
       "voltage": "35 kV",
       "layer": "35 kV VE ESO",
       "file": "35 kV.json",
-      "field": "Laisva_galia_EKĮ_viršbalansinė",
-      "old_value": 5.52,
-      "new_value": 5.51,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 1.14,
+      "new_value": 1.15,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Aerouostas",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaSUN1",
-      "old_value": 36.79,
-      "new_value": 36.78,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "name": "Lekėčiai T-1",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": "TPlanksti_laisvaN1",
+      "old_value": 2.27,
+      "new_value": 2.28,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Ežerėlis T-1",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 3.34,
+      "new_value": 3.35,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Ežerėlis T-2",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": "Laisva_galia_35110_surib",
+      "old_value": 0.54,
+      "new_value": 0.52,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "added",
+      "name": "Šalčininkėliai T-2",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "added",
+      "name": "Eišiškės T-2",
+      "voltage": "35 kV",
+      "layer": "35 kV VE ESO",
+      "file": "35 kV.json",
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -217,20 +261,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 53.42274049999998,
-      "new_value": 53.41974049999998,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 53.41974049999998,
+      "new_value": 53.413500499999984,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Aerouostas",
+      "name": "Aleksotas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 47.74,
-      "new_value": 47.73,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 10.13,
+      "new_value": 10.1,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -239,9 +283,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 26.08756299999998,
-      "new_value": 26.08456299999998,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 26.08456299999998,
+      "new_value": 26.070112999999974,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -250,9 +294,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 44.55,
-      "new_value": 44.54,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 44.54,
+      "new_value": 44.55,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -261,9 +305,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 54.9185825,
-      "new_value": 54.9130825,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 54.9130825,
+      "new_value": 54.9180825,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Baltupis",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 55.18,
+      "new_value": 55.16,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -272,31 +327,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 62.5868605,
-      "new_value": 62.586560500000004,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 62.586560500000004,
+      "new_value": 62.57341050000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Baltupis",
+      "name": "Eiguliai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 28.34,
-      "new_value": 28.32,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Centrinė",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 34.41,
-      "new_value": 34.4,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 35.17,
+      "new_value": 35.16,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -305,9 +349,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 50.832308499999996,
-      "new_value": 50.8278085,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 50.8278085,
+      "new_value": 50.824809,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -316,9 +360,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 18.74,
-      "new_value": 18.75,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 18.75,
+      "new_value": 18.81,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -327,9 +371,31 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 35.50448800000001,
-      "new_value": 35.60848800000001,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 35.60848800000001,
+      "new_value": 35.63773300000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Gailiai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 4.66,
+      "new_value": 4.65,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Gailiai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 5.1098,
+      "new_value": 5.1028,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -338,9 +404,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 10.64,
-      "new_value": 10.63,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 10.63,
+      "new_value": 10.62,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -349,53 +415,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 22.458787499999993,
-      "new_value": 22.44118749999999,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Grigiškės",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "SuN1naktine",
-      "old_value": 40.8514905,
-      "new_value": 40.8509905,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Grigiškės",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 26.12,
-      "new_value": 26.11,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Gruzdžiai",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Jačionys",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 26.12,
-      "new_value": 26.11,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 22.44118749999999,
+      "new_value": 22.42900999999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -404,9 +426,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 24.52,
-      "new_value": 24.53,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 24.53,
+      "new_value": 24.63,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -415,9 +437,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 29.745037499999988,
-      "new_value": 29.75003749999999,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 29.75003749999999,
+      "new_value": 29.795537499999988,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Jonava",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaEEKI",
+      "old_value": 39.7,
+      "new_value": 39.69,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -426,9 +459,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 8.16,
-      "new_value": 8.15,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 8.15,
+      "new_value": 8.14,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -437,42 +470,97 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 16.0194775,
-      "new_value": 16.0094775,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 16.0094775,
+      "new_value": 16.0044775,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Joniškis",
+      "name": "Jurbarkas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 5.28,
+      "new_value": 5.26,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Kapsai",
+      "name": "Jurbarkas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 45.549207499999994,
-      "new_value": 45.54420749999999,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 16.070230500000005,
+      "new_value": 16.060730500000005,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Kapsai",
+      "name": "Jurbarkas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaEEKI",
-      "old_value": 39.37,
-      "new_value": 39.36,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 40.63,
+      "new_value": 28.63,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kalveliai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 1.32,
+      "new_value": 1.34,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kalveliai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 7.807182499999998,
+      "new_value": 7.817182499999998,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kauno HE",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 13.71,
+      "new_value": 13.7,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kauno HE",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 15.4287625,
+      "new_value": 15.423762499999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kazlų Rūda",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 13.59,
+      "new_value": 13.58,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -481,20 +569,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 18.510795500000015,
-      "new_value": 18.504395500000015,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 18.504395500000015,
+      "new_value": 18.499395500000016,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Kazlų Rūda",
+      "name": "Ketus",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 39.37,
-      "new_value": 39.36,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 36.95,
+      "new_value": 36.96,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -503,9 +591,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 40.5307875,
-      "new_value": 40.525847500000005,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 40.525847500000005,
+      "new_value": 40.5308475,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -514,9 +602,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 24.89,
-      "new_value": 24.87,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 24.87,
+      "new_value": 24.86,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -525,31 +613,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 33.6121165,
-      "new_value": 33.591196499999995,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Kinostudija",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 34.41,
-      "new_value": 34.4,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Laukuva",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 33.591196499999995,
+      "new_value": 33.5861965,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -558,31 +624,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 29.918003500000008,
-      "new_value": 29.918503500000007,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Lentvaris",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 26.12,
-      "new_value": 26.11,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Markučiai",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 27.88,
-      "new_value": 27.87,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 29.918503500000007,
+      "new_value": 29.91700350000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -590,10 +634,32 @@
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 2.48,
+      "new_value": 2.47,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Meškuičiai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 4.563945,
+      "new_value": 4.558445,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Migla",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 3.27,
+      "new_value": 3.26,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -602,20 +668,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 15.162292500000003,
-      "new_value": 15.160492500000005,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Murava",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaSUN1",
-      "old_value": 32.65,
-      "new_value": 32.66,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 15.160492500000005,
+      "new_value": 15.155492500000005,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -624,42 +679,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 38.610534,
-      "new_value": 38.615534,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 38.615534,
+      "new_value": 38.611034,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Murava",
+      "name": "Noreikiškės",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 29.32,
-      "new_value": 29.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Naujoji Akmenė",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Nemunas",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 29.32,
-      "new_value": 29.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 2.8,
+      "new_value": 2.88,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -668,9 +701,42 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 14.637503999999998,
-      "new_value": 14.642503999999995,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 14.642503999999995,
+      "new_value": 14.676000999999996,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Pabradė",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 15.69,
+      "new_value": 15.67,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Pabradė",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 18.999595999999997,
+      "new_value": 18.989596,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Pagiriai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 47.41,
+      "new_value": 47.42,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -679,20 +745,31 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 52.632608000000005,
-      "new_value": 52.627608,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 52.627608,
+      "new_value": 52.632108,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Pagiriai",
+      "name": "Pakruojis",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 47.74,
-      "new_value": 47.73,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 1.05,
+      "new_value": 1.06,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Pakruojis",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 4.664644999999997,
+      "new_value": 4.669644999999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -701,9 +778,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 26,
-      "new_value": 25.99,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 25.99,
+      "new_value": 25.98,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -712,20 +789,53 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 33.575192500000014,
-      "new_value": 33.566692500000016,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 33.566692500000016,
+      "new_value": 33.565632500000014,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Palanga",
+      "name": "Panemunėlis",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 4.8,
+      "new_value": 3.3,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Panemunėlis",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 5.228315,
+      "new_value": 3.7283150000000003,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Panemunėlis",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaEEKI",
-      "old_value": 35.19,
-      "new_value": 35.17,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 27.74,
+      "new_value": 23.84,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Pasvalys",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 2.18,
+      "new_value": 2.17,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -734,42 +844,64 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 9.122824999999999,
-      "new_value": 9.122325,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 9.122325,
+      "new_value": 9.117325000000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Rietavas",
+      "name": "Pušalotas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 5.45,
-      "new_value": 5.44,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 0.06,
+      "new_value": 0.05,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Rietavas",
+      "name": "Pušalotas",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 9.573060500000004,
-      "new_value": 9.569560500000005,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 4.5097075,
+      "new_value": 4.5047075,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Rietavas",
+      "name": "Putinai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 19.81,
+      "new_value": 19.82,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Putinai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 23.575005000000008,
+      "new_value": 23.579505000000008,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Raseiniai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 15.487295499999991,
+      "new_value": 15.488295499999992,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -778,9 +910,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 24.967782500000002,
-      "new_value": 24.962782500000003,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 24.962782500000003,
+      "new_value": 24.964482500000003,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -788,10 +920,21 @@
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 27.88,
-      "new_value": 27.87,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 14.27,
+      "new_value": 14.25,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Rudamina",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 29.006800500000004,
+      "new_value": 28.996800500000003,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -799,10 +942,21 @@
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 5.19,
+      "new_value": 5.18,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Šakyna",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 5.42454,
+      "new_value": 5.42054,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -810,10 +964,21 @@
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 5.52,
-      "new_value": 5.51,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 15.43,
+      "new_value": 15.42,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Šalčininkai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 21.9049775,
+      "new_value": 21.899977500000002,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -822,9 +987,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 25.37,
-      "new_value": 25.45,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 25.45,
+      "new_value": 25.44,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -833,20 +998,31 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 33.2159025,
-      "new_value": 33.2559025,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 33.2559025,
+      "new_value": 33.2447625,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Sendvaris",
+      "name": "Seredžius",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 6.72,
-      "new_value": 6.71,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 2.69,
+      "new_value": 2.67,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Seredžius",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 8.448725,
+      "new_value": 8.438724999999998,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -855,9 +1031,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 64.98,
-      "new_value": 64.97,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 64.97,
+      "new_value": 64.96,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -866,9 +1042,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 68.34233499999999,
-      "new_value": 68.329335,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 68.329335,
+      "new_value": 68.326275,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Šiauliai",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 44.58,
+      "new_value": 44.59,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -877,20 +1064,20 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 52.3787765,
-      "new_value": 52.382416500000005,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 52.382416500000005,
+      "new_value": 52.386916500000005,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Šiaurinė",
+      "name": "Šilainiai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 34.41,
-      "new_value": 34.4,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 18.84,
+      "new_value": 18.81,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -899,9 +1086,75 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 41.45453699999997,
-      "new_value": 41.43982199999998,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 41.43982199999998,
+      "new_value": 41.426201999999975,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Šilkas",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 23.68,
+      "new_value": 23.67,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Šilkas",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 26.0950475,
+      "new_value": 26.0900475,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Stiklas",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 51.99,
+      "new_value": 37.02,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Stiklas",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 67.08413049999999,
+      "new_value": 52.10013049999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Stiklas",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaEEKI",
+      "old_value": 26.86,
+      "new_value": 11.86,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Subačius",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaEEKI",
+      "old_value": 27.74,
+      "new_value": 23.84,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -909,32 +1162,10 @@
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaSUN1",
-      "old_value": 25.23,
-      "new_value": 25.22,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Švenčionėliai",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 26.922665000000002,
-      "new_value": 26.917665,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Švenčionys",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "SuN1naktine",
-      "old_value": 25.244126,
-      "new_value": 25.244231,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 26.917665,
+      "new_value": 26.916415,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -943,9 +1174,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 5.58,
-      "new_value": 5.57,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 5.57,
+      "new_value": 5.56,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -954,75 +1185,86 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 8.3331525,
-      "new_value": 8.3281525,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 8.3281525,
+      "new_value": 8.32115,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Šventoji",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 35.19,
-      "new_value": 35.17,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Taika",
+      "name": "Užpaliai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 97.26,
-      "new_value": 97.25,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 6.31,
+      "new_value": 6.3,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Taika",
+      "name": "Užpaliai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 99.8263145,
-      "new_value": 99.81895449999999,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 7.510792499999999,
+      "new_value": 7.506292499999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Taika",
+      "name": "Vaidotai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 6.72,
-      "new_value": 6.71,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 15.92,
+      "new_value": 15.91,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Vašuokėnai",
+      "name": "Vaidotai",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 4.619865000000001,
-      "new_value": 4.620865,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 22.155080499999997,
+      "new_value": 22.1540805,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "VE-2",
+      "name": "Velžys",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 47.74,
-      "new_value": 47.73,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 6.19,
+      "new_value": 6.18,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Velžys",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "SuN1naktine",
+      "old_value": 15.851372999999993,
+      "new_value": 15.849682999999994,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Venta",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": "LaisvaSUN1",
+      "old_value": 14.53,
+      "new_value": 14.52,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1031,9 +1273,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 18.760129999999997,
-      "new_value": 18.752629999999996,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 18.752629999999996,
+      "new_value": 18.747629999999997,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1042,9 +1284,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "LaisvaSUN1",
-      "old_value": 11.95,
-      "new_value": 11.96,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 11.96,
+      "new_value": 11.97,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1053,31 +1295,31 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 27.057579999999952,
-      "new_value": 27.062579999999972,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 27.062579999999972,
+      "new_value": 27.067979999999952,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Vilnia",
+      "name": "Viršuliškės",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 27.88,
-      "new_value": 27.87,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "LaisvaSUN1",
+      "old_value": 58.44,
+      "new_value": 58.42,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Žagarė",
+      "name": "Viršuliškės",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "SuN1naktine",
+      "old_value": 64.4878125,
+      "new_value": 64.4803225,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1086,31 +1328,31 @@
       "layer": "110 kV — ESO laisva yra, Litgrid yra",
       "file": "ESO_yra_Litgrid_yra.json",
       "field": "SuN1naktine",
-      "old_value": 45.107125,
-      "new_value": 45.102125,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 45.102125,
+      "new_value": 45.104625000000006,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Zokniai",
-      "voltage": "110 kV",
-      "layer": "110 kV — ESO laisva yra, Litgrid yra",
-      "file": "ESO_yra_Litgrid_yra.json",
-      "field": "LaisvaEEKI",
-      "old_value": 17.48,
-      "new_value": 17.47,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Plungė",
+      "name": "Oda",
       "voltage": "110 kV",
       "layer": "110 kV — ESO laisva yra, Litgrid nėra",
       "file": "ESO_yra_Litgrid_nera.json",
       "field": "LaisvaSUN1",
-      "old_value": 8.51,
-      "new_value": 8.5,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 9.42,
+      "new_value": 9.4,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Oda",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+      "file": "ESO_yra_Litgrid_nera.json",
+      "field": "SuN1naktine",
+      "old_value": 13.4553225,
+      "new_value": 13.447322499999999,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1119,9 +1361,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid nėra",
       "file": "ESO_yra_Litgrid_nera.json",
       "field": "SuN1naktine",
-      "old_value": 12.347030500000002,
-      "new_value": 12.3420305,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 12.3420305,
+      "new_value": 12.344530500000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1130,9 +1372,9 @@
       "layer": "110 kV — ESO laisva yra, Litgrid nėra",
       "file": "ESO_yra_Litgrid_nera.json",
       "field": "LaisvaSUN1",
-      "old_value": 39.75,
-      "new_value": 39.76,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 39.76,
+      "new_value": 39.74,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1141,75 +1383,64 @@
       "layer": "110 kV — ESO laisva yra, Litgrid nėra",
       "file": "ESO_yra_Litgrid_nera.json",
       "field": "SuN1naktine",
-      "old_value": 42.2303985,
-      "new_value": 42.2353985,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 42.2353985,
+      "new_value": 42.2273985,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Balbieriškis",
+      "name": "Vandžiogala",
       "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 39.37,
-      "new_value": 39.36,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Dainai",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "SuN1naktine",
-      "old_value": 10.60534500000001,
-      "new_value": 10.600345000000008,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Danė",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
+      "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+      "file": "ESO_yra_Litgrid_nera.json",
       "field": "LaisvaSUN1",
-      "old_value": 14.12,
-      "new_value": 14.11,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 1.54,
+      "new_value": 1.55,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Danė",
+      "name": "Vandžiogala",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+      "file": "ESO_yra_Litgrid_nera.json",
+      "field": "SuN1naktine",
+      "old_value": 3.576120000000001,
+      "new_value": 3.5811200000000007,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Ąžuolynė",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 18.856506,
-      "new_value": 18.851506,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 12.735852499999968,
+      "new_value": 12.729852499999954,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Endriejavas",
+      "name": "Didžiasalis",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "SuN1naktine",
+      "old_value": 8.6820925,
+      "new_value": 8.6810925,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Gargždai",
+      "name": "Griškonys",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "SuN1naktine",
+      "old_value": 7.406235000000002,
+      "new_value": 7.405235000000003,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1217,32 +1448,10 @@
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 39.37,
-      "new_value": 39.36,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Jakai",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 6.72,
-      "new_value": 6.71,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Jašiūnai",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 5.52,
-      "new_value": 5.51,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "field": "SuN1naktine",
+      "old_value": 4.353235000000001,
+      "new_value": 4.354235000000001,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1251,20 +1460,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 14.112440499999998,
-      "new_value": 14.107440499999996,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Kelmė",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 7.32,
-      "new_value": 7.31,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 14.107440499999996,
+      "new_value": 14.108940499999996,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1273,9 +1471,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "LaisvaSUN1",
-      "old_value": 1.8,
-      "new_value": 1.79,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 1.79,
+      "new_value": 1.78,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1284,9 +1482,20 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 14.518102500000005,
-      "new_value": 14.513102500000006,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 14.513102500000006,
+      "new_value": 14.501012500000005,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kupiškis",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaEEKI",
+      "old_value": 27.74,
+      "new_value": 23.84,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1295,20 +1504,53 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 8.91471,
-      "new_value": 8.896365,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 8.896365,
+      "new_value": 8.895364999999998,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Kybartai",
+      "name": "Lypkiai",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 21.4165125,
-      "new_value": 21.4155125,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 33.7580025,
+      "new_value": 33.7560025,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Mažeikiai",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaSUN1",
+      "old_value": 0.49,
+      "new_value": 0.5,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Mažeikiai",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "SuN1naktine",
+      "old_value": 11.297552499999995,
+      "new_value": 11.302552499999996,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Mockėnai",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaSUN1",
+      "old_value": 16.04,
+      "new_value": 16.03,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1317,9 +1559,20 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 20.2880825,
-      "new_value": 20.2830825,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 20.2830825,
+      "new_value": 20.2785825,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Molėtai",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaSUN1",
+      "old_value": 11.02,
+      "new_value": 11.01,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1328,20 +1581,20 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 18.422630499999997,
-      "new_value": 18.418940499999994,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 18.418940499999994,
+      "new_value": 18.412915499999997,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Palemonas",
+      "name": "Nemenčinė",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 45.613612,
-      "new_value": 45.607642,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 21.617060500000008,
+      "new_value": 21.613070500000006,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1350,9 +1603,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "LaisvaSUN1",
-      "old_value": 0.65,
-      "new_value": 0.64,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 0.64,
+      "new_value": 0.63,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1361,31 +1614,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 14.185786500000011,
-      "new_value": 14.169086500000011,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Rašė",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "SuN1naktine",
-      "old_value": 25.585807999999997,
-      "new_value": 25.586312999999993,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Rėkyva",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaSUN1",
-      "old_value": 7.17,
-      "new_value": 7.16,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 14.169086500000011,
+      "new_value": 14.159086500000011,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1394,9 +1625,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 12.353985,
-      "new_value": 12.349145,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 12.349145,
+      "new_value": 12.347645,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1405,9 +1636,9 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "LaisvaSUN1",
-      "old_value": 0.21,
-      "new_value": 0.22,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 0.22,
+      "new_value": 0.23,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1416,20 +1647,20 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 13.40895499999998,
-      "new_value": 13.392319999999957,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 13.392319999999957,
+      "new_value": 13.395819999999981,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Šakiai",
+      "name": "Rūdiškės",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 2.597635000000004,
-      "new_value": 2.5971350000000015,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 10.855667499999997,
+      "new_value": 10.850667499999997,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1438,75 +1669,53 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 18.500805000000003,
-      "new_value": 18.49816500000002,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 18.49816500000002,
+      "new_value": 18.493165000000005,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Sargėnai",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "LaisvaEEKI",
-      "old_value": 28.78,
-      "new_value": 28.77,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Seda",
+      "name": "Šventininkai",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 7.357222499999995,
-      "new_value": 7.356222499999998,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 16.31261,
+      "new_value": 16.311609999999998,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Šilutė",
+      "name": "Trakai",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 13.246737500000037,
-      "new_value": 13.241737500000035,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 13.897734999999999,
+      "new_value": 13.897334999999998,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Tarpučiai",
+      "name": "Ukmergė",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaSUN1",
+      "old_value": 3.22,
+      "new_value": 3.21,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Ukmergė",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 10.998795,
-      "new_value": 10.998294999999999,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Tauragė",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "SuN1naktine",
-      "old_value": 19.148797500000015,
-      "new_value": 19.147797500000014,
-      "timestamp": "2026-06-30T08:02:20.168Z"
-    },
-    {
-      "type": "changed",
-      "name": "Tauralaukis",
-      "voltage": "110 kV",
-      "layer": "110 kV — nevaldoma / saugios generacijos riba",
-      "file": "ESO_nevaldoma.json",
-      "field": "SuN1naktine",
-      "old_value": 12.931160000000004,
-      "new_value": 12.926660000000007,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 22.91444,
+      "new_value": 22.90944,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
@@ -1515,23 +1724,2801 @@
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 23.52747450000002,
-      "new_value": 23.52707450000002,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 23.52707450000002,
+      "new_value": 23.52677450000002,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     },
     {
       "type": "changed",
-      "name": "Vilkaviškis",
+      "name": "Kalnėnai",
+      "voltage": "110 kV",
+      "layer": "110 kV — nevaldoma / saugios generacijos riba",
+      "file": "ESO_nevaldoma.json",
+      "field": "LaisvaSUN1",
+      "old_value": 17.65,
+      "new_value": 17.67,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "Kalnėnai",
       "voltage": "110 kV",
       "layer": "110 kV — nevaldoma / saugios generacijos riba",
       "file": "ESO_nevaldoma.json",
       "field": "SuN1naktine",
-      "old_value": 11.51433500000001,
-      "new_value": 11.513635000000015,
-      "timestamp": "2026-06-30T08:02:20.168Z"
+      "old_value": 17.82023,
+      "new_value": 17.83023,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ALEKSOTAS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "AMALIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "AUKŠTRAKIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "DANĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 20,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠAKYNA",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠILAINIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠILKAS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "TAURAGĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 21,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "TAURAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 21,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "VIEVIS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "VILIJAMPOLĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "EIGULIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ERŽVILKAS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 21,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "GARLIAVA",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "DROBĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "GRUZDŽIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "JONIŠKIS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KAIŠIADORYS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KAUNO E",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KAUNO HE",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KETUS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KRUONIS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "LIETUVOS E",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "MARVELĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "NOREIKIŠKĖS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "MEŠKUIČIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "PALEMONAS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "PETRAŠIŪNŲ E",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "PLUOŠTAS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ROKAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 5,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "SALOTĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KAMAJAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ZOKNIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŽAGARĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŽIEŽMARIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŽASLIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 10,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ČEDASAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ROKIŠKIS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "UŽPALIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "JUODUPĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "PAROVĖJA",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 21,
+      "new_value": 19,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "JAKAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 20,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "LYPKIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_SE",
+      "old_value": 20,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠAPNAGIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "N.AKMENĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
+    },
+    {
+      "type": "changed",
+      "name": "KANTEIKIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_prijungimo_galia_VE",
+      "old_value": 2,
+      "new_value": 0,
+      "timestamp": "2026-07-01T08:32:24.497Z"
     }
   ],
   "history": [
+    {
+      "timestamp": "2026-07-01T08:32:24.497Z",
+      "changes_count": 205,
+      "changes": [
+        {
+          "type": "changed",
+          "name": "Saločiai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Namišiai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Biržai T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Biržai T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "TPlanksti_laisvaN1",
+          "old_value": 1.21,
+          "new_value": 1.2,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Papilė T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "TPlanksti_laisvaN1",
+          "old_value": 0.85,
+          "new_value": 0.86,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Papilė T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "TPlanksti_laisvaN1",
+          "old_value": 0.85,
+          "new_value": 0.86,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kraštai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Linkuva T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Linkuva T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Joniškėlis T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Joniškėlis T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Petrašiūnai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Petrašiūnai T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rozalimas T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "added",
+          "name": "Dusetos T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "added",
+          "name": "Skaudvilė T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "added",
+          "name": "Sirvydai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Lekėčiai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 1.14,
+          "new_value": 1.15,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Lekėčiai T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "TPlanksti_laisvaN1",
+          "old_value": 2.27,
+          "new_value": 2.28,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ežerėlis T-1",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 3.34,
+          "new_value": 3.35,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ežerėlis T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": "Laisva_galia_35110_surib",
+          "old_value": 0.54,
+          "new_value": 0.52,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "added",
+          "name": "Šalčininkėliai T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "added",
+          "name": "Eišiškės T-2",
+          "voltage": "35 kV",
+          "layer": "35 kV VE ESO",
+          "file": "35 kV.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Aerouostas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 53.41974049999998,
+          "new_value": 53.413500499999984,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Aleksotas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 10.13,
+          "new_value": 10.1,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Aleksotas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 26.08456299999998,
+          "new_value": 26.070112999999974,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Amaliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 44.54,
+          "new_value": 44.55,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Amaliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 54.9130825,
+          "new_value": 54.9180825,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Baltupis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 55.18,
+          "new_value": 55.16,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Baltupis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 62.586560500000004,
+          "new_value": 62.57341050000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Eiguliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 35.17,
+          "new_value": 35.16,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Eiguliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 50.8278085,
+          "new_value": 50.824809,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ekranas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 18.75,
+          "new_value": 18.81,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ekranas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 35.60848800000001,
+          "new_value": 35.63773300000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Gailiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 4.66,
+          "new_value": 4.65,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Gailiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 5.1098,
+          "new_value": 5.1028,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Garliava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 10.63,
+          "new_value": 10.62,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Garliava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 22.44118749999999,
+          "new_value": 22.42900999999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jonava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 24.53,
+          "new_value": 24.63,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jonava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 29.75003749999999,
+          "new_value": 29.795537499999988,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jonava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaEEKI",
+          "old_value": 39.7,
+          "new_value": 39.69,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Joniškis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 8.15,
+          "new_value": 8.14,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Joniškis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 16.0094775,
+          "new_value": 16.0044775,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jurbarkas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 5.28,
+          "new_value": 5.26,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jurbarkas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 16.070230500000005,
+          "new_value": 16.060730500000005,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Jurbarkas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaEEKI",
+          "old_value": 40.63,
+          "new_value": 28.63,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kalveliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 1.32,
+          "new_value": 1.34,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kalveliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 7.807182499999998,
+          "new_value": 7.817182499999998,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kauno HE",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 13.71,
+          "new_value": 13.7,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kauno HE",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 15.4287625,
+          "new_value": 15.423762499999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kazlų Rūda",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 13.59,
+          "new_value": 13.58,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kazlų Rūda",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 18.504395500000015,
+          "new_value": 18.499395500000016,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ketus",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 36.95,
+          "new_value": 36.96,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ketus",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 40.525847500000005,
+          "new_value": 40.5308475,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kinostudija",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 24.87,
+          "new_value": 24.86,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kinostudija",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 33.591196499999995,
+          "new_value": 33.5861965,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Lentvaris",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 29.918503500000007,
+          "new_value": 29.91700350000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Meškuičiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 2.48,
+          "new_value": 2.47,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Meškuičiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 4.563945,
+          "new_value": 4.558445,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Migla",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 3.27,
+          "new_value": 3.26,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Migla",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 15.160492500000005,
+          "new_value": 15.155492500000005,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Murava",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 38.615534,
+          "new_value": 38.611034,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Noreikiškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 2.8,
+          "new_value": 2.88,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Noreikiškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 14.642503999999995,
+          "new_value": 14.676000999999996,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pabradė",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 15.69,
+          "new_value": 15.67,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pabradė",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 18.999595999999997,
+          "new_value": 18.989596,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pagiriai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 47.41,
+          "new_value": 47.42,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pagiriai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 52.627608,
+          "new_value": 52.632108,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pakruojis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 1.05,
+          "new_value": 1.06,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pakruojis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 4.664644999999997,
+          "new_value": 4.669644999999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Palanga",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 25.99,
+          "new_value": 25.98,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Palanga",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 33.566692500000016,
+          "new_value": 33.565632500000014,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Panemunėlis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 4.8,
+          "new_value": 3.3,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Panemunėlis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 5.228315,
+          "new_value": 3.7283150000000003,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Panemunėlis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaEEKI",
+          "old_value": 27.74,
+          "new_value": 23.84,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pasvalys",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 2.18,
+          "new_value": 2.17,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pasvalys",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 9.122325,
+          "new_value": 9.117325000000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pušalotas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 0.06,
+          "new_value": 0.05,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Pušalotas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 4.5097075,
+          "new_value": 4.5047075,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Putinai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 19.81,
+          "new_value": 19.82,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Putinai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 23.575005000000008,
+          "new_value": 23.579505000000008,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Raseiniai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 15.487295499999991,
+          "new_value": 15.488295499999992,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rokiškis",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 24.962782500000003,
+          "new_value": 24.964482500000003,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rudamina",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 14.27,
+          "new_value": 14.25,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rudamina",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 29.006800500000004,
+          "new_value": 28.996800500000003,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šakyna",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 5.19,
+          "new_value": 5.18,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šakyna",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 5.42454,
+          "new_value": 5.42054,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šalčininkai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 15.43,
+          "new_value": 15.42,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šalčininkai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 21.9049775,
+          "new_value": 21.899977500000002,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Sendvaris",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 25.45,
+          "new_value": 25.44,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Sendvaris",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 33.2559025,
+          "new_value": 33.2447625,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Seredžius",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 2.69,
+          "new_value": 2.67,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Seredžius",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 8.448725,
+          "new_value": 8.438724999999998,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šeškinė",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 64.97,
+          "new_value": 64.96,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šeškinė",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 68.329335,
+          "new_value": 68.326275,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šiauliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 44.58,
+          "new_value": 44.59,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šiauliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 52.382416500000005,
+          "new_value": 52.386916500000005,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šilainiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 18.84,
+          "new_value": 18.81,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šilainiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 41.43982199999998,
+          "new_value": 41.426201999999975,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šilkas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 23.68,
+          "new_value": 23.67,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šilkas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 26.0950475,
+          "new_value": 26.0900475,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Stiklas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 51.99,
+          "new_value": 37.02,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Stiklas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 67.08413049999999,
+          "new_value": 52.10013049999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Stiklas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaEEKI",
+          "old_value": 26.86,
+          "new_value": 11.86,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Subačius",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaEEKI",
+          "old_value": 27.74,
+          "new_value": 23.84,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Švenčionėliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 26.917665,
+          "new_value": 26.916415,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šventoji",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 5.57,
+          "new_value": 5.56,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šventoji",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 8.3281525,
+          "new_value": 8.32115,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Užpaliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 6.31,
+          "new_value": 6.3,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Užpaliai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 7.510792499999999,
+          "new_value": 7.506292499999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vaidotai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 15.92,
+          "new_value": 15.91,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vaidotai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 22.155080499999997,
+          "new_value": 22.1540805,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Velžys",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 6.19,
+          "new_value": 6.18,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Velžys",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 15.851372999999993,
+          "new_value": 15.849682999999994,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Venta",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 14.53,
+          "new_value": 14.52,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Venta",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 18.752629999999996,
+          "new_value": 18.747629999999997,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vilnia",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 11.96,
+          "new_value": 11.97,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vilnia",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 27.062579999999972,
+          "new_value": 27.067979999999952,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Viršuliškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "LaisvaSUN1",
+          "old_value": 58.44,
+          "new_value": 58.42,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Viršuliškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 64.4878125,
+          "new_value": 64.4803225,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Zokniai",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": "SuN1naktine",
+          "old_value": 45.102125,
+          "new_value": 45.104625000000006,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Oda",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "LaisvaSUN1",
+          "old_value": 9.42,
+          "new_value": 9.4,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Oda",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "SuN1naktine",
+          "old_value": 13.4553225,
+          "new_value": 13.447322499999999,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Plungė",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "SuN1naktine",
+          "old_value": 12.3420305,
+          "new_value": 12.344530500000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Uostas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "LaisvaSUN1",
+          "old_value": 39.76,
+          "new_value": 39.74,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Uostas",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "SuN1naktine",
+          "old_value": 42.2353985,
+          "new_value": 42.2273985,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vandžiogala",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "LaisvaSUN1",
+          "old_value": 1.54,
+          "new_value": 1.55,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vandžiogala",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid nėra",
+          "file": "ESO_yra_Litgrid_nera.json",
+          "field": "SuN1naktine",
+          "old_value": 3.576120000000001,
+          "new_value": 3.5811200000000007,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ąžuolynė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 12.735852499999968,
+          "new_value": 12.729852499999954,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Didžiasalis",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 8.6820925,
+          "new_value": 8.6810925,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Griškonys",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 7.406235000000002,
+          "new_value": 7.405235000000003,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Igliauka",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 4.353235000000001,
+          "new_value": 4.354235000000001,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kėdainiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 14.107440499999996,
+          "new_value": 14.108940499999996,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Krekenava",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 1.79,
+          "new_value": 1.78,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Krekenava",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 14.513102500000006,
+          "new_value": 14.501012500000005,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kupiškis",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaEEKI",
+          "old_value": 27.74,
+          "new_value": 23.84,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kuršėnai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 8.896365,
+          "new_value": 8.895364999999998,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Lypkiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 33.7580025,
+          "new_value": 33.7560025,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Mažeikiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 0.49,
+          "new_value": 0.5,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Mažeikiai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 11.297552499999995,
+          "new_value": 11.302552499999996,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Mockėnai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 16.04,
+          "new_value": 16.03,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Mockėnai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 20.2830825,
+          "new_value": 20.2785825,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Molėtai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 11.02,
+          "new_value": 11.01,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Molėtai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 18.418940499999994,
+          "new_value": 18.412915499999997,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Nemenčinė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 21.617060500000008,
+          "new_value": 21.613070500000006,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Prienai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 0.64,
+          "new_value": 0.63,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Prienai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 14.169086500000011,
+          "new_value": 14.159086500000011,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rėkyva",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 12.349145,
+          "new_value": 12.347645,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Riešė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 0.22,
+          "new_value": 0.23,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Riešė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 13.392319999999957,
+          "new_value": 13.395819999999981,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Rūdiškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 10.855667499999997,
+          "new_value": 10.850667499999997,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Salotė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 18.49816500000002,
+          "new_value": 18.493165000000005,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Šventininkai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 16.31261,
+          "new_value": 16.311609999999998,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Trakai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 13.897734999999999,
+          "new_value": 13.897334999999998,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ukmergė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 3.22,
+          "new_value": 3.21,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Ukmergė",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 22.91444,
+          "new_value": 22.90944,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Vievis",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 23.52707450000002,
+          "new_value": 23.52677450000002,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kalnėnai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "LaisvaSUN1",
+          "old_value": 17.65,
+          "new_value": 17.67,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "Kalnėnai",
+          "voltage": "110 kV",
+          "layer": "110 kV — nevaldoma / saugios generacijos riba",
+          "file": "ESO_nevaldoma.json",
+          "field": "SuN1naktine",
+          "old_value": 17.82023,
+          "new_value": 17.83023,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ALEKSOTAS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "AMALIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "AUKŠTRAKIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "DANĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 20,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠAKYNA",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠILAINIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠILKAS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "TAURAGĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 21,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "TAURAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 21,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "VIEVIS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "VILIJAMPOLĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "EIGULIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ERŽVILKAS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 21,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "GARLIAVA",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "DROBĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "GRUZDŽIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "JONIŠKIS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KAIŠIADORYS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KAUNO E",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KAUNO HE",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KETUS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KRUONIS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "LIETUVOS E",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "MARVELĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "NOREIKIŠKĖS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "MEŠKUIČIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "PALEMONAS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "PETRAŠIŪNŲ E",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "PLUOŠTAS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ROKAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 5,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "SALOTĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KAMAJAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ZOKNIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŽAGARĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŽIEŽMARIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŽASLIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 10,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ČEDASAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ROKIŠKIS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "UŽPALIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "JUODUPĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "PAROVĖJA",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 21,
+          "new_value": 19,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "JAKAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 20,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "LYPKIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_SE",
+          "old_value": 20,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠAPNAGIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "N.AKMENĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        },
+        {
+          "type": "changed",
+          "name": "KANTEIKIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_prijungimo_galia_VE",
+          "old_value": 2,
+          "new_value": 0,
+          "timestamp": "2026-07-01T08:32:24.497Z"
+        }
+      ]
+    },
     {
       "timestamp": "2026-06-30T08:02:20.168Z",
       "changes_count": 139,
