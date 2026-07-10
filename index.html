@@ -475,6 +475,151 @@
     padding: 9px 14px; font-size: 10px; color: var(--muted);
     border-top: 1px solid var(--border); text-align: right;
   }   
+
+  /* ═══════════════════════════════════════════════════════════════
+     POWER BI SIDE PANEL   (NEW — tik papildymas, nieko nekeičia)
+     Naujas šoninis Power BI panelis „ESO transformatorių apkrova“.
+     Visos taisyklės čia yra NAUJOS ir nekeičia esamų.
+     ═══════════════════════════════════════════════════════════════ */
+
+  /* Off-canvas panelis clip'inamas #map-wrap ribose, kad UŽDARYTAS
+     panelis būtų visiškai už ekrano ir NESUKURTŲ horizontalaus
+     slinkimo. #map jau užpildo #map-wrap per 100 %, o Leaflet
+     konteineris ir taip turi overflow:hidden — todėl žemėlapiui,
+     popup'ams ar valdikliams įtakos nedaro. (nauja taisyklė) */
+  #map-wrap { overflow: hidden; }
+
+  /* Header mygtukas — vizualiai derantis prie .tgl-btn, tik atskiras
+     ir šiek tiek platesnis. Naudoja tas pačias temos kintamąsias,
+     todėl automatiškai veikia tamsioje ir šviesioje temoje. */
+  .powerbi-toggle-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--btn-bg);
+    color: var(--muted);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .powerbi-toggle-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .powerbi-toggle-btn.active {          /* aktyvi būsena, kai panelis atidarytas */
+    background: var(--btn-active);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Pusiau permatoma fono uždanga — tik virš žemėlapio (ne header).
+     Panelis turi aukštesnį z-index, todėl uždanga jo neuždengia. */
+  .powerbi-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .powerbi-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Šoninis panelis — išslysta iš dešinės, virš žemėlapio, po header'iu */
+  .powerbi-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 62%;
+    max-width: 1160px;
+    z-index: 3001;
+    background: var(--bg2);
+    border-left: 1px solid var(--border);
+    box-shadow: -8px 0 30px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);      /* uždarytas — visiškai už dešinio krašto */
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+  }
+  .powerbi-panel.open {
+    transform: translateX(0);
+  }
+
+  /* Panelio antraštė: pavadinimas + uždarymo mygtukas */
+  .powerbi-header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 14px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .powerbi-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text2);
+    letter-spacing: 0.2px;
+  }
+  .powerbi-close {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    line-height: 1;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--btn-bg);
+    color: var(--muted);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .powerbi-close:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--btn-active);
+  }
+
+  /* Panelio kūnas + iframe (100 % x 100 %) */
+  .powerbi-body {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+  }
+  .powerbi-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* Responsive: mažuose ekranuose panelis beveik per visą plotį */
+  @media (max-width: 700px) {
+    .powerbi-panel { width: 100%; max-width: none; }
+  }
+  /* Responsive: mažinamas TIK naujo mygtuko padding/šriftas,
+     kad nesulaužytų header išdėstymo */
+  @media (max-width: 640px) {
+    .powerbi-toggle-btn { padding: 5px 9px; font-size: 11px; gap: 4px; }
+  }
 </style>
 </head>
 <body>
@@ -489,6 +634,9 @@
     <button class="tgl-btn active" id="btn-dark"  onclick="setTheme('dark')">🌑 Tamsi</button>
     <button class="tgl-btn"        id="btn-light" onclick="setTheme('light')">☀ Šviesi</button>
   </div>
+  <!-- NEW: Power BI panelio perjungimo mygtukas (šalia „Tamsi/Šviesi“) -->
+  <button class="powerbi-toggle-btn" id="btn-powerbi"
+          aria-expanded="false" onclick="togglePowerBIPanel()">📊 ESO transformatorių apkrova</button>
 </div>
 
 <!-- ── Map area ────────────────────────────────────────── -->
@@ -602,6 +750,27 @@
     <div id="locked-summary-total">Iš viso užrakinta: 0</div>
   </div>
   <div id="map"></div>
+
+  <!-- ── NEW: Power BI fono uždanga + šoninis panelis ─────────────────
+       Įterpta VIRŠ žemėlapio, #map-wrap viduje (todėl automatiškai
+       telpa po header'iu). iframe src įrašytas TIK vieną kartą — panelis
+       atidaromas/uždaromas keičiant tik CSS klasę, ataskaita NEperkraunama. -->
+  <div class="powerbi-overlay" id="powerbi-overlay" onclick="closePowerBIPanel()"></div>
+  <aside class="powerbi-panel" id="powerbi-panel" role="dialog" aria-modal="true"
+         aria-label="ESO transformatorių apkrova">
+    <div class="powerbi-header">
+      <span class="powerbi-title">ESO transformatorių apkrova</span>
+      <button class="powerbi-close" id="powerbi-close"
+              onclick="closePowerBIPanel()" aria-label="Uždaryti">×</button>
+    </div>
+    <div class="powerbi-body">
+      <iframe class="powerbi-iframe" id="powerbi-iframe"
+              title="ESO transformatorių apkrova"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYTg3Yzg4N2ItMmM0Yi00M2FkLWE5N2UtNmQwYjZmOTRlMTc0IiwidCI6ImVhODhlOTgzLWQ2NWEtNDdiMy1hZGI0LTNlMWM2ZDIxMTBkMiIsImMiOjh9"
+              frameborder="0" allowfullscreen="true" allow="fullscreen"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </aside>
 </div>
 
 
@@ -1947,6 +2116,58 @@ async function loadLitgrid() {
       .openOn(map);
   }
 }
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NEW: POWER BI SIDE PANEL — logika (visiškai atskiras script blokas)
+     openPowerBIPanel() / closePowerBIPanel() / togglePowerBIPanel()
+     Nekeičia jokio esamo JS. Iframe niekada nekuriamas iš naujo —
+     tik perjungiamos CSS klasės, todėl Power BI NEperkraunamas.
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+  if (window.__powerbiPanelInit) return;   /* apsauga nuo dvigubos inicializacijos */
+  window.__powerbiPanelInit = true;
+
+  function pbiPanel()   { return document.getElementById('powerbi-panel'); }
+  function pbiOverlay() { return document.getElementById('powerbi-overlay'); }
+  function pbiBtn()     { return document.getElementById('btn-powerbi'); }
+
+  window.openPowerBIPanel = function openPowerBIPanel() {
+    var panel = pbiPanel();
+    if (!panel) return;
+    panel.classList.add('open');
+    var ov = pbiOverlay(); if (ov) ov.classList.add('visible');
+    var b  = pbiBtn();
+    if (b) { b.classList.add('active'); b.setAttribute('aria-expanded', 'true'); }
+  };
+
+  window.closePowerBIPanel = function closePowerBIPanel() {
+    var panel = pbiPanel();
+    if (!panel) return;
+    panel.classList.remove('open');
+    var ov = pbiOverlay(); if (ov) ov.classList.remove('visible');
+    var b  = pbiBtn();
+    if (b) { b.classList.remove('active'); b.setAttribute('aria-expanded', 'false'); }
+  };
+
+  window.togglePowerBIPanel = function togglePowerBIPanel() {
+    var panel = pbiPanel();
+    if (!panel) return;
+    if (panel.classList.contains('open')) window.closePowerBIPanel();
+    else window.openPowerBIPanel();
+  };
+
+  /* Escape uždaro panelį (tik kai jis atidarytas). Esamo keydown
+     klausytojo puslapyje nėra, todėl konflikto su niekuo nėra. */
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape' || ev.key === 'Esc') {
+      var panel = pbiPanel();
+      if (panel && panel.classList.contains('open')) window.closePowerBIPanel();
+    }
+  });
+})();
 </script>
 <script src="js/changelog.js"></script>
 </body>
