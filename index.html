@@ -1190,6 +1190,32 @@ function buildPopupHtml(sub) {
   // badge falls back to "operator · voltage kV" if not set explicitly
   const badge = sub.badge || (sub.operator + ' · ' + sub.voltage + ' kV');
 
+  /*
+    Dvi papildomos eilutės rodomos TIK "ESO · 110 kV" kategorijos objektams.
+    Reikšmės imamos iš to paties stoties / ruožo objekto (sub.tech_su,
+    sub.laisva_lng), kurį užpildo loadESO110kV(). Kitiems įtampos lygiams
+    (pvz. "ESO · 35 kV") šie laukai neužpildomi, todėl eilutės neįterpiamos.
+    0 yra galiojanti reikšmė ir rodoma kaip skaičius su " MW"; tik null /
+    undefined duoda "Nėra duomenų". Tas pats atvaizdavimo būdas kaip EEKĮ eilutėje.
+  */
+  const eso110ExtraRows = (badge === 'ESO · 110 kV')
+    ? (
+        '<div class="popup-row">' +
+          '<span class="popup-label">Ruožo laisva ESO tinklo techninė galia su sistemos balanso ribojimu, MW</span>' +
+          (sub.tech_su != null
+            ? '<span class="popup-value">' + sub.tech_su.toFixed(2) + ' MW</span>'
+            : '<span class="popup-null">Nėra duomenų</span>') +
+        '</div>' +
+
+        '<div class="popup-row">' +
+          '<span class="popup-label">Laisva vartojimo galia, MW</span>' +
+          (sub.laisva_lng != null
+            ? '<span class="popup-value">' + sub.laisva_lng.toFixed(2) + ' MW</span>'
+            : '<span class="popup-null">Nėra duomenų</span>') +
+        '</div>'
+      )
+    : '';
+
   return (
     '<div class="popup-name">' + (sub.name || 'Nenurodyta') + '</div>' +
 
@@ -1214,6 +1240,8 @@ function buildPopupHtml(sub) {
     ? '<span class="popup-value">' + sub.laisva_eeki.toFixed(2) + ' MW</span>'
     : '<span class="popup-null">Nėra duomenų</span>') +
 '</div>' +
+
+       eso110ExtraRows +
 
        '<div class="popup-row">' +
   '<span class="popup-label">Rekonstrukcijos įgyvendinimo data</span>' +
@@ -1985,6 +2013,22 @@ async function loadESO110kV() {
           laisva_eeki: (attr.LaisvaEEKI != null && isFinite(attr.LaisvaEEKI))
                          ? Number(attr.LaisvaEEKI)
                          : null,
+
+          /*
+            techSU     — Ruožo laisva ESO tinklo techninė galia su
+                         sistemos balanso ribojimu, MW
+            LaisvaLNG  — Laisva vartojimo galia, MW
+            Both come from the SAME feature.attributes object as the
+            powers above, and can be null if the field is absent or
+            not a finite number. 0 is preserved as a valid value.
+          */
+          tech_su: (attr.techSU != null && isFinite(attr.techSU))
+                     ? Number(attr.techSU)
+                     : null,
+
+          laisva_lng: (attr.LaisvaLNG != null && isFinite(attr.LaisvaLNG))
+                        ? Number(attr.LaisvaLNG)
+                        : null,
            rekon_data: (attr.INV_metai != null && attr.INV_metai !== '')
                 ? attr.INV_metai
                 : null,
