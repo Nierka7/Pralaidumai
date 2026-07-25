@@ -1,7 +1,12 @@
 {
-  "last_update": "2026-07-24T06:40:10.459Z",
+  "last_update": "2026-07-25T06:29:41.993Z",
   "changes": [],
   "history": [
+    {
+      "timestamp": "2026-07-25T06:29:41.993Z",
+      "changes_count": 0,
+      "changes": []
+    },
     {
       "timestamp": "2026-07-24T06:40:10.459Z",
       "changes_count": 0,
@@ -22771,11 +22776,6 @@
     },
     {
       "timestamp": "2026-06-26T08:03:19.050Z",
-      "changes_count": 0,
-      "changes": []
-    },
-    {
-      "timestamp": "2026-06-25T07:54:33.268Z",
       "changes_count": 0,
       "changes": []
     }
