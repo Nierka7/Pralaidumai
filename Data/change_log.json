@@ -1,7 +1,12 @@
 {
-  "last_update": "2026-08-06T06:47:04.501Z",
+  "last_update": "2026-08-07T05:51:05.430Z",
   "changes": [],
   "history": [
+    {
+      "timestamp": "2026-08-07T05:51:05.430Z",
+      "changes_count": 0,
+      "changes": []
+    },
     {
       "timestamp": "2026-08-06T06:47:04.501Z",
       "changes_count": 0,
@@ -15714,133 +15719,6 @@
           "old_value": 500,
           "new_value": 600,
           "timestamp": "2026-07-09T07:53:28.027Z"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-07-08T06:39:04.447Z",
-      "changes_count": 11,
-      "changes": [
-        {
-          "type": "changed",
-          "name": "KRUONIO HAE",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 540,
-          "new_value": 200,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "VILNIUS",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 620,
-          "new_value": 200,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "KLAIPĖDA",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 420,
-          "new_value": 0,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "ALYTUS",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 320,
-          "new_value": 0,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "JURBARKAS",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 400,
-          "new_value": 200,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "BITĖNAI",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 400,
-          "new_value": 200,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "PANEVĖŽYS",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 680,
-          "new_value": 380,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "UTENA",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_prijungimo_galia_VE",
-          "old_value": 354,
-          "new_value": 0,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "UTENA",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 680,
-          "new_value": 380,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "IAE",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_prijungimo_galia_VE",
-          "old_value": 250,
-          "new_value": 0,
-          "timestamp": "2026-07-08T06:39:04.447Z"
-        },
-        {
-          "type": "changed",
-          "name": "IAE",
-          "voltage": "110/330 kV",
-          "layer": "Litgrid 110/330 kV",
-          "file": "Litgrid_110_330_pastotes.json",
-          "field": "Laisva_galia_kaupikliams",
-          "old_value": 740,
-          "new_value": 380,
-          "timestamp": "2026-07-08T06:39:04.447Z"
         }
       ]
     }
