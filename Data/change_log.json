@@ -1,7 +1,322 @@
 {
-  "last_update": "2026-08-17T04:59:06.705Z",
-  "changes": [],
+  "last_update": "2026-08-18T04:53:13.838Z",
+  "changes": [
+    {
+      "type": "changed",
+      "name": "AUKŠTRAKIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠAKYNA",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "GRUZDŽIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "JONIŠKIS",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "MEŠKUIČIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "PIELIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 53,
+      "new_value": 153,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "KRUOPIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 53,
+      "new_value": 153,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "ZOKNIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŽAGARĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "TELŠIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 53,
+      "new_value": 153,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠIAULIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 51,
+      "new_value": 100,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "ŠAPNAGIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "N.AKMENĖ",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    },
+    {
+      "type": "changed",
+      "name": "KANTEIKIAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 24,
+      "timestamp": "2026-08-18T04:53:13.838Z"
+    }
+  ],
   "history": [
+    {
+      "timestamp": "2026-08-18T04:53:13.838Z",
+      "changes_count": 14,
+      "changes": [
+        {
+          "type": "changed",
+          "name": "AUKŠTRAKIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠAKYNA",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "GRUZDŽIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "JONIŠKIS",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "MEŠKUIČIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "PIELIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 53,
+          "new_value": 153,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "KRUOPIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 53,
+          "new_value": 153,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "ZOKNIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŽAGARĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "TELŠIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 53,
+          "new_value": 153,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠIAULIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 51,
+          "new_value": 100,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "ŠAPNAGIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "N.AKMENĖ",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        },
+        {
+          "type": "changed",
+          "name": "KANTEIKIAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 24,
+          "timestamp": "2026-08-18T04:53:13.838Z"
+        }
+      ]
+    },
     {
       "timestamp": "2026-08-17T04:59:06.705Z",
       "changes_count": 0,
@@ -20247,11 +20562,6 @@
     },
     {
       "timestamp": "2026-07-20T07:30:17.376Z",
-      "changes_count": 0,
-      "changes": []
-    },
-    {
-      "timestamp": "2026-07-19T06:43:24.965Z",
       "changes_count": 0,
       "changes": []
     }
