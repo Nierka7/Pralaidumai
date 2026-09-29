@@ -1,7 +1,36 @@
 {
-  "last_update": "2026-09-28T10:56:17.591Z",
-  "changes": [],
+  "last_update": "2026-09-29T10:42:17.255Z",
+  "changes": [
+    {
+      "type": "changed",
+      "name": "BITĖNAI",
+      "voltage": "110/330 kV",
+      "layer": "Litgrid 110/330 kV",
+      "file": "Litgrid_110_330_pastotes.json",
+      "field": "Laisva_galia_kaupikliams",
+      "old_value": 0,
+      "new_value": 40,
+      "timestamp": "2026-09-29T10:42:17.255Z"
+    }
+  ],
   "history": [
+    {
+      "timestamp": "2026-09-29T10:42:17.255Z",
+      "changes_count": 1,
+      "changes": [
+        {
+          "type": "changed",
+          "name": "BITĖNAI",
+          "voltage": "110/330 kV",
+          "layer": "Litgrid 110/330 kV",
+          "file": "Litgrid_110_330_pastotes.json",
+          "field": "Laisva_galia_kaupikliams",
+          "old_value": 0,
+          "new_value": 40,
+          "timestamp": "2026-09-29T10:42:17.255Z"
+        }
+      ]
+    },
     {
       "timestamp": "2026-09-28T10:56:17.591Z",
       "changes_count": 0,
@@ -39003,11 +39032,6 @@
           "timestamp": "2026-08-31T10:52:49.962Z"
         }
       ]
-    },
-    {
-      "timestamp": "2026-08-30T09:57:10.643Z",
-      "changes_count": 0,
-      "changes": []
     }
   ]
 }
