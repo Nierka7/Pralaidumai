@@ -6640,53 +6640,6 @@
       "attributes": {
         "PAS_ID": 79582,
         "PAS_PAV": "LIETUVOS E",
-        "PAS_ITAMPA": 110,
-        "Papildoma_informacija": null,
-        "CREATED_USER": null,
-        "CREATED_DATE": null,
-        "LAST_EDITED_USER": null,
-        "LAST_EDITED_DATE": null,
-        "Zona": 36,
-        "Metai": 2026,
-        "PAS_PAV_Excel": "LIETUVOS E 110 kV",
-        "ZONA_1747116922273": 36,
-        "Laisva_prijungimo_galia_SE": 0,
-        "Rezer_ESO_tinklo_galia_VE": 15,
-        "Rezer_ESO_tinklo_galia_SE": 130,
-        "Rezer_VE_tinklo_galia_LIT_ESO": 20,
-        "Rezer_SE_tinklo_galia_LIT_ESO": 10,
-        "Metai_1747116922273": 2026,
-        "Zonos_pralaidumas": 140,
-        "created_user_1747116922273": null,
-        "created_date_1747116922273": null,
-        "last_edited_user_1747116922273": null,
-        "last_edited_date_1747116922273": null,
-        "Laisva_prijungimo_galia_VE": 55,
-        "Laisva_galia_kaupikliams": 10,
-        "Rezervuota_galia_kaupikliams": 103,
-        "Atributas_12": 26,
-        "Atributas_13": null,
-        "Atributas_14": null,
-        "Atributas_15": null,
-        "Atributas_16": null,
-        "Atributas_17": null,
-        "Atributas_18": null,
-        "Atributas_19": null,
-        "Atributas_20": null,
-        "Atributas_21": null,
-        "Rez_prij_galia_LITGRID_kaup": null,
-        "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1341
-      },
-      "geometry": {
-        "x": 541810.6184999999,
-        "y": 6070896.38225
-      }
-    },
-    {
-      "attributes": {
-        "PAS_ID": 79582,
-        "PAS_PAV": "LIETUVOS E",
         "PAS_ITAMPA": 330,
         "Papildoma_informacija": null,
         "CREATED_USER": null,
@@ -6723,11 +6676,11 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1351
+        "ObjectId": 1341
       },
       "geometry": {
-        "x": 541810.6184999999,
-        "y": 6070896.38225
+        "x": 541470.1678750003,
+        "y": 6070617.162249999
       }
     },
     {
@@ -6770,7 +6723,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1361
+        "ObjectId": 1351
       },
       "geometry": {
         "x": 478140.8934375001,
@@ -6817,7 +6770,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1371
+        "ObjectId": 1361
       },
       "geometry": {
         "x": 321769.4084374998,
@@ -6864,7 +6817,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1381
+        "ObjectId": 1371
       },
       "geometry": {
         "x": 585467.4975624997,
@@ -6911,7 +6864,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1391
+        "ObjectId": 1381
       },
       "geometry": {
         "x": 489167.5702499999,
@@ -6958,7 +6911,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1401
+        "ObjectId": 1391
       },
       "geometry": {
         "x": 543761.7570000002,
@@ -7005,7 +6958,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1411
+        "ObjectId": 1401
       },
       "geometry": {
         "x": 398403.1571249999,
@@ -7052,7 +7005,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1421
+        "ObjectId": 1411
       },
       "geometry": {
         "x": 387982.21862499975,
@@ -7099,7 +7052,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1431
+        "ObjectId": 1421
       },
       "geometry": {
         "x": 512121.49231250025,
@@ -7146,7 +7099,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1441
+        "ObjectId": 1431
       },
       "geometry": {
         "x": 333629.72443750035,
@@ -7193,7 +7146,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Į šią pralaidumo zoną patenka radialinė linija, kuri gali būti atjungiama kompleksiniams remontams arba rekonstravimui (atstatymo darbams) papildomam laikui, nei numato teisės aktai. Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1451
+        "ObjectId": 1441
       },
       "geometry": {
         "x": 588984.4176874999,
@@ -7240,7 +7193,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1461
+        "ObjectId": 1451
       },
       "geometry": {
         "x": 496613.02418749966,
@@ -7287,7 +7240,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1471
+        "ObjectId": 1461
       },
       "geometry": {
         "x": 591450.8300000001,
@@ -7334,7 +7287,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1481
+        "ObjectId": 1471
       },
       "geometry": {
         "x": 591450.8300000001,
@@ -7381,7 +7334,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1491
+        "ObjectId": 1481
       },
       "geometry": {
         "x": 488231.0593750002,
@@ -7428,7 +7381,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1501
+        "ObjectId": 1491
       },
       "geometry": {
         "x": 592718.5468124999,
@@ -7475,7 +7428,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1511
+        "ObjectId": 1501
       },
       "geometry": {
         "x": 363449.54587499984,
@@ -7522,7 +7475,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Į šią pralaidumo zoną patenka radialinė linija, kuri gali būti atjungiama kompleksiniams remontams arba rekonstravimui (atstatymo darbams) papildomam laikui, nei numato teisės aktai. Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1521
+        "ObjectId": 1511
       },
       "geometry": {
         "x": 579128.5166875003,
@@ -7569,7 +7522,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1531
+        "ObjectId": 1521
       },
       "geometry": {
         "x": 612116.7289375002,
@@ -7616,7 +7569,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1541
+        "ObjectId": 1531
       },
       "geometry": {
         "x": 363772.6095625004,
@@ -7663,7 +7616,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1551
+        "ObjectId": 1541
       },
       "geometry": {
         "x": 577744.2895,
@@ -7710,7 +7663,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1561
+        "ObjectId": 1551
       },
       "geometry": {
         "x": 492146.86000000034,
@@ -7757,7 +7710,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1571
+        "ObjectId": 1561
       },
       "geometry": {
         "x": 465782.0167500004,
@@ -7804,7 +7757,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1581
+        "ObjectId": 1571
       },
       "geometry": {
         "x": 317447.0975625003,
@@ -7851,7 +7804,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1591
+        "ObjectId": 1581
       },
       "geometry": {
         "x": 503475.53500000015,
@@ -7898,7 +7851,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1601
+        "ObjectId": 1591
       },
       "geometry": {
         "x": 503475.53500000015,
@@ -7945,7 +7898,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1611
+        "ObjectId": 1601
       },
       "geometry": {
         "x": 573779.7615,
@@ -7992,7 +7945,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1621
+        "ObjectId": 1611
       },
       "geometry": {
         "x": 499396.5108749997,
@@ -8039,7 +7992,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1631
+        "ObjectId": 1621
       },
       "geometry": {
         "x": 507283.00431250036,
@@ -8086,7 +8039,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1641
+        "ObjectId": 1631
       },
       "geometry": {
         "x": 578660.6516875001,
@@ -8133,7 +8086,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1651
+        "ObjectId": 1641
       },
       "geometry": {
         "x": 364221.5976250004,
@@ -8180,7 +8133,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1661
+        "ObjectId": 1651
       },
       "geometry": {
         "x": 499533.59281249996,
@@ -8227,7 +8180,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1671
+        "ObjectId": 1661
       },
       "geometry": {
         "x": 331824.1788750002,
@@ -8274,7 +8227,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1681
+        "ObjectId": 1671
       },
       "geometry": {
         "x": 496075.7817500001,
@@ -8321,7 +8274,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1691
+        "ObjectId": 1681
       },
       "geometry": {
         "x": 500790.3359375,
@@ -8368,7 +8321,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1701
+        "ObjectId": 1691
       },
       "geometry": {
         "x": 444201.4776250003,
@@ -8415,7 +8368,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1711
+        "ObjectId": 1701
       },
       "geometry": {
         "x": 457742.7133750003,
@@ -8462,7 +8415,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1721
+        "ObjectId": 1711
       },
       "geometry": {
         "x": 577243.2839374999,
@@ -8509,7 +8462,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1731
+        "ObjectId": 1721
       },
       "geometry": {
         "x": 369399.4058750002,
@@ -8556,7 +8509,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1741
+        "ObjectId": 1731
       },
       "geometry": {
         "x": 515921.9784375001,
@@ -8603,7 +8556,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1751
+        "ObjectId": 1741
       },
       "geometry": {
         "x": 515921.9784375001,
@@ -8650,7 +8603,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1761
+        "ObjectId": 1751
       },
       "geometry": {
         "x": 533309.6960000005,
@@ -8697,7 +8650,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Rezervuota LITGRID tinklo galia skirstomojo tinklo operatoriaus Dainavos Elektra atbuliniam srautui dėl SE - 5MW ir dėl EEKĮ - 3MW",
-        "ObjectId": 1771
+        "ObjectId": 1761
       },
       "geometry": {
         "x": 496603.7165000001,
@@ -8744,7 +8697,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1781
+        "ObjectId": 1771
       },
       "geometry": {
         "x": 586273.4060000004,
@@ -8791,7 +8744,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1791
+        "ObjectId": 1781
       },
       "geometry": {
         "x": 552217.1798750004,
@@ -8838,7 +8791,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1801
+        "ObjectId": 1791
       },
       "geometry": {
         "x": 515493.4871875001,
@@ -8885,7 +8838,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1811
+        "ObjectId": 1801
       },
       "geometry": {
         "x": 575503.2458124999,
@@ -8932,7 +8885,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1821
+        "ObjectId": 1811
       },
       "geometry": {
         "x": 575503.2458124999,
@@ -8979,7 +8932,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Pralaidumo zona, kuriai galioja teismo pritaikytos laikinosios apsaugos priemonės, apribojančios išankstinių prijungimo sąlygų išdavimą ir laisvų pralaidumų rezervaciją (įskaitant ketinimų protokolų pasirašymą) šioje zonoje vėjo elektrinėms (60 MW apimtyje) ir energijos kaupimo įrenginiams (12 MW apimtyje) iki laikinųjų apsaugos priemonių galiojimo pabaigos. Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1831
+        "ObjectId": 1821
       },
       "geometry": {
         "x": 472286.42062500026,
@@ -9026,7 +8979,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1841
+        "ObjectId": 1831
       },
       "geometry": {
         "x": 329464.8239374999,
@@ -9073,7 +9026,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1851
+        "ObjectId": 1841
       },
       "geometry": {
         "x": 371715.24925000034,
@@ -9120,7 +9073,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1861
+        "ObjectId": 1851
       },
       "geometry": {
         "x": 594482.9427500004,
@@ -9167,7 +9120,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1871
+        "ObjectId": 1861
       },
       "geometry": {
         "x": 593893.9801874999,
@@ -9214,7 +9167,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "Į šią pralaidumo zoną patenka radialinė linija, kuri gali būti atjungiama kompleksiniams remontams arba rekonstravimui (atstatymo darbams) papildomam laikui, nei numato teisės aktai. Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
-        "ObjectId": 1881
+        "ObjectId": 1871
       },
       "geometry": {
         "x": 593893.9801874999,
@@ -9261,7 +9214,7 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1891
+        "ObjectId": 1881
       },
       "geometry": {
         "x": 400825.1019374998,
@@ -9308,11 +9261,58 @@
         "Atributas_21": null,
         "Rez_prij_galia_LITGRID_kaup": null,
         "Papildoma_informacija_1747116922273": "",
-        "ObjectId": 1901
+        "ObjectId": 1891
       },
       "geometry": {
         "x": 437609.3459999999,
         "y": 6233286.540875001
+      }
+    },
+    {
+      "attributes": {
+        "PAS_ID": 131143,
+        "PAS_PAV": "LIETUVOS E 110KV",
+        "PAS_ITAMPA": 110,
+        "Papildoma_informacija": null,
+        "CREATED_USER": null,
+        "CREATED_DATE": null,
+        "LAST_EDITED_USER": null,
+        "LAST_EDITED_DATE": null,
+        "Zona": 36,
+        "Metai": 2026,
+        "PAS_PAV_Excel": "LIETUVOS E 110 kV",
+        "ZONA_1747116922273": 36,
+        "Laisva_prijungimo_galia_SE": 0,
+        "Rezer_ESO_tinklo_galia_VE": 15,
+        "Rezer_ESO_tinklo_galia_SE": 130,
+        "Rezer_VE_tinklo_galia_LIT_ESO": 20,
+        "Rezer_SE_tinklo_galia_LIT_ESO": 10,
+        "Metai_1747116922273": 2026,
+        "Zonos_pralaidumas": 140,
+        "created_user_1747116922273": null,
+        "created_date_1747116922273": null,
+        "last_edited_user_1747116922273": null,
+        "last_edited_date_1747116922273": null,
+        "Laisva_prijungimo_galia_VE": 55,
+        "Laisva_galia_kaupikliams": 10,
+        "Rezervuota_galia_kaupikliams": 103,
+        "Atributas_12": 26,
+        "Atributas_13": null,
+        "Atributas_14": null,
+        "Atributas_15": null,
+        "Atributas_16": null,
+        "Atributas_17": null,
+        "Atributas_18": null,
+        "Atributas_19": null,
+        "Atributas_20": null,
+        "Atributas_21": null,
+        "Rez_prij_galia_LITGRID_kaup": null,
+        "Papildoma_informacija_1747116922273": "Šioje zonoje nėra laisvų pralaidumų EEKĮ krovimuisi",
+        "ObjectId": 1901
+      },
+      "geometry": {
+        "x": 541810.6184999999,
+        "y": 6070896.38225
       }
     },
     {
