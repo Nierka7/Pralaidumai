@@ -1233,8 +1233,8 @@
         "INV_laisva_galia": null,
         "INV_metai": null,
         "INV_pastabos": null,
-        "laisva_dienine": null,
-        "laisva_naktine": null,
+        "laisva_dienine": 25.400000000000002,
+        "laisva_naktine": 30.6,
         "GlobalID": "96a02fd7-b6c0-4f9f-a5b3-35aac5f83291"
       },
       "geometry": {
