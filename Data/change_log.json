@@ -1,7 +1,36 @@
 {
-  "last_update": "2026-11-24T14:54:14.967Z",
-  "changes": [],
+  "last_update": "2026-11-25T14:25:30.943Z",
+  "changes": [
+    {
+      "type": "added",
+      "name": "Kuprioniškės",
+      "voltage": "110 kV",
+      "layer": "110 kV — ESO laisva yra, Litgrid yra",
+      "file": "ESO_yra_Litgrid_yra.json",
+      "field": null,
+      "old_value": null,
+      "new_value": null,
+      "timestamp": "2026-11-25T14:25:30.943Z"
+    }
+  ],
   "history": [
+    {
+      "timestamp": "2026-11-25T14:25:30.943Z",
+      "changes_count": 1,
+      "changes": [
+        {
+          "type": "added",
+          "name": "Kuprioniškės",
+          "voltage": "110 kV",
+          "layer": "110 kV — ESO laisva yra, Litgrid yra",
+          "file": "ESO_yra_Litgrid_yra.json",
+          "field": null,
+          "old_value": null,
+          "new_value": null,
+          "timestamp": "2026-11-25T14:25:30.943Z"
+        }
+      ]
+    },
     {
       "timestamp": "2026-11-24T14:54:14.967Z",
       "changes_count": 0,
@@ -9448,11 +9477,6 @@
           "timestamp": "2026-10-26T10:09:33.742Z"
         }
       ]
-    },
-    {
-      "timestamp": "2026-10-25T09:10:04.351Z",
-      "changes_count": 0,
-      "changes": []
     }
   ]
 }
